@@ -12,7 +12,9 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.debug.internal.ui.IInternalDebugUIConstants;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
+import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -20,6 +22,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -133,7 +136,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
         try {
             String program = null;
-            program = configuration.getAttribute("file", (String) null);
+            program = configuration.getAttribute(LaunchConstants.FILE, "");
             String emulatorName = configuration.getAttribute("type", (String) null);
             if (program != null) {
                 fProgramText.setText(program);
@@ -225,6 +228,14 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         gd.horizontalSpan = hspan;
         g.setLayoutData(gd);
         return g;
+    }
+    
+    /* (non-Javadoc)
+     * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getImage()
+     */
+    @SuppressWarnings("restriction")
+    public Image getImage() {
+        return DebugUITools.getImage(IInternalDebugUIConstants.IMG_OBJS_ARRAY_PARTITION);
     }
 
 }
