@@ -227,7 +227,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getImage()
      **/
     public Image getImage() {
-        return Activator.getImageDescriptor("icons/nodejs.png").createImage();
+        return Activator.getImageDescriptor(Constants.NODEJS_ICON).createImage();
     }
 
     /**
@@ -236,7 +236,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getName()
      **/
     public String getName() {
-        return "Main";
+        return Constants.MAIN_TAB_NAME;
     }
 
 }
