@@ -177,15 +177,16 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         // configuration.setAttribute(LaunchConstants._TYPE, typeName);
 
         // perform resource mapping for contextual launch
-        IResource[] resources = null;
-        if (program != null) {
-            IPath path = new Path(program);
-            IResource res = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
-            if (res != null) {
-                resources = new IResource[] { res };
-            }
-        }
-        configuration.setMappedResources(resources);
+        // IResource[] resources = null;
+        // if (program != null) {
+        // IPath path = new Path(program);
+        // IResource res =
+        // ResourcesPlugin.getWorkspace().getRoot().findMember(path);
+        // if (res != null) {
+        // resources = new IResource[] { res };
+        // }
+        // }
+        // configuration.setMappedResources(resources);
     }
 
     /**

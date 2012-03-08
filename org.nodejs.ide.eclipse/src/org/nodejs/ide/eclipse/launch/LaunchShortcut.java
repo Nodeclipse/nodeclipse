@@ -5,7 +5,6 @@
 package org.nodejs.ide.eclipse.launch;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -27,13 +26,13 @@ import org.nodejs.ide.eclipse.Constants;
  **/
 public class LaunchShortcut implements ILaunchShortcut {
 
-    /*
+    /**
      * (non-Javadoc)
      * 
      * @see
      * org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.jface.viewers
      * .ISelection, java.lang.String)
-     */
+     **/
     @Override
     public void launch(ISelection selection, String mode) {
         try {
@@ -48,13 +47,13 @@ public class LaunchShortcut implements ILaunchShortcut {
         }
     }
 
-    /*
+    /**
      * (non-Javadoc)
      * 
      * @see
      * org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.ui.IEditorPart,
      * java.lang.String)
-     */
+     **/
     @Override
     public void launch(IEditorPart editor, String mode) {
         try {
@@ -102,7 +101,7 @@ public class LaunchShortcut implements ILaunchShortcut {
         ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, file.getName());
         workingCopy.setAttribute(Constants.FILE, path);
         // workingCopy.setAttribute(LaunchConstants._TYPE,"");
-        workingCopy.setMappedResources(new IResource[] { file });
+        //workingCopy.setMappedResources(new IResource[] { file });
         return workingCopy.doSave();
     }
 }
