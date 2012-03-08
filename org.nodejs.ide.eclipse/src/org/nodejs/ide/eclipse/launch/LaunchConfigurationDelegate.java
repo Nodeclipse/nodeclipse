@@ -14,6 +14,7 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
+import org.nodejs.ide.eclipse.Constants;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
@@ -34,7 +35,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Application path should be stored in preference.
         cmdLine.add("C:\\windows\\NOTEPAD.EXE");
         // cmdLine.add("node ");
-        String file = configuration.getAttribute(LaunchConstants.FILE, "");
+        String file = configuration.getAttribute(Constants.FILE, "");
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
         // path is relative, so can not found it.
         cmdLine.add(filePath);

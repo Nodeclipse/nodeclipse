@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
+import org.nodejs.ide.eclipse.Constants;
 
 /**
  * Using "Run As" --> "Nodejs Application" will lead here.
@@ -80,7 +81,7 @@ public class LaunchShortcut implements ILaunchShortcut {
         // check for an existing launch config for the js file
         String path = file.getFullPath().toString();
         ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
-        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(LaunchConstants.LAUNCH_CONFIGURATION_TYPE_ID);
+        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(Constants.LAUNCH_CONFIGURATION_TYPE_ID);
         ILaunchConfiguration configuration = createLaunchConfiguration(type, path, file);
         DebugUITools.launch(configuration, mode);
 
@@ -99,7 +100,7 @@ public class LaunchShortcut implements ILaunchShortcut {
             throws CoreException {
         // create a new configuration for the js file
         ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, file.getName());
-        workingCopy.setAttribute(LaunchConstants.FILE, path);
+        workingCopy.setAttribute(Constants.FILE, path);
         // workingCopy.setAttribute(LaunchConstants._TYPE,"");
         workingCopy.setMappedResources(new IResource[] { file });
         return workingCopy.doSave();

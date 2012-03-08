@@ -12,9 +12,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
-import org.eclipse.debug.internal.ui.IInternalDebugUIConstants;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
-import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -31,6 +29,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
+import org.nodejs.ide.eclipse.Activator;
+import org.nodejs.ide.eclipse.Constants;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
@@ -136,7 +136,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
         try {
             String program = null;
-            program = configuration.getAttribute(LaunchConstants.FILE, "");
+            program = configuration.getAttribute(Constants.FILE, "");
             String emulatorName = configuration.getAttribute("type", (String) null);
             if (program != null) {
                 fProgramText.setText(program);
@@ -173,7 +173,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             typeName = null;
         }
 
-        configuration.setAttribute(LaunchConstants.FILE, program);
+        configuration.setAttribute(Constants.FILE, program);
         // configuration.setAttribute(LaunchConstants._TYPE, typeName);
 
         // perform resource mapping for contextual launch
@@ -186,15 +186,6 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             }
         }
         configuration.setMappedResources(resources);
-    }
-
-    /**
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getName()
-     **/
-    public String getName() {
-        return "Main";
     }
 
     /**
@@ -229,13 +220,23 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         g.setLayoutData(gd);
         return g;
     }
-    
-    /* (non-Javadoc)
+
+    /**
+     * (non-Javadoc)
+     * 
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getImage()
-     */
-    @SuppressWarnings("restriction")
+     **/
     public Image getImage() {
-        return DebugUITools.getImage(IInternalDebugUIConstants.IMG_OBJS_ARRAY_PARTITION);
+        return Activator.getImageDescriptor("icons/nodejs.png").createImage();
+    }
+
+    /**
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getName()
+     **/
+    public String getName() {
+        return "Main";
     }
 
 }
