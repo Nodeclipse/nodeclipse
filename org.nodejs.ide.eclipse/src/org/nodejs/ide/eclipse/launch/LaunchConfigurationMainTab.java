@@ -36,7 +36,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
     private Text fProgramText;
     private Button fProgramButton;
-    private Combo typeCombo;
+    //private Combo typeCombo;
 
     /**
      * @wbp.parser.entryPoint (non-Javadoc)
@@ -49,27 +49,27 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         Composite comp = createComposite(parent, font, 1, 1, GridData.FILL_BOTH);
         createKulGroup(comp);
         createVerticalSpacer(comp, 1);
-        createEmulatorGroup(comp);
+        //createEmulatorGroup(comp);
         setControl(comp);
 
     }
 
-    private void createEmulatorGroup(Composite parent) {
-        Group group = new Group(parent, SWT.NONE);
-        group.setText("&Type");
-        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-        group.setLayoutData(gd);
-        GridLayout layout = new GridLayout();
-        layout.numColumns = 1;
-        group.setLayout(layout);
-        group.setFont(parent.getFont());
-
-        typeCombo = new Combo(group, SWT.READ_ONLY);
-        typeCombo.add("6.0.0");
-        gd = new GridData(GridData.FILL_HORIZONTAL);
-        typeCombo.setLayoutData(gd);
-        typeCombo.setFont(parent.getFont());
-    }
+//    private void createEmulatorGroup(Composite parent) {
+//        Group group = new Group(parent, SWT.NONE);
+//        group.setText("&Type");
+//        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+//        group.setLayoutData(gd);
+//        GridLayout layout = new GridLayout();
+//        layout.numColumns = 1;
+//        group.setLayout(layout);
+//        group.setFont(parent.getFont());
+//
+//        typeCombo = new Combo(group, SWT.READ_ONLY);
+//        typeCombo.add("6.0.0");
+//        gd = new GridData(GridData.FILL_HORIZONTAL);
+//        typeCombo.setLayoutData(gd);
+//        typeCombo.setFont(parent.getFont());
+//    }
 
     private void createKulGroup(Composite parent) {
         Group kulGroup = new Group(parent, SWT.NONE);
@@ -137,19 +137,19 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         try {
             String program = null;
             program = configuration.getAttribute(Constants.FILE, "");
-            String emulatorName = configuration.getAttribute("type", (String) null);
+//            String emulatorName = configuration.getAttribute("type", (String) null);
             if (program != null) {
                 fProgramText.setText(program);
             }
-            if (emulatorName == null) {
-                typeCombo.select(0);
-            } else {
-                for (int i = 0; i < typeCombo.getItemCount(); i++) {
-                    if (emulatorName.equals(typeCombo.getItem(i))) {
-                        typeCombo.select(i);
-                    }
-                }
-            }
+//            if (emulatorName == null) {
+//                typeCombo.select(0);
+//            } else {
+//                for (int i = 0; i < typeCombo.getItemCount(); i++) {
+//                    if (emulatorName.equals(typeCombo.getItem(i))) {
+//                        typeCombo.select(i);
+//                    }
+//                }
+//            }
 
         } catch (CoreException e) {
             setErrorMessage(e.getMessage());
@@ -168,10 +168,10 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         if (program.length() == 0) {
             program = null;
         }
-        String typeName = typeCombo.getText().trim();
-        if (typeName.length() == 0) {
-            typeName = null;
-        }
+//        String typeName = typeCombo.getText().trim();
+//        if (typeName.length() == 0) {
+//            typeName = null;
+//        }
 
         configuration.setAttribute(Constants.FILE, program);
         // configuration.setAttribute(LaunchConstants._TYPE, typeName);
