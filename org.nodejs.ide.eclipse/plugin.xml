@@ -58,4 +58,11 @@
         	type= "org.nodejs.ide.eclipse.launch.LaunchConfigurationType" >   
 		  </launchConfigurationTabGroup>   
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.debugModelPresentations">
+      <debugModelPresentation
+            class="org.nodejs.ide.eclipse.debug.DebugModelPresentation"
+            id="org.nodejs.ide.eclipse.debug.DebugModelPresentation">
+      </debugModelPresentation>
+   </extension>
 </plugin>

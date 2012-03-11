@@ -13,8 +13,11 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
+import org.eclipse.debug.core.model.IProcess;
 import org.nodejs.ide.eclipse.Constants;
+import org.nodejs.ide.eclipse.debug.DebugTarget;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
@@ -29,26 +32,28 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
      */
     @Override
     public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
-
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
-        //cmdLine.add("C:\\windows\\NOTEPAD.EXE");
-        cmdLine.add("node ");
+        // cmdLine.add("C:\\windows\\NOTEPAD.EXE");
+        cmdLine.add("node");
+        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
+            cmdLine.add("debug");
+        }
         String file = configuration.getAttribute(Constants.FILE, Constants.BLANK);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
         // path is relative, so can not found it.
         cmdLine.add(filePath);
         String[] cmds = {};
         cmds = cmdLine.toArray(cmds);
-        try {
-            // Launch a process to debug.eg,
-            // Launch NOTEPAD.EXE to show the JSfile we choose.
-            // IProcess p =
-            DebugPlugin.newProcess(launch, Runtime.getRuntime().exec(cmds, null), "Nodejs Process");
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        // Launch a process to debug.eg,
+        Process p = DebugPlugin.exec(cmds, null);
+        IProcess process = DebugPlugin.newProcess(launch, p, "Nodejs Process");
+        // DebugPlugin.newProcess(launch, Runtime.getRuntime().exec(cmds, null),
+        // "Nodejs Process");
+        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
+            DebugTarget target = new DebugTarget(launch, process);
+            launch.addDebugTarget(target);
         }
 
     }
