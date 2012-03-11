@@ -6,6 +6,7 @@ package org.nodejs.ide.eclipse.launch;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -36,7 +37,8 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
     private Text fileText;
     private Button fileButton;
-    //private Combo typeCombo;
+
+    // private Combo typeCombo;
 
     /**
      * @wbp.parser.entryPoint (non-Javadoc)
@@ -48,32 +50,32 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         Font font = parent.getFont();
         Composite comp = createComposite(parent, font, 1, 1, GridData.FILL_BOTH);
         createFileGroup(comp);
-        //createVerticalSpacer(comp, 1);
-        //createEmulatorGroup(comp);
+        // createVerticalSpacer(comp, 1);
+        // createEmulatorGroup(comp);
         setControl(comp);
 
     }
 
-//    private void createEmulatorGroup(Composite parent) {
-//        Group group = new Group(parent, SWT.NONE);
-//        group.setText("&Type");
-//        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-//        group.setLayoutData(gd);
-//        GridLayout layout = new GridLayout();
-//        layout.numColumns = 1;
-//        group.setLayout(layout);
-//        group.setFont(parent.getFont());
-//
-//        typeCombo = new Combo(group, SWT.READ_ONLY);
-//        typeCombo.add("6.0.0");
-//        gd = new GridData(GridData.FILL_HORIZONTAL);
-//        typeCombo.setLayoutData(gd);
-//        typeCombo.setFont(parent.getFont());
-//    }
+    // private void createEmulatorGroup(Composite parent) {
+    // Group group = new Group(parent, SWT.NONE);
+    // group.setText("&Type");
+    // GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+    // group.setLayoutData(gd);
+    // GridLayout layout = new GridLayout();
+    // layout.numColumns = 1;
+    // group.setLayout(layout);
+    // group.setFont(parent.getFont());
+    //
+    // typeCombo = new Combo(group, SWT.READ_ONLY);
+    // typeCombo.add("6.0.0");
+    // gd = new GridData(GridData.FILL_HORIZONTAL);
+    // typeCombo.setLayoutData(gd);
+    // typeCombo.setFont(parent.getFont());
+    // }
 
     private void createFileGroup(Composite parent) {
         Group fileGroup = new Group(parent, SWT.NONE);
-        fileGroup.setText("&XML File");
+        fileGroup.setText(Constants.FILE);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         fileGroup.setLayoutData(gd);
         GridLayout layout = new GridLayout();
@@ -91,11 +93,11 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             }
         });
 
-        fileButton = createPushButton(fileGroup, "&Browse...", null); //$NON-NLS-1$
+        fileButton = createPushButton(fileGroup, Constants.SEARCH + Constants.ELLIPSIS, null); //$NON-NLS-1$
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileButton.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
-                browseXMLFiles();
+                browseFiles();
             }
         });
     }
@@ -103,11 +105,11 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     /***
      * Open a resource chooser to select a PDA program
      **/
-    protected void browseXMLFiles() {
-        ResourceListSelectionDialog dialog = new ResourceListSelectionDialog(getShell(), ResourcesPlugin.getWorkspace().getRoot(),
-                IResource.FILE);
-        dialog.setTitle("Xml Program");
-        dialog.setMessage("Select XML Program");
+    protected void browseFiles() {
+        IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+        ResourceListSelectionDialog dialog = new ResourceListSelectionDialog(getShell(), root, IResource.FILE);
+        dialog.setTitle(Constants.SEARCH + Constants.SPACE + Constants.FILE);
+        // dialog.setMessage("Select XML Program");
         if (dialog.open() == Window.OK) {
             Object[] files = dialog.getResult();
             IFile file = (IFile) files[0];
@@ -123,7 +125,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      *      debug.core.ILaunchConfigurationWorkingCopy)
      **/
     public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-        System.out.println("setdefaults");
+        // System.out.println("setdefaults");
     }
 
     /**
@@ -137,19 +139,20 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         try {
             String program = null;
             program = configuration.getAttribute(Constants.FILE, "");
-//            String emulatorName = configuration.getAttribute("type", (String) null);
+            // String emulatorName = configuration.getAttribute("type", (String)
+            // null);
             if (program != null) {
                 fileText.setText(program);
             }
-//            if (emulatorName == null) {
-//                typeCombo.select(0);
-//            } else {
-//                for (int i = 0; i < typeCombo.getItemCount(); i++) {
-//                    if (emulatorName.equals(typeCombo.getItem(i))) {
-//                        typeCombo.select(i);
-//                    }
-//                }
-//            }
+            // if (emulatorName == null) {
+            // typeCombo.select(0);
+            // } else {
+            // for (int i = 0; i < typeCombo.getItemCount(); i++) {
+            // if (emulatorName.equals(typeCombo.getItem(i))) {
+            // typeCombo.select(i);
+            // }
+            // }
+            // }
 
         } catch (CoreException e) {
             setErrorMessage(e.getMessage());
@@ -168,10 +171,10 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         if (program.length() == 0) {
             program = null;
         }
-//        String typeName = typeCombo.getText().trim();
-//        if (typeName.length() == 0) {
-//            typeName = null;
-//        }
+        // String typeName = typeCombo.getText().trim();
+        // if (typeName.length() == 0) {
+        // typeName = null;
+        // }
 
         configuration.setAttribute(Constants.FILE, program);
         // configuration.setAttribute(LaunchConstants._TYPE, typeName);
