@@ -34,8 +34,8 @@ import org.nodejs.ide.eclipse.Constants;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
-    private Text fProgramText;
-    private Button fProgramButton;
+    private Text fileText;
+    private Button fileButton;
     //private Combo typeCombo;
 
     /**
@@ -81,19 +81,19 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         kulGroup.setLayout(layout);
         kulGroup.setFont(parent.getFont());
 
-        fProgramText = new Text(kulGroup, SWT.SINGLE | SWT.BORDER);
+        fileText = new Text(kulGroup, SWT.SINGLE | SWT.BORDER);
         gd = new GridData(GridData.FILL_HORIZONTAL);
-        fProgramText.setLayoutData(gd);
-        fProgramText.setFont(parent.getFont());
-        fProgramText.addModifyListener(new ModifyListener() {
+        fileText.setLayoutData(gd);
+        fileText.setFont(parent.getFont());
+        fileText.addModifyListener(new ModifyListener() {
             public void modifyText(ModifyEvent e) {
                 updateLaunchConfigurationDialog();
             }
         });
 
-        fProgramButton = createPushButton(kulGroup, "&Browse...", null); //$NON-NLS-1$
+        fileButton = createPushButton(kulGroup, "&Browse...", null); //$NON-NLS-1$
         gd = new GridData(GridData.FILL_HORIZONTAL);
-        fProgramButton.addSelectionListener(new SelectionAdapter() {
+        fileButton.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
                 browseXMLFiles();
             }
@@ -111,7 +111,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         if (dialog.open() == Window.OK) {
             Object[] files = dialog.getResult();
             IFile file = (IFile) files[0];
-            fProgramText.setText(file.getFullPath().toString());
+            fileText.setText(file.getFullPath().toString());
         }
 
     }
@@ -139,7 +139,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             program = configuration.getAttribute(Constants.FILE, "");
 //            String emulatorName = configuration.getAttribute("type", (String) null);
             if (program != null) {
-                fProgramText.setText(program);
+                fileText.setText(program);
             }
 //            if (emulatorName == null) {
 //                typeCombo.select(0);
@@ -164,7 +164,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      *      .debug.core.ILaunchConfigurationWorkingCopy)
      **/
     public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-        String program = fProgramText.getText().trim();
+        String program = fileText.getText().trim();
         if (program.length() == 0) {
             program = null;
         }
@@ -198,7 +198,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     public boolean isValid(ILaunchConfiguration launchConfig) {
         setErrorMessage(null);
         setMessage(null);
-        String text = fProgramText.getText();
+        String text = fileText.getText();
 
         if (text.length() > 0) {
             IPath path = new Path(text);
