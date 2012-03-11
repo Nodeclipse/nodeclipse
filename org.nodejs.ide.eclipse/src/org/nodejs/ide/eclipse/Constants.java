@@ -16,5 +16,6 @@ public class Constants {
     public static final String SEARCH = "Search";
     public static final String ELLIPSIS = "...";
     public static final String SPACE = " ";
+    public static final String BLANK = "";
 
 }

@@ -35,7 +35,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Application path should be stored in preference.
         cmdLine.add("C:\\windows\\NOTEPAD.EXE");
         // cmdLine.add("node ");
-        String file = configuration.getAttribute(Constants.FILE, "");
+        String file = configuration.getAttribute(Constants.FILE, Constants.BLANK);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
         // path is relative, so can not found it.
         cmdLine.add(filePath);
