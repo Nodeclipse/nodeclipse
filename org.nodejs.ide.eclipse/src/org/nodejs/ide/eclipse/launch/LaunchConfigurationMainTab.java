@@ -47,8 +47,8 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     public void createControl(Composite parent) {
         Font font = parent.getFont();
         Composite comp = createComposite(parent, font, 1, 1, GridData.FILL_BOTH);
-        createKulGroup(comp);
-        createVerticalSpacer(comp, 1);
+        createFileGroup(comp);
+        //createVerticalSpacer(comp, 1);
         //createEmulatorGroup(comp);
         setControl(comp);
 
@@ -71,17 +71,17 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 //        typeCombo.setFont(parent.getFont());
 //    }
 
-    private void createKulGroup(Composite parent) {
-        Group kulGroup = new Group(parent, SWT.NONE);
-        kulGroup.setText("&XML File");
+    private void createFileGroup(Composite parent) {
+        Group fileGroup = new Group(parent, SWT.NONE);
+        fileGroup.setText("&XML File");
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-        kulGroup.setLayoutData(gd);
+        fileGroup.setLayoutData(gd);
         GridLayout layout = new GridLayout();
         layout.numColumns = 2;
-        kulGroup.setLayout(layout);
-        kulGroup.setFont(parent.getFont());
+        fileGroup.setLayout(layout);
+        fileGroup.setFont(parent.getFont());
 
-        fileText = new Text(kulGroup, SWT.SINGLE | SWT.BORDER);
+        fileText = new Text(fileGroup, SWT.SINGLE | SWT.BORDER);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileText.setLayoutData(gd);
         fileText.setFont(parent.getFont());
@@ -91,7 +91,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             }
         });
 
-        fileButton = createPushButton(kulGroup, "&Browse...", null); //$NON-NLS-1$
+        fileButton = createPushButton(fileGroup, "&Browse...", null); //$NON-NLS-1$
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileButton.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
