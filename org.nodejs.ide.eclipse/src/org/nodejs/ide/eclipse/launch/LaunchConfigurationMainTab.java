@@ -138,7 +138,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
         try {
             String program = null;
-            program = configuration.getAttribute(Constants.FILE, "");
+            program = configuration.getAttribute(Constants.FILE, Constants.BLANK);
             // String emulatorName = configuration.getAttribute("type", (String)
             // null);
             if (program != null) {
@@ -206,11 +206,11 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         if (text.length() > 0) {
             IPath path = new Path(text);
             if (ResourcesPlugin.getWorkspace().getRoot().findMember(path) == null) {
-                setErrorMessage("Specified xml file does not exist");
+                setErrorMessage("Specified file does not exist");
                 return false;
             }
         } else {
-            setMessage("Specify an xml file");
+            setMessage("Specify an file");
         }
         return true;
     }
