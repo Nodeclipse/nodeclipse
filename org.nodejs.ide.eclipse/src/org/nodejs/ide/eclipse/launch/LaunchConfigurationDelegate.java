@@ -4,7 +4,6 @@
  *******************************************************************************/
 package org.nodejs.ide.eclipse.launch;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -15,7 +14,6 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
-import org.eclipse.debug.core.model.IProcess;
 import org.nodejs.ide.eclipse.Constants;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
@@ -47,13 +45,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         cmds = cmdLine.toArray(cmds);
         // Launch a process to debug.eg,
         Process p = DebugPlugin.exec(cmds, null);
-        IProcess process = DebugPlugin.newProcess(launch, p, "Nodejs Process");
-        // DebugPlugin.newProcess(launch, Runtime.getRuntime().exec(cmds, null),
-        // "Nodejs Process");
-//        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-//            DebugTarget target = new DebugTarget(launch, process);
-//            launch.addDebugTarget(target);
-//        }
+        DebugPlugin.newProcess(launch, p, "Nodejs Process");
 
     }
 
