@@ -29,9 +29,8 @@ public class LaunchShortcut implements ILaunchShortcut {
     /**
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.jface.viewers
-     * .ISelection, java.lang.String)
+     * @see org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.jface.viewers
+     *      .ISelection, java.lang.String)
      **/
     @Override
     public void launch(ISelection selection, String mode) {
@@ -39,8 +38,7 @@ public class LaunchShortcut implements ILaunchShortcut {
             Object selectObj = ((IStructuredSelection) selection).getFirstElement();
             if (selectObj instanceof IFile) {
                 launchFile((IFile) selectObj, mode);
-            }
-            else {
+            } else {
                 MessageDialog.openWarning(null, "Warning", "Not implemeneted yet!");
             }
         } catch (CoreException e) {
@@ -50,9 +48,8 @@ public class LaunchShortcut implements ILaunchShortcut {
     /**
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.ui.IEditorPart,
-     * java.lang.String)
+     * @see org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.ui.IEditorPart,
+     *      java.lang.String)
      **/
     @Override
     public void launch(IEditorPart editor, String mode) {
@@ -61,8 +58,7 @@ public class LaunchShortcut implements ILaunchShortcut {
             if (editorInput instanceof IFileEditorInput) {
                 IFile selectObj = ((IFileEditorInput) editorInput).getFile();
                 launchFile((IFile) selectObj, mode);
-            }
-            else {
+            } else {
                 MessageDialog.openWarning(null, "Warning", "Not implemeneted yet!");
             }
         } catch (CoreException e) {
@@ -70,7 +66,8 @@ public class LaunchShortcut implements ILaunchShortcut {
     }
 
     /**
-     * Launch an XML file,using the file information, which means using default launch configurations.
+     * Launch an XML file,using the file information, which means using default
+     * launch configurations.
      * 
      * @param file
      * @param mode
@@ -95,13 +92,10 @@ public class LaunchShortcut implements ILaunchShortcut {
      * @return
      * @throws CoreException
      */
-    private ILaunchConfiguration createLaunchConfiguration(ILaunchConfigurationType type, String path, IFile file)
-            throws CoreException {
-        // create a new configuration for the js file
+    private ILaunchConfiguration createLaunchConfiguration(ILaunchConfigurationType type, String path, IFile file) throws CoreException {
+        // create a new configuration for the file
         ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, file.getName());
         workingCopy.setAttribute(Constants.FILE, path);
-        // workingCopy.setAttribute(LaunchConstants._TYPE,"");
-        //workingCopy.setMappedResources(new IResource[] { file });
         return workingCopy.doSave();
     }
 }

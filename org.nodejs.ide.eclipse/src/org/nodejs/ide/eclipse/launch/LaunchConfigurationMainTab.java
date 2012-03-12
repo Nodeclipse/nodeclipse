@@ -37,8 +37,6 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     private Text fileText;
     private Button fileButton;
 
-    // private Combo typeCombo;
-
     /**
      * @wbp.parser.entryPoint (non-Javadoc)
      * 
@@ -49,28 +47,9 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         Font font = parent.getFont();
         Composite comp = createComposite(parent, font, 1, 1, GridData.FILL_BOTH);
         createFileGroup(comp);
-        // createVerticalSpacer(comp, 1);
-        // createEmulatorGroup(comp);
         setControl(comp);
 
     }
-
-    // private void createEmulatorGroup(Composite parent) {
-    // Group group = new Group(parent, SWT.NONE);
-    // group.setText("&Type");
-    // GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-    // group.setLayoutData(gd);
-    // GridLayout layout = new GridLayout();
-    // layout.numColumns = 1;
-    // group.setLayout(layout);
-    // group.setFont(parent.getFont());
-    //
-    // typeCombo = new Combo(group, SWT.READ_ONLY);
-    // typeCombo.add("6.0.0");
-    // gd = new GridData(GridData.FILL_HORIZONTAL);
-    // typeCombo.setLayoutData(gd);
-    // typeCombo.setFont(parent.getFont());
-    // }
 
     private void createFileGroup(Composite parent) {
         Group fileGroup = new Group(parent, SWT.NONE);
@@ -102,13 +81,12 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     }
 
     /***
-     * Open a resource chooser to select a PDA program
+     * Open a resource chooser to select a file
      **/
     protected void browseFiles() {
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         ResourceListSelectionDialog dialog = new ResourceListSelectionDialog(getShell(), root, IResource.FILE);
         dialog.setTitle(Constants.SEARCH + Constants.SPACE + Constants.FILE);
-        // dialog.setMessage("Select XML Program");
         if (dialog.open() == Window.OK) {
             Object[] files = dialog.getResult();
             IFile file = (IFile) files[0];
@@ -124,7 +102,6 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      *      debug.core.ILaunchConfigurationWorkingCopy)
      **/
     public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-        // System.out.println("setdefaults");
     }
 
     /**
@@ -138,25 +115,12 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         try {
             String program = null;
             program = configuration.getAttribute(Constants.FILE, Constants.BLANK);
-            // String emulatorName = configuration.getAttribute("type", (String)
-            // null);
             if (program != null) {
                 fileText.setText(program);
             }
-            // if (emulatorName == null) {
-            // typeCombo.select(0);
-            // } else {
-            // for (int i = 0; i < typeCombo.getItemCount(); i++) {
-            // if (emulatorName.equals(typeCombo.getItem(i))) {
-            // typeCombo.select(i);
-            // }
-            // }
-            // }
-
         } catch (CoreException e) {
             setErrorMessage(e.getMessage());
         }
-        // #endif
     }
 
     /**
@@ -170,25 +134,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         if (program.length() == 0) {
             program = null;
         }
-        // String typeName = typeCombo.getText().trim();
-        // if (typeName.length() == 0) {
-        // typeName = null;
-        // }
-
         configuration.setAttribute(Constants.FILE, program);
-        // configuration.setAttribute(LaunchConstants._TYPE, typeName);
-
-        // perform resource mapping for contextual launch
-        // IResource[] resources = null;
-        // if (program != null) {
-        // IPath path = new Path(program);
-        // IResource res =
-        // ResourcesPlugin.getWorkspace().getRoot().findMember(path);
-        // if (res != null) {
-        // resources = new IResource[] { res };
-        // }
-        // }
-        // configuration.setMappedResources(resources);
     }
 
     /**
