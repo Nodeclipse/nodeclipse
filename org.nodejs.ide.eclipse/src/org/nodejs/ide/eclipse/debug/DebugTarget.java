@@ -3,7 +3,6 @@ package org.nodejs.ide.eclipse.debug;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugException;
@@ -53,7 +52,7 @@ public class DebugTarget implements IDebugTarget, IDebugElement {
         System.out.println(launch.getChildren()[1] instanceof IProcess);
         //InputStream is = p.getInputStream();
         OutputStream os = p.getOutputStream();
-        String s = "quit";
+        String s = "quit\r";
         byte[] c= s.getBytes();
         try {
             os.write(c, 0, c.length);
@@ -62,7 +61,7 @@ public class DebugTarget implements IDebugTarget, IDebugElement {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //process.terminate();
+        process.terminate();
 
         isTerminated = true;
     }
