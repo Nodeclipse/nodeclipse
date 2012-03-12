@@ -1,5 +1,9 @@
 package org.nodejs.ide.eclipse.debug;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugException;
@@ -15,11 +19,13 @@ import org.eclipse.debug.core.model.IThread;
 public class DebugTarget implements IDebugTarget, IDebugElement {
     ILaunch launch;
     IProcess process;
+    Process p;
     boolean isTerminated = false;
 
-    public DebugTarget(ILaunch launch, IProcess process) {
+    public DebugTarget(ILaunch launch, IProcess process, Process p) {
         this.launch = launch;
         this.process = process;
+        this.p = p;
     }
 
     @Override
@@ -41,9 +47,23 @@ public class DebugTarget implements IDebugTarget, IDebugElement {
 
     @Override
     public void terminate() throws DebugException {
-        System.out.println("kill");
-        System.out.println(launch.getProcesses().length);
-        process.terminate();
+        System.out.println("terminate");
+        System.out.println(launch.getChildren().length);
+        System.out.println(launch.getChildren()[0] instanceof IDebugTarget);
+        System.out.println(launch.getChildren()[1] instanceof IProcess);
+        //InputStream is = p.getInputStream();
+        OutputStream os = p.getOutputStream();
+        String s = "quit";
+        byte[] c= s.getBytes();
+        try {
+            os.write(c, 0, c.length);
+            os.flush();
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //process.terminate();
+
         isTerminated = true;
     }
 
@@ -149,7 +169,7 @@ public class DebugTarget implements IDebugTarget, IDebugElement {
     @Override
     public IThread[] getThreads() throws DebugException {
         // TODO Auto-generated method stub
-        return null;
+        return new IThread[] {};
     }
 
     @Override

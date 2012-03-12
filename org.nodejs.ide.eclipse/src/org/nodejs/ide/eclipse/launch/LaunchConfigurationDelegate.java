@@ -48,7 +48,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         Process p = DebugPlugin.exec(cmds, null);
         IProcess process = DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-            DebugTarget target = new DebugTarget(launch, process);
+            DebugTarget target = new DebugTarget(launch, process, p);
             launch.addDebugTarget(target);
         }
 
