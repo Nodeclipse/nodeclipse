@@ -17,7 +17,6 @@ import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.eclipse.debug.core.model.IProcess;
 import org.nodejs.ide.eclipse.Constants;
-import org.nodejs.ide.eclipse.debug.DebugTarget;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
@@ -51,10 +50,10 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         IProcess process = DebugPlugin.newProcess(launch, p, "Nodejs Process");
         // DebugPlugin.newProcess(launch, Runtime.getRuntime().exec(cmds, null),
         // "Nodejs Process");
-        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-            DebugTarget target = new DebugTarget(launch, process);
-            launch.addDebugTarget(target);
-        }
+//        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
+//            DebugTarget target = new DebugTarget(launch, process);
+//            launch.addDebugTarget(target);
+//        }
 
     }
 
