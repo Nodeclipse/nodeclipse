@@ -32,10 +32,9 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
-        // cmdLine.add("C:\\windows\\NOTEPAD.EXE");
-        cmdLine.add("node");
+        cmdLine.add(Constants.NODE);
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-            cmdLine.add("debug");
+            cmdLine.add(ILaunchManager.DEBUG_MODE);
         }
         String file = configuration.getAttribute(Constants.FILE, Constants.BLANK);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
@@ -45,7 +44,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         cmds = cmdLine.toArray(cmds);
         // Launch a process to debug.eg,
         Process p = DebugPlugin.exec(cmds, null);
-        DebugPlugin.newProcess(launch, p, "Nodejs Process");
+        DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
 
     }
 
