@@ -52,7 +52,7 @@ public class DebugTarget implements IDebugTarget, IDebugElement {
         System.out.println(launch.getChildren()[1] instanceof IProcess);
         //InputStream is = p.getInputStream();
         OutputStream os = p.getOutputStream();
-        String s = "quit\r";
+        String s = "quit";
         byte[] c= s.getBytes();
         try {
             os.write(c, 0, c.length);
