@@ -1,4 +1,4 @@
-package org.nodejs.ide.eclipse.debug;
+package org.nodejs.ide.eclipse.debug.model;
 
 import java.io.IOException;
 import org.eclipse.core.resources.IMarkerDelta;
@@ -10,9 +10,8 @@ import org.eclipse.debug.core.model.IMemoryBlock;
 import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.debug.core.model.IThread;
-import org.nodejs.ide.eclipse.util.Constants;
-import org.nodejs.ide.eclipse.util.LogUtil;
-import org.nodejs.ide.eclipse.debug.NodeDebugElement;
+import org.nodejs.ide.eclipse.debug.util.Constants;
+import org.nodejs.ide.eclipse.debug.util.LogUtil;
 
 public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 

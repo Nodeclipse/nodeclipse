@@ -1,4 +1,4 @@
-package org.nodejs.ide.eclipse;
+package org.nodejs.ide.eclipse.debug;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

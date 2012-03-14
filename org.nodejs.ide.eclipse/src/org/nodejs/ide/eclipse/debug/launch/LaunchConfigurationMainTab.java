@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.launch;
+package org.nodejs.ide.eclipse.debug.launch;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -29,8 +29,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
-import org.nodejs.ide.eclipse.Activator;
-import org.nodejs.ide.eclipse.util.Constants;
+import org.nodejs.ide.eclipse.debug.Activator;
+import org.nodejs.ide.eclipse.debug.util.Constants;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 

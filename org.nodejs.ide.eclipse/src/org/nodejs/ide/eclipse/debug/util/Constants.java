@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.util;
+package org.nodejs.ide.eclipse.debug.util;
 
 public class Constants {
 

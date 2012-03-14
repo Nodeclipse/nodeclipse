@@ -4,7 +4,7 @@
 	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
       <launchConfigurationType 
-            delegate="org.nodejs.ide.eclipse.launch.LaunchConfigurationDelegate" 
+            delegate="org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationDelegate" 
             id="org.nodejs.ide.eclipse.launch.LaunchConfigurationType" 
             modes="run, debug" 
             name="Nodejs Application">
@@ -21,7 +21,7 @@
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
-             class= "org.nodejs.ide.eclipse.launch.LaunchShortcut"   
+             class= "org.nodejs.ide.eclipse.debug.launch.LaunchShortcut"   
              icon= "icons/nodejs.png"   
              id= "org.nodejs.ide.eclipse.launch.LaunchShortcut"   
              label= "Nodejs Application"   
@@ -53,7 +53,7 @@
    <extension
           point="org.eclipse.debug.ui.launchConfigurationTabGroups">
           <launchConfigurationTabGroup   
-       		class= "org.nodejs.ide.eclipse.launch.LaunchConfigurationTabGroup"   
+       		class= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationTabGroup"   
       		id= "org.nodejs.ide.eclipse.launch.LaunchConfigurationTabGroup"   
         	type= "org.nodejs.ide.eclipse.launch.LaunchConfigurationType" >   
 		  </launchConfigurationTabGroup>   

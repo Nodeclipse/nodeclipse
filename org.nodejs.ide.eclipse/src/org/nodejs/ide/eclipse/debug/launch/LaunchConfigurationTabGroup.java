@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.launch;
+package org.nodejs.ide.eclipse.debug.launch;
 
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
 import org.eclipse.debug.ui.CommonTab;
