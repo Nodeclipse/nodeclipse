@@ -19,7 +19,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
-import org.nodejs.ide.eclipse.Constants;
+import org.nodejs.ide.eclipse.util.Constants;
 
 /**
  * Using "Run As" --> "Nodejs Application" will lead here.

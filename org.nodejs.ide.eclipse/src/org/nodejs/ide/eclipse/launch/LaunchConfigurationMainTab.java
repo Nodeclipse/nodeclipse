@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.nodejs.ide.eclipse.Activator;
-import org.nodejs.ide.eclipse.Constants;
+import org.nodejs.ide.eclipse.util.Constants;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
