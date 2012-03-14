@@ -21,4 +21,8 @@ public class Constants {
     public static final String PROCESS_MESSAGE = "Nodejs Process";
     public static final String NODE = "node";
 
+    public static final String LINE_SEPARATOR = "line.separator";
+    public static final String EOL = System.getProperty(LINE_SEPARATOR);
+    public static final String QUIT = "quit";
+
 }
