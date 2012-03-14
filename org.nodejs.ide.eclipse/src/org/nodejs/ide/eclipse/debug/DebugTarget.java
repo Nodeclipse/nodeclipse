@@ -5,7 +5,6 @@ import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.model.IBreakpoint;
-import org.eclipse.debug.core.model.IDebugElement;
 import org.eclipse.debug.core.model.IDebugTarget;
 import org.eclipse.debug.core.model.IMemoryBlock;
 import org.eclipse.debug.core.model.IProcess;
@@ -13,30 +12,25 @@ import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.debug.core.model.IThread;
 import org.nodejs.ide.eclipse.util.Constants;
 import org.nodejs.ide.eclipse.util.LogUtil;
+import org.nodejs.ide.eclipse.debug.NodeDebugElement;
 
-public class DebugTarget implements IDebugTarget, IDebugElement {
+public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     private ILaunch launch;
     private IProcess process;
     private Process p;
 
     public DebugTarget(ILaunch launch, IProcess process, Process p) {
+        super(null);
         this.launch = launch;
         this.process = process;
         this.p = p;
     }
 
-    @SuppressWarnings("rawtypes")
-    @Override
-    public Object getAdapter(Class adapter) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     @Override
     public boolean canTerminate() {
         // TODO Auto-generated method stub
-        return false;
+        return  process.canTerminate();
     }
 
     @Override
