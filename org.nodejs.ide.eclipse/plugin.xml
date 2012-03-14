@@ -5,7 +5,7 @@
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
       <launchConfigurationType 
             delegate="org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationDelegate" 
-            id="org.nodejs.ide.eclipse.launch.LaunchConfigurationType" 
+            id="org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationType" 
             modes="run, debug" 
             name="Nodejs Application">
       </launchConfigurationType> 
@@ -13,9 +13,9 @@
     <extension   
           point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
        <launchConfigurationTypeImage   
-             configTypeID= "org.nodejs.ide.eclipse.launch.LaunchConfigurationType"   
+             configTypeID= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationType"   
              icon= "icons/nodejs.png"   
-             id= "org.nodejs.ide.eclipse.launch.LaunchConfigurationTypeImage" >   
+             id= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationTypeImage" >   
        </launchConfigurationTypeImage>   
     </extension>  
     <extension   
@@ -23,11 +23,11 @@
        <shortcut   
              class= "org.nodejs.ide.eclipse.debug.launch.LaunchShortcut"   
              icon= "icons/nodejs.png"   
-             id= "org.nodejs.ide.eclipse.launch.LaunchShortcut"   
+             id= "org.nodejs.ide.eclipse.debug.launch.LaunchShortcut"   
              label= "Nodejs Application"   
              modes= "run, debug" >   
           <configurationType
-                id= "org.nodejs.ide.eclipse.launch.LaunchConfigurationType" >
+                id= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationType" >
           </configurationType>   
            <contextualLaunch>   
               <enablement>   
@@ -54,8 +54,8 @@
           point="org.eclipse.debug.ui.launchConfigurationTabGroups">
           <launchConfigurationTabGroup   
        		class= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationTabGroup"   
-      		id= "org.nodejs.ide.eclipse.launch.LaunchConfigurationTabGroup"   
-        	type= "org.nodejs.ide.eclipse.launch.LaunchConfigurationType" >   
+      		id= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationTabGroup"   
+        	type= "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationType" >   
 		  </launchConfigurationTabGroup>   
    </extension>
 </plugin>
