@@ -29,7 +29,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
     @Override
     public boolean canTerminate() {
         // TODO Auto-generated method stub
-        return  process.canTerminate();
+        return process.canTerminate();
     }
 
     @Override
@@ -44,10 +44,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
             if (!isTerminated()) {
                 streamsProxy.write(Constants.QUIT + Constants.EOL);
                 // wait for subprocess exit
-                while (true) {
-                    if (p.waitFor() == 0)
-                        break;
-                }
+                p.waitFor();
             }
         } catch (IOException e) {
             LogUtil.error(e);
