@@ -1,9 +1,9 @@
-package org.nodejs.ide.eclipse.debug.util;
+package org.nodeclipse.debug.util;
 
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.nodejs.ide.eclipse.debug.Activator;
+import org.nodeclipse.debug.Activator;
 
 public class LogUtil {
 

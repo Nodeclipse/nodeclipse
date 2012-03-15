@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.debug.launch;
+package org.nodeclipse.debug.launch;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
@@ -19,7 +19,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
-import org.nodejs.ide.eclipse.debug.util.Constants;
+import org.nodeclipse.debug.util.Constants;
 
 /**
  * Using "Run As" --> "Nodejs Application" will lead here.

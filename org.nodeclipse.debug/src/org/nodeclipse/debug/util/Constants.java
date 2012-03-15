@@ -2,11 +2,11 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.debug.util;
+package org.nodeclipse.debug.util;
 
 public class Constants {
 
-    public static final String LAUNCH_CONFIGURATION_TYPE_ID = "org.nodejs.ide.eclipse.debug.launch.LaunchConfigurationType";
+    public static final String LAUNCH_CONFIGURATION_TYPE_ID = "org.nodeclipse.debug.launch.LaunchConfigurationType";
     public static final String FILE = "File";
     // public static final String _TYPE = "TYPE";
     public static final String ICONS = "$nl$/icons/";

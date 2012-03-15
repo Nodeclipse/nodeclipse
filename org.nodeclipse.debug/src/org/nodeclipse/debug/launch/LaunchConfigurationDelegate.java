@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Lamb. All rights reserved. 
  *
  *******************************************************************************/
-package org.nodejs.ide.eclipse.debug.launch;
+package org.nodeclipse.debug.launch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,8 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.eclipse.debug.core.model.IProcess;
-import org.nodejs.ide.eclipse.debug.model.DebugTarget;
-import org.nodejs.ide.eclipse.debug.util.Constants;
+import org.nodeclipse.debug.model.DebugTarget;
+import org.nodeclipse.debug.util.Constants;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 

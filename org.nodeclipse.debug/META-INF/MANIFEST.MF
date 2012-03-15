@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Eclipse
-Bundle-SymbolicName: org.nodejs.ide.eclipse.debug; singleton:=true
+Bundle-SymbolicName: org.nodeclipse.debug; singleton:=true
 Bundle-Version: 0.0.0
-Bundle-Activator: org.nodejs.ide.eclipse.debug.Activator
+Bundle-Activator: org.nodeclipse.debug.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.ide,

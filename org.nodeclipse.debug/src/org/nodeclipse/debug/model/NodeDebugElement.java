@@ -1,8 +1,8 @@
-package org.nodejs.ide.eclipse.debug.model;
+package org.nodeclipse.debug.model;
 
 import org.eclipse.debug.core.model.DebugElement;
 import org.eclipse.debug.core.model.IDebugTarget;
-import org.nodejs.ide.eclipse.debug.Activator;
+import org.nodeclipse.debug.Activator;
 
 public class NodeDebugElement extends DebugElement {
 
