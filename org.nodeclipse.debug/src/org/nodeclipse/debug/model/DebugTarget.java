@@ -1,5 +1,6 @@
 package org.nodeclipse.debug.model;
 
+import java.util.List;
 import java.io.IOException;
 import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.debug.core.DebugException;
@@ -18,6 +19,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
     private ILaunch launch;
     private IProcess process;
     private Process p;
+    private List<Thread> threads;
 
     public DebugTarget(ILaunch launch, IProcess process, Process p) {
         super(null);
@@ -154,14 +156,17 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public IThread[] getThreads() throws DebugException {
-        // TODO Auto-generated method stub
-        return new IThread[] {};
+        if (threads == null) {
+            return new IThread[0];
+        } else {
+            return threads.toArray(new Thread[threads.size()]);
+        }
     }
 
     @Override
     public boolean hasThreads() throws DebugException {
         // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
     @Override
@@ -173,7 +178,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
     @Override
     public boolean supportsBreakpoint(IBreakpoint breakpoint) {
         // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
 }
