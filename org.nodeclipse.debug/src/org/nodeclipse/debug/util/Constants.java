@@ -24,5 +24,8 @@ public class Constants {
     public static final String LINE_SEPARATOR = "line.separator";
     public static final String EOL = System.getProperty(LINE_SEPARATOR);
     public static final String QUIT = "quit";
+    public static final String STEP = "step";
+    public static final String NEXT = "next";
+    public static final String OUT = "out";
 
 }

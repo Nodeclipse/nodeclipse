@@ -10,6 +10,7 @@ import org.eclipse.debug.core.model.IVariable;
 public class StackFrame extends NodeDebugElement implements IStackFrame {
 
     private Thread thread;
+    private IVariable[] variables;
     
     public StackFrame(IDebugTarget target, Thread thread) {
         super(target);
@@ -19,110 +20,97 @@ public class StackFrame extends NodeDebugElement implements IStackFrame {
 
     @Override
     public boolean canStepInto() {
-        // TODO Auto-generated method stub
         return thread.canStepInto();
     }
 
     @Override
     public boolean canStepOver() {
-        // TODO Auto-generated method stub
         return thread.canStepOver();
     }
 
     @Override
     public boolean canStepReturn() {
-        // TODO Auto-generated method stub
         return thread.canStepReturn();
     }
 
     @Override
     public boolean isStepping() {
-        // TODO Auto-generated method stub
-        return false;
+        return thread.isStepping();
     }
 
     @Override
     public void stepInto() throws DebugException {
-        // TODO Auto-generated method stub
-
+        thread.stepInto();
     }
 
     @Override
     public void stepOver() throws DebugException {
-        // TODO Auto-generated method stub
-
+        thread.stepOver();
     }
 
     @Override
     public void stepReturn() throws DebugException {
-        // TODO Auto-generated method stub
-
+        thread.stepReturn();
     }
 
     @Override
     public boolean canResume() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().canResume();
     }
 
     @Override
     public boolean canSuspend() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().canSuspend();
     }
 
     @Override
     public boolean isSuspended() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().isSuspended();
     }
 
     @Override
     public void resume() throws DebugException {
-        // TODO Auto-generated method stub
-
+        getDebugTarget().resume();
     }
 
     @Override
     public void suspend() throws DebugException {
-        // TODO Auto-generated method stub
-
+        getDebugTarget().suspend();
     }
 
     @Override
     public boolean canTerminate() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().canTerminate();
     }
 
     @Override
     public boolean isTerminated() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().isTerminated();
     }
 
     @Override
     public void terminate() throws DebugException {
-        // TODO Auto-generated method stub
-
+        getDebugTarget().terminate();
     }
 
     @Override
     public IThread getThread() {
-        // TODO Auto-generated method stub
-        return null;
+        return thread;
     }
 
     @Override
     public IVariable[] getVariables() throws DebugException {
         // TODO Auto-generated method stub
-        return null;
+        if (variables == null) {
+        //    variables = getVariablesImpl();
+        }
+        
+        return variables;
     }
 
     @Override
     public boolean hasVariables() throws DebugException {
-        // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
     @Override

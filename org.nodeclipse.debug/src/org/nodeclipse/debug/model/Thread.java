@@ -1,16 +1,24 @@
 package org.nodeclipse.debug.model;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.debug.core.model.IDebugTarget;
 import org.eclipse.debug.core.model.IStackFrame;
+import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.debug.core.model.IThread;
+import org.nodeclipse.debug.util.Constants;
+import org.nodeclipse.debug.util.LogUtil;
 
 public class Thread extends NodeDebugElement implements IThread {
+    IStreamsProxy streamsProxy;
+    private List<StackFrame> frames;
 
-    public Thread(IDebugTarget target) {
+    public Thread(IDebugTarget target, Thread thread) {
         super(target);
-        // TODO Auto-generated constructor stub
+        streamsProxy = target.getProcess().getStreamsProxy();
     }
 
     @Override
@@ -58,76 +66,86 @@ public class Thread extends NodeDebugElement implements IThread {
         return false;
     }
 
+    public void sendCommand(String command) {
+        try {
+            if (!isTerminated()) {
+                streamsProxy.write(command + Constants.EOL);
+            }
+        } catch (IOException e) {
+            LogUtil.error(e);
+        }
+    }
+
     @Override
     public void stepInto() throws DebugException {
-        // TODO Auto-generated method stub
-
+        sendCommand(Constants.STEP);
     }
 
     @Override
     public void stepOver() throws DebugException {
-        // TODO Auto-generated method stub
-
+        sendCommand(Constants.NEXT);
     }
 
     @Override
     public void stepReturn() throws DebugException {
-        // TODO Auto-generated method stub
-
+        sendCommand(Constants.OUT);
     }
 
     @Override
     public boolean canTerminate() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().canTerminate();
     }
 
     @Override
     public boolean isTerminated() {
-        // TODO Auto-generated method stub
-        return false;
+        return getDebugTarget().isTerminated();
     }
 
     @Override
     public void terminate() throws DebugException {
-        // TODO Auto-generated method stub
-
+        getDebugTarget().terminate();
     }
 
     @Override
     public IStackFrame[] getStackFrames() throws DebugException {
-        // TODO Auto-generated method stub
-        return null;
+        //TODO
+        if (frames == null) {
+            frames = new ArrayList<StackFrame>();
+
+            //for (StackFrame frame : frames) {
+                StackFrame frame = new StackFrame(getDebugTarget(), this);
+
+                frames.add(frame);
+            //}
+        }
+
+        return frames.toArray(new IStackFrame[frames.size()]);
     }
 
     @Override
     public boolean hasStackFrames() throws DebugException {
-        // TODO Auto-generated method stub
-        return false;
+        return getStackFrames().length > 0;
     }
 
     @Override
     public int getPriority() throws DebugException {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public IStackFrame getTopStackFrame() throws DebugException {
-        // TODO Auto-generated method stub
-        return null;
+        IStackFrame[] frames = getStackFrames();
+        return frames.length > 0 ? frames[0] : null;
     }
 
     @Override
     public String getName() throws DebugException {
-        // TODO Auto-generated method stub
-        return null;
+        return "nodethread-" + this.toString();
     }
 
     @Override
     public IBreakpoint[] getBreakpoints() {
-        // TODO Auto-generated method stub
-        return null;
+        return new IBreakpoint[0];
     }
 
 }
