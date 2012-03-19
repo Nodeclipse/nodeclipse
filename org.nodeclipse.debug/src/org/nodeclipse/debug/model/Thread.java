@@ -16,7 +16,7 @@ public class Thread extends NodeDebugElement implements IThread {
     IStreamsProxy streamsProxy;
     private List<StackFrame> frames;
 
-    public Thread(IDebugTarget target, Thread thread) {
+    public Thread(IDebugTarget target) {
         super(target);
         streamsProxy = target.getProcess().getStreamsProxy();
     }

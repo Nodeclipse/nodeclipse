@@ -27,5 +27,6 @@ public class Constants {
     public static final String STEP = "step";
     public static final String NEXT = "next";
     public static final String OUT = "out";
+    public static final String CONT = "cont";
 
 }

@@ -20,23 +20,26 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
     private IProcess process;
     private Process p;
     private List<Thread> threads;
+    private Thread thread;
+    private boolean suspended;
 
     public DebugTarget(ILaunch launch, IProcess process, Process p) {
         super(null);
         this.launch = launch;
         this.process = process;
         this.p = p;
+        this.thread = new Thread(this);
+        threads.add(this.thread);
     }
 
     @Override
     public boolean canTerminate() {
-        // TODO Auto-generated method stub
-        return process.canTerminate();
+        return !isTerminated();
     }
 
     @Override
     public boolean isTerminated() {
-        return process.isTerminated();
+        return getProcess().isTerminated();
     }
 
     @Override
@@ -57,26 +60,33 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public boolean canResume() {
-        // TODO Auto-generated method stub
-        return false;
+        return !isTerminated() && isSuspended();
     }
 
     @Override
     public boolean canSuspend() {
-        // TODO Auto-generated method stub
-        return false;
+        return !isTerminated() && !isSuspended();
     }
 
     @Override
     public boolean isSuspended() {
-        // TODO Auto-generated method stub
-        return false;
+        return suspended;
+    }
+
+    public void sendCommand(String command) {
+        IStreamsProxy streamsProxy = process.getStreamsProxy();
+        try {
+            if (!isTerminated()) {
+                streamsProxy.write(command + Constants.EOL);
+            }
+        } catch (IOException e) {
+            LogUtil.error(e);
+        }
     }
 
     @Override
     public void resume() throws DebugException {
-        // TODO Auto-generated method stub
-
+        sendCommand(Constants.CONT);
     }
 
     @Override
@@ -105,7 +115,6 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public boolean canDisconnect() {
-        // TODO Auto-generated method stub
         return false;
     }
 
@@ -117,7 +126,6 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public boolean isDisconnected() {
-        // TODO Auto-generated method stub
         return false;
     }
 
@@ -129,12 +137,6 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public IMemoryBlock getMemoryBlock(long startAddress, long length) throws DebugException {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String getModelIdentifier() {
         // TODO Auto-generated method stub
         return null;
     }
@@ -165,7 +167,6 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
 
     @Override
     public boolean hasThreads() throws DebugException {
-        // TODO Auto-generated method stub
         return true;
     }
 
