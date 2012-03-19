@@ -1,6 +1,5 @@
 package org.nodeclipse.debug.model;
 
-import java.util.List;
 import java.io.IOException;
 import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.debug.core.DebugException;
@@ -19,7 +18,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
     private ILaunch launch;
     private IProcess process;
     private Process p;
-    private List<Thread> threads;
+    private IThread[] threads;
     private Thread thread;
     private boolean suspended;
 
@@ -29,7 +28,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
         this.process = process;
         this.p = p;
         this.thread = new Thread(this);
-        threads.add(this.thread);
+        threads = new Thread[] { this.thread };
     }
 
     @Override
@@ -161,7 +160,7 @@ public class DebugTarget extends NodeDebugElement implements IDebugTarget {
         if (threads == null) {
             return new IThread[0];
         } else {
-            return threads.toArray(new Thread[threads.size()]);
+            return threads;
         }
     }
 
