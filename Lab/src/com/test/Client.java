@@ -4,7 +4,8 @@ import java.io.*;
 import java.net.*;
 
 public class Client {
-
+    // D:\Workspace\runtime-EclipseApplication\test\src
+    // node --debug-brk=5859 index.js
     public static void main(String args[]) {
         try {
             Socket socket = new Socket("127.0.0.1", 5859);
@@ -25,9 +26,18 @@ public class Client {
                 // 刷新输出流，使Server马上收到该字符串
                 System.out.println("Client:" + readline);
                 // 在系统标准输出上打印读入的字符串
-                System.out.println("Server:" + is.readLine());
+                char[] buf = new char[64];
+                StringBuffer sb = new StringBuffer("");
+                String line = null;
+                while ((line = is.readLine()) != null) {
+                    sb.append(line + "\n");
+                    System.out.print(line + "\n");
+                }
+                String response = sb.toString();
+                System.out.println("Server:" + response);
                 // 从Server读入一字符串，并打印到标准输出上
-                readline = sin.readLine(); // 从系统标准输入读入一字符串
+                // 从系统标准输入读入一字符串
+                readline = sin.readLine();
             } // 继续循环
             os.close(); // 关闭Socket输出流
             is.close(); // 关闭Socket输入流
@@ -39,5 +49,4 @@ public class Client {
         }
 
     }
-
 }
