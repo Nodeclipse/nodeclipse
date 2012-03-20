@@ -26,7 +26,6 @@ public class Client {
                 // 刷新输出流，使Server马上收到该字符串
                 System.out.println("Client:" + readline);
                 // 在系统标准输出上打印读入的字符串
-                char[] buf = new char[64];
                 StringBuffer sb = new StringBuffer("");
                 String line = null;
                 while ((line = is.readLine()) != null) {
