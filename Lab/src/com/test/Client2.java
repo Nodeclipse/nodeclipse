@@ -45,7 +45,7 @@ public class Client2 {
         // D:\Workspace\runtime-EclipseApplication\test\src
         // node --debug-brk=5859 index.js
         Client2 client = new Client2();
-        System.out.println(client.send("{\"seq\":1,\"type\":\"request\",\"command\":\"version\"}"));
+        System.out.println(client.send("{\"seq\":1,\"type\":\"request\",\"command\":\"version\"}\n"));
         //System.out.println(client.send("{\"seq\":1,\"type\":\"request\",\"command\":\"version\"}"));
         Thread.sleep(20000);
         client.close();
