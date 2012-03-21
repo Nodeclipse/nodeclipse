@@ -2,8 +2,11 @@ package com.test;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.Charset;
 
 public class Client2 {
+    private static final Charset SOCKET_CHARSET = Charset.forName("UTF-8");
+
     Socket socket;
     OutputStream os;
     InputStream is;
@@ -43,6 +46,7 @@ public class Client2 {
         // node --debug-brk=5859 index.js
         Client2 client = new Client2();
         System.out.println(client.send("{\"seq\":1,\"type\":\"request\",\"command\":\"version\"}"));
+        //System.out.println(client.send("{\"seq\":1,\"type\":\"request\",\"command\":\"version\"}"));
         Thread.sleep(20000);
         client.close();
     }
