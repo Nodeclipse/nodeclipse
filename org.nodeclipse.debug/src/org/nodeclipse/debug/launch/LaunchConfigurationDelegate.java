@@ -36,7 +36,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Application path should be stored in preference.
         cmdLine.add(Constants.NODE);
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-            cmdLine.add(ILaunchManager.DEBUG_MODE);
+            cmdLine.add("--debug-brk=5858");
         }
         String file = configuration.getAttribute(Constants.FILE, Constants.BLANK);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
@@ -47,10 +47,10 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Launch a process to debug.eg,
         Process p = DebugPlugin.exec(cmds, null);
         IProcess process = DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
-        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-            DebugTarget target = new DebugTarget(launch, process, p);
-            launch.addDebugTarget(target);
-        }
+//        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
+//            DebugTarget target = new DebugTarget(launch, process, p);
+//            launch.addDebugTarget(target);
+//        }
 
     }
 
