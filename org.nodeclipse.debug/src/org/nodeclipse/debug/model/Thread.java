@@ -108,15 +108,15 @@ public class Thread extends NodeDebugElement implements IThread {
 
     @Override
     public IStackFrame[] getStackFrames() throws DebugException {
-        //TODO
+        // TODO
         if (frames == null) {
             frames = new ArrayList<StackFrame>();
 
-            //for (StackFrame frame : frames) {
-                StackFrame frame = new StackFrame(getDebugTarget(), this);
+            // for (StackFrame frame : frames) {
+            StackFrame frame = new StackFrame(getDebugTarget(), this);
 
-                frames.add(frame);
-            //}
+            frames.add(frame);
+            // }
         }
 
         return frames.toArray(new IStackFrame[frames.size()]);

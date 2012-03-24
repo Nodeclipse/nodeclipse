@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 Lamb. All rights reserved. 
- *
- *******************************************************************************/
 package org.nodeclipse.debug.launch;
 
 import java.util.ArrayList;
@@ -14,8 +10,6 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
-import org.eclipse.debug.core.model.IProcess;
-import org.nodeclipse.debug.model.DebugTarget;
 import org.nodeclipse.debug.util.Constants;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
@@ -38,7 +32,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
             cmdLine.add("--debug-brk=5858");
         }
-        String file = configuration.getAttribute(Constants.FILE, Constants.BLANK);
+        String file = configuration.getAttribute(Constants.KEY_FILE_PATH, Constants.BLANK_STRING);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
         // path is relative, so can not found it.
         cmdLine.add(filePath);
@@ -46,11 +40,11 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         cmds = cmdLine.toArray(cmds);
         // Launch a process to debug.eg,
         Process p = DebugPlugin.exec(cmds, null);
-        IProcess process = DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
-//        if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-//            DebugTarget target = new DebugTarget(launch, process, p);
-//            launch.addDebugTarget(target);
-//        }
+        DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
+        // if (mode.equals(ILaunchManager.DEBUG_MODE)) {
+        // DebugTarget target = new DebugTarget(launch, process, p);
+        // launch.addDebugTarget(target);
+        // }
 
     }
 

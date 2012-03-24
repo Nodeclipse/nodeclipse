@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 Lamb. All rights reserved. 
- *
- *******************************************************************************/
 package org.nodeclipse.debug.launch;
 
 import org.eclipse.core.resources.IFile;
@@ -31,9 +27,11 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.nodeclipse.debug.Activator;
 import org.nodeclipse.debug.util.Constants;
+import org.nodeclipse.debug.util.Messages;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
+    public static final String MAIN_TAB_NAME = "Main";
     private Text fileText;
     private Button fileButton;
 
@@ -53,7 +51,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
     private void createFileGroup(Composite parent) {
         Group fileGroup = new Group(parent, SWT.NONE);
-        fileGroup.setText(Constants.FILE);
+        fileGroup.setText(Messages.fileLabel);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         fileGroup.setLayoutData(gd);
         GridLayout layout = new GridLayout();
@@ -71,7 +69,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             }
         });
 
-        fileButton = createPushButton(fileGroup, Constants.SEARCH + Constants.ELLIPSIS, null); //$NON-NLS-1$
+        fileButton = createPushButton(fileGroup, Messages.searchLabel, null); //$NON-NLS-1$
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileButton.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -86,7 +84,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     protected void browseFiles() {
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         ResourceListSelectionDialog dialog = new ResourceListSelectionDialog(getShell(), root, IResource.FILE);
-        dialog.setTitle(Constants.SEARCH + Constants.SPACE + Constants.FILE);
+        dialog.setTitle(Messages.searchTitle);
         if (dialog.open() == Window.OK) {
             Object[] files = dialog.getResult();
             IFile file = (IFile) files[0];
@@ -113,10 +111,11 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     public void initializeFrom(ILaunchConfiguration configuration) {
 
         try {
-            String program = null;
-            program = configuration.getAttribute(Constants.FILE, Constants.BLANK);
-            if (program != null) {
-                fileText.setText(program);
+            String path = null;
+            path = configuration.getAttribute(Constants.KEY_FILE_PATH, Constants.BLANK_STRING);
+            System.out.println(path);
+            if (path != null) {
+                fileText.setText(path);
             }
         } catch (CoreException e) {
             setErrorMessage(e.getMessage());
@@ -130,11 +129,11 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      *      .debug.core.ILaunchConfigurationWorkingCopy)
      **/
     public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-        String program = fileText.getText().trim();
-        if (program.length() == 0) {
-            program = null;
+        String file = fileText.getText().trim();
+        if (file.length() == 0) {
+            file = null;
         }
-        configuration.setAttribute(Constants.FILE, program);
+        configuration.setAttribute(Constants.KEY_FILE_PATH, file);
     }
 
     /**
@@ -185,7 +184,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getName()
      **/
     public String getName() {
-        return Constants.MAIN_TAB_NAME;
+        return MAIN_TAB_NAME;
     }
 
 }

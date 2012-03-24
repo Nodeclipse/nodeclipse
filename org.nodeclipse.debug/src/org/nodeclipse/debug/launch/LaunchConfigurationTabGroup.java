@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 Lamb. All rights reserved. 
- *
- *******************************************************************************/
 package org.nodeclipse.debug.launch;
 
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
@@ -19,6 +15,5 @@ public class LaunchConfigurationTabGroup extends AbstractLaunchConfigurationTabG
     public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
         ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { new LaunchConfigurationMainTab(), new CommonTab() };
         setTabs(tabs);
-
     }
 }

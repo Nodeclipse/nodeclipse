@@ -11,7 +11,7 @@ public class StackFrame extends NodeDebugElement implements IStackFrame {
 
     private Thread thread;
     private IVariable[] variables;
-    
+
     public StackFrame(IDebugTarget target, Thread thread) {
         super(target);
         // TODO Auto-generated constructor stub
@@ -102,9 +102,9 @@ public class StackFrame extends NodeDebugElement implements IStackFrame {
     public IVariable[] getVariables() throws DebugException {
         // TODO Auto-generated method stub
         if (variables == null) {
-        //    variables = getVariablesImpl();
+            // variables = getVariablesImpl();
         }
-        
+
         return variables;
     }
 

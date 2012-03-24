@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2012 Lamb. All rights reserved. 
- *
- *******************************************************************************/
 package org.nodeclipse.debug.launch;
 
 import org.eclipse.core.resources.IFile;
@@ -66,15 +62,14 @@ public class LaunchShortcut implements ILaunchShortcut {
     }
 
     /**
-     * Launch an XML file,using the file information, which means using default
+     * Launch an file,using the file information, which means using default
      * launch configurations.
      * 
      * @param file
      * @param mode
      */
     private void launchFile(IFile file, String mode) throws CoreException {
-
-        // check for an existing launch config for the js file
+        // check for an existing launch config for the file
         String path = file.getFullPath().toString();
         ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
         ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(Constants.LAUNCH_CONFIGURATION_TYPE_ID);
@@ -95,7 +90,7 @@ public class LaunchShortcut implements ILaunchShortcut {
     private ILaunchConfiguration createLaunchConfiguration(ILaunchConfigurationType type, String path, IFile file) throws CoreException {
         // create a new configuration for the file
         ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, file.getName());
-        workingCopy.setAttribute(Constants.FILE, path);
+        workingCopy.setAttribute(Constants.KEY_FILE_PATH, path);
         return workingCopy.doSave();
     }
 }
