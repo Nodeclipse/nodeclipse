@@ -113,7 +113,6 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
         try {
             String path = null;
             path = configuration.getAttribute(Constants.KEY_FILE_PATH, Constants.BLANK_STRING);
-            System.out.println(path);
             if (path != null) {
                 fileText.setText(path);
             }
