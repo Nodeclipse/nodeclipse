@@ -1,5 +1,6 @@
 package org.nodeclipse.debug.launch;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -39,7 +40,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         String[] cmds = {};
         cmds = cmdLine.toArray(cmds);
         // Launch a process to debug.eg,
-        Process p = DebugPlugin.exec(cmds, null);
+        Process p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
         DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
         // if (mode.equals(ILaunchManager.DEBUG_MODE)) {
         // DebugTarget target = new DebugTarget(launch, process, p);
