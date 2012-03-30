@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.nodeclipse.ui.wizards.category"
+            name="Nodejs">
+      </category>
+      <wizard
+            category="org.nodeclipse.ui.wizards.category"
+            class="org.nodeclipse.ui.wizards.NodejsProjectWizard"
+            icon="icons/nodejs.png"
+            id="org.nodeclipse.ui.wizards.NodejsProjectWizard"
+            name="Nodejs Project"
+            project="true">
+         <description>
+            Create a new Nodejs language project
+         </description>
+      </wizard>
+      <wizard
+            category="org.nodeclipse.ui.wizards.category"
+            class="org.nodeclipse.ui.wizards.NodejsFileWizard"
+            icon="icons/nodejs.png"
+            id="org.nodeclipse.ui.wizards.NodejsFileWizard"
+            name="Nodejs Source File">
+         <description>
+            Create a new Nodejs source file
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.nodeclipse.ui.editors.NodejsEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="js"
+            icon="icons/nodejs.png"
+            id="org.nodeclipse.ui.editors.NodejsEditor"
+            name="Nodejs Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/nodejs-nature.png"
+            id="org.nodeclipse.ui.nodejsNature.image"
+            natureId="org.nodeclipse.ui.nodejsNature">
+      </image>
+   </extension>
+   <extension
+         id="nodejsNature"
+         name="Nodejs Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.nodeclipse.ui.builder.NodejsNature">
+         </run>
+      </runtime>
+      <builder
+            id="org.nodeclipse.ui.nodejsBuilder">
+      </builder>
+   </extension>
+   <extension
+         id="nodejsBuilder"
+         name="Nodejs Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.nodeclipse.ui.builder.NodejsBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.nodeclipse.ui.contribution1"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.nodeclipse.ui.builder.ToggleNatureAction"
+               enablesFor="+"
+               id="org.nodeclipse.ui.addRemoveNatureAction"
+               label="Add/Remove Nodejs Nature"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         id="nodejsProblem"
+         name="Nodejs Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>
