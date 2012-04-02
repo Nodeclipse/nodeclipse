@@ -7,6 +7,7 @@ import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
+import org.eclipse.jface.text.contentassist.ContextInformation;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
@@ -20,14 +21,15 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
         IDocument doc = viewer.getDocument();
-        List<CompletionProposal> list = computObject(getObjectName(doc, offset), offset);
+        List<CompletionProposal> list = computCompletionProposal(getObjectName(doc, offset), offset);
         return (CompletionProposal[]) list.toArray(new CompletionProposal[list.size()]);
     }
 
     @Override
     public IContextInformation[] computeContextInformation(ITextViewer viewer, int offset) {
-        // TODO Auto-generated method stub
-        return null;
+        IDocument doc = viewer.getDocument();
+        List<ContextInformation> list = computContextInformation(getObjectName(doc, offset), offset);
+        return (ContextInformation[]) list.toArray(new ContextInformation[list.size()]);
     }
 
     @Override
@@ -72,7 +74,7 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         return buf.reverse().toString();
     }
 
-    public List<CompletionProposal> computObject(String objName, int offset) {
+    public List<CompletionProposal> computCompletionProposal(String objName, int offset) {
         List<CompletionProposal> list = new ArrayList<CompletionProposal>();
         boolean bFind = false;
         for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
@@ -87,6 +89,25 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
                 String insert = objName + "." + JS_SYNTAX_BUILDIB_OBJECT[i];
                 int length = objName.length();
                 list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length() + 1, null, null, null, "aaa"));
+            }
+        }
+        return list;
+    }
+    public List<ContextInformation> computContextInformation(String objName, int offset) {
+        List<ContextInformation> list = new ArrayList<ContextInformation>();
+        boolean bFind = false;
+        for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
+            String tempString = JS_SYNTAX_BUILDIB_OBJECT[i];
+            if (objName.equals(tempString)) {
+                bFind = true;
+                break;
+            }
+        }
+        if (bFind) {
+            for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
+                String insert = objName + "." + JS_SYNTAX_BUILDIB_OBJECT[i];
+                int length = objName.length();
+                list.add(new ContextInformation(insert+i,i+""));
             }
         }
         return list;
