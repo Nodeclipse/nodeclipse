@@ -11,6 +11,7 @@ import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
+import org.nodeclipse.ui.contentassist.NodejsContentAssistant;
 
 public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
 
@@ -53,7 +54,7 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
         // 创建内容助手对象
         ContentAssistant contentAssistant = new ContentAssistant();
         // 设置提示的内容
-        contentAssistant.setContentAssistProcessor(new ObjectContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
+        contentAssistant.setContentAssistProcessor(new NodejsContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
         // 设置自动激活提示
         contentAssistant.enableAutoActivation(true);
         // 设置自动激活提示的时间为500毫秒

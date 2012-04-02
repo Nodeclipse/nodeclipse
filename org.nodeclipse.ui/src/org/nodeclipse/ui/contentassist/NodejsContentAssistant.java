@@ -1,4 +1,4 @@
-package org.nodeclipse.ui.editors;
+package org.nodeclipse.ui.contentassist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.nodeclipse.ui.util.Constants;
 
-public class ObjectContentAssistant implements IContentAssistProcessor {
+public class NodejsContentAssistant implements IContentAssistProcessor {
     // 接口中的方法，获得内容的提示数组
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
