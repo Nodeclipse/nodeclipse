@@ -74,7 +74,7 @@ public class NodejsCodeScanner extends BufferedRuleBasedScanner {
     }
 
     private static class KeywordRule extends WordRule {
-
+        //TODO 现在是32个，还缺少一些保留关键字
         private static final String[] KEYWORDS = { "break", //$NON-NLS-1$
                 "case", //$NON-NLS-1$
                 "catch", //$NON-NLS-1$
