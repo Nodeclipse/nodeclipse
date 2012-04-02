@@ -39,7 +39,7 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
      */
     @Override
     public char[] getCompletionProposalAutoActivationCharacters() {
-        // TODO 首选项支持
+        // TODO 首选项支持 .
         return new char[] { '.' };
     }
 
@@ -76,12 +76,9 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         // 然后将字符串反转
         while (true) {
             try {
-                // 获得前一个字符
                 char charOffset = doc.getChar(--offset);
-                // 如果为空格，跳出
                 if (Character.isWhitespace(charOffset))
                     break;
-                // 如果为“.”则跳出
                 if (charOffset == '.')
                     break;
                 buf.append(charOffset);
@@ -89,7 +86,7 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
                 break;
             }
         }
-        // 最后将字符反转
+        // 最后将字符反转.
         return buf.reverse().toString();
     }
 
