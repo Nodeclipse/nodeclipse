@@ -50,14 +50,11 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
 
     @Override
     public IContentAssistant getContentAssistant(ISourceViewer sourceViewer) {
-        // TODO 代码提示
-        // 创建内容助手对象
+        // TODO Assistant
+        // TODO Preferences
         ContentAssistant contentAssistant = new ContentAssistant();
-        // 设置提示的内容
         contentAssistant.setContentAssistProcessor(new NodejsContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
-        // 设置自动激活提示
         contentAssistant.enableAutoActivation(true);
-        // 设置自动激活提示的时间为500毫秒
         contentAssistant.setAutoActivationDelay(500);
         return contentAssistant;
     }
