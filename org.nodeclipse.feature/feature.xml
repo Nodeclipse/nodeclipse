@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.nodeclipse.debug.feature"
+      id="org.nodeclipse.feature"
       label="Nodeclipse"
-      version="0.1.3"
-      plugin="org.nodeclipse.debug">
+      version="0.1.3">
 
    <description url="http://www.nodeclipse.org/">
       node.js language support
