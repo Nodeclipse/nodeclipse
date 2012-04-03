@@ -27,9 +27,8 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
 
     @Override
     public IContextInformation[] computeContextInformation(ITextViewer viewer, int offset) {
-        IDocument doc = viewer.getDocument();
-        List<ContextInformation> list = computContextInformation(getObjectName(doc, offset), offset);
-        return (ContextInformation[]) list.toArray(new ContextInformation[list.size()]);
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
@@ -93,23 +92,5 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         }
         return list;
     }
-    public List<ContextInformation> computContextInformation(String objName, int offset) {
-        List<ContextInformation> list = new ArrayList<ContextInformation>();
-        boolean bFind = false;
-        for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
-            String tempString = JS_SYNTAX_BUILDIB_OBJECT[i];
-            if (objName.equals(tempString)) {
-                bFind = true;
-                break;
-            }
-        }
-        if (bFind) {
-            for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
-                String insert = objName + "." + JS_SYNTAX_BUILDIB_OBJECT[i];
-                int length = objName.length();
-                list.add(new ContextInformation(insert+i,i+""));
-            }
-        }
-        return list;
-    }
+
 }
