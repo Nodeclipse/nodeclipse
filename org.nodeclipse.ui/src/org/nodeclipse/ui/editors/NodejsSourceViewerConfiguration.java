@@ -1,6 +1,9 @@
 package org.nodeclipse.ui.editors;
 
+import org.eclipse.jface.text.DefaultInformationControl;
 import org.eclipse.jface.text.IDocument;
+import org.eclipse.jface.text.IInformationControl;
+import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.contentassist.ContentAssistant;
 import org.eclipse.jface.text.contentassist.IContentAssistant;
@@ -11,6 +14,7 @@ import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
+import org.eclipse.swt.widgets.Shell;
 import org.nodeclipse.ui.contentassist.NodejsContentAssistant;
 
 public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
@@ -53,6 +57,12 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
         // TODO Assistant
         // TODO Preferences
         ContentAssistant contentAssistant = new ContentAssistant();
+        contentAssistant.setInformationControlCreator(new IInformationControlCreator() {
+            public IInformationControl createInformationControl(Shell parent) {
+                DefaultInformationControl control = new DefaultInformationControl(parent);
+                return control;
+            }
+        });
         contentAssistant.setContentAssistProcessor(new NodejsContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
         contentAssistant.enableAutoActivation(true);
         contentAssistant.setAutoActivationDelay(500);
