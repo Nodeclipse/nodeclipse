@@ -4,10 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.nodeclipse.lab.grammar.JavaScriptParser.newExpression_return;
 
 public class TestJSON {
     public static final String FILE_NAME = "org/nodeclipse/lab/api/path.json";
