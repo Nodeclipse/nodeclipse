@@ -111,37 +111,5 @@
             name="Nodejs">
       </perspective>
    </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <category
-            id="org.nodeclipse.ui"
-            name="Nodejs">
-      </category>
-      <view
-            category="org.nodeclipse.ui"
-            class="org.nodeclipse.ui.views.NodejsExplorerView"
-            icon="icons/nodejs.png"
-            id="org.nodeclipse.ui.views.NodejsExplorerView"
-            name="Nodejs Explorer">
-      </view>
-   </extension>
-   <extension
-         point="org.eclipse.help.contexts">
-      <contexts
-            file="contexts.xml">
-      </contexts>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.nodeclipse.ui.perspectives.NodejsPerspective">
-         <view
-               id="org.nodeclipse.ui.views.NodejsExplorerView"
-               ratio="0.5"
-               relationship="right"
-               relative="org.eclipse.ui.views.TaskList">
-         </view>
-      </perspectiveExtension>
-   </extension>
 
 </plugin>
