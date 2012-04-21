@@ -14,6 +14,7 @@ import org.eclipse.jdt.ui.JavaUI;
  */
 public class NodejsPerspective implements IPerspectiveFactory {
 
+	public static final String ID = "org.nodeclipse.ui.perspectives.NodejsPerspective";
 	private IPageLayout factory;
 
 	public NodejsPerspective() {
