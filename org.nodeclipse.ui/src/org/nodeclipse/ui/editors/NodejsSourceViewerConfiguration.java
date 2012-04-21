@@ -59,7 +59,7 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
         ContentAssistant contentAssistant = new ContentAssistant();
         contentAssistant.setInformationControlCreator(new IInformationControlCreator() {
             public IInformationControl createInformationControl(Shell parent) {
-                DefaultInformationControl control = new DefaultInformationControl(parent);
+                DefaultInformationControl control = new DefaultInformationControl(parent, true);
                 return control;
             }
         });
