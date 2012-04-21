@@ -14,7 +14,6 @@
             icon="icons/nodejs.png"
             id="org.nodeclipse.ui.wizards.NodejsProjectWizard"
             name="Nodejs Project"
-            preferredPerspectives="Nodejs"
             project="true">
          <description>
             Create a new Nodejs language project
@@ -23,6 +22,7 @@
       <wizard
             category="org.nodeclipse.ui.wizards.category"
             class="org.nodeclipse.ui.wizards.NodejsFileWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodejsPerspective"
             icon="icons/nodejs.png"
             id="org.nodeclipse.ui.wizards.NodejsFileWizard"
             name="Nodejs Source File">
@@ -110,6 +110,36 @@
             id="org.nodeclipse.ui.perspectives.NodejsPerspective"
             name="Nodejs">
       </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <perspectiveShortcut
+               id="org.nodeclipse.ui.perspectives.NodejsPerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.debug.ui.DebugPerspective">
+         <perspectiveShortcut
+               id="org.nodeclipse.ui.perspectives.NodejsPerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonWizard
+            menuGroupId="org.nodeclipse.ui.wizards.category"
+            type="new"
+            wizardId="org.nodeclipse.ui.wizards.NodejsProjectWizard">
+         <enablement></enablement>
+      </commonWizard>
+      <commonWizard
+            menuGroupId="org.nodeclipse.ui.wizards.category"
+            type="new"
+            wizardId="org.nodeclipse.ui.wizards.NodejsFileWizard">
+         <enablement></enablement>
+      </commonWizard>
    </extension>
 
 </plugin>

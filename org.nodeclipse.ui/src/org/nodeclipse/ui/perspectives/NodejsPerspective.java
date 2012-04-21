@@ -4,6 +4,7 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.console.IConsoleConstants;
+import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.jdt.ui.JavaUI;
 
 /**
@@ -61,11 +62,12 @@ public class NodejsPerspective implements IPerspectiveFactory {
 	private void addPerspectiveShortcuts() {
 		factory.addPerspectiveShortcut("org.eclipse.team.ui.TeamSynchronizingPerspective"); // NON-NLS-1
 		factory.addPerspectiveShortcut("org.eclipse.ui.resourcePerspective"); // NON-NLS-1
+		factory.addPerspectiveShortcut(IDebugUIConstants.ID_DEBUG_PERSPECTIVE);
 	}
 
 	private void addNewWizardShortcuts() {
-		factory.addNewWizardShortcut("org.eclipse.team.cvs.ui.newProjectCheckout");// NON-NLS-1
 		factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodejsProjectWizard");
+		factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodejsFileWizard");
 		factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder");// NON-NLS-1
 		factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.file");// NON-NLS-1
 	}
