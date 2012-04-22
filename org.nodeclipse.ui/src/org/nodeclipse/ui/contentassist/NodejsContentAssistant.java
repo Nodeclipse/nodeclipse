@@ -2,7 +2,6 @@ package org.nodeclipse.ui.contentassist;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextViewer;
@@ -21,8 +20,7 @@ import org.nodeclipse.ui.util.Constants;
 
 public class NodejsContentAssistant implements IContentAssistProcessor {
 
-    public static final Map<String, JSONObject> contents = ContentProvider.contents;
-    public static final String[] FILE_NAMES = ContentProvider.FILE_NAMES;
+    public static final JSONArray METHODS = ContentProvider.METHODS;
 
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
@@ -70,8 +68,8 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
                 char charOffset = doc.getChar(--offset);
                 if (Character.isWhitespace(charOffset))
                     break;
-                if (charOffset == '.')
-                    break;
+                // if (charOffset == '.')
+                // break;
                 buf.append(charOffset);
             } catch (BadLocationException e) {
                 break;
@@ -82,33 +80,21 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
 
     public List<CompletionProposal> computCompletionProposal(String input, int offset) {
         List<CompletionProposal> list = new ArrayList<CompletionProposal>();
-        boolean bFind = false;
-        String content_key = null;
-        for (int i = 0; i < FILE_NAMES.length; i++) {
-            if (FILE_NAMES[i].contains(input)) {
-                content_key = FILE_NAMES[i];
-                bFind = true;
-                break;
-            }
-        }
-        if (bFind) {
-            JSONObject object = contents.get(content_key);
-            JSONArray methods;
-            try {
-                methods = object.getJSONArray(ContentProvider.METHODS);
-                for (int i = 0; i < methods.length(); i++) {
-                    JSONObject method = (JSONObject) methods.get(i);
-                    String insert = method.getString("textRaw");
+        try {
+            for (int i = 0; i < METHODS.length(); i++) {
+                JSONObject method = (JSONObject) METHODS.get(i);
+                String insert = method.getString("textRaw");
+                if (insert != null && insert.contains(input)) {
                     String desc = APITool.clear(method.getString("desc"));
                     int length = input.length();
                     // JSONArray params =
                     // ((JSONObject)method.getJSONArray("signatures").get(0)).getJSONArray("params");
                     Image image = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
-                    list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length() + 1, image, null, null, desc));
+                    list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length(), image, null, null, desc));
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return list;
     }

@@ -1,0 +1,219 @@
+{
+  "source": "doc/api/globals.markdown",
+  "globals": [
+    {
+      "textRaw": "global",
+      "name": "global",
+      "type": "global",
+      "desc": "<p>In browsers, the top-level scope is the global scope. That means that in\nbrowsers if you&apos;re in the global scope <code>var something</code> will define a global\nvariable. In Node this is different. The top-level scope is not the global\nscope; <code>var something</code> inside a Node module will be local to that module.\n\n</p>\n"
+    },
+    {
+      "textRaw": "process",
+      "name": "process",
+      "type": "global",
+      "desc": "<p>The process object. See the <a href=\"process.html#process\">process object</a> section.\n\n</p>\n"
+    },
+    {
+      "textRaw": "console",
+      "name": "console",
+      "type": "global",
+      "desc": "<p>Used to print to stdout and stderr. See the <a href=\"stdio.html\">stdio</a> section.\n\n</p>\n"
+    },
+    {
+      "textRaw": "Buffer",
+      "name": "Buffer",
+      "type": "global",
+      "desc": "<p>Used to handle binary data. See the <a href=\"buffer.html\">buffer section</a>.\n\n</p>\n"
+    },
+    {
+      "textRaw": "clearInterval(t)",
+      "type": "global",
+      "name": "clearInterval",
+      "desc": "<p>The timer functions are global variables. See the <a href=\"timers.html\">timers</a> section.\n</p>\n"
+    }
+  ],
+  "vars": [
+    {
+      "textRaw": "require()",
+      "type": "var",
+      "name": "require",
+      "desc": "<p>To require modules. See the <a href=\"modules.html#modules\">Modules</a> section.\n<code>require</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n",
+      "methods": [
+        {
+          "textRaw": "require.resolve()",
+          "type": "method",
+          "name": "resolve",
+          "desc": "<p>Use the internal <code>require()</code> machinery to look up the location of a module,\nbut rather than loading the module, just return the resolved filename.\n\n</p>\n",
+          "signatures": [
+            {
+              "params": []
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "textRaw": "`cache` {Object} ",
+          "name": "cache",
+          "desc": "<p>Modules are cached in this object when they are required. By deleting a key\nvalue from this object, the next <code>require</code> will reload the module.\n\n</p>\n"
+        }
+      ]
+    },
+    {
+      "textRaw": "__filename",
+      "name": "__filename",
+      "type": "var",
+      "desc": "<p>The filename of the code being executed.  This is the resolved absolute path\nof this code file.  For a main program this is not necessarily the same\nfilename used in the command line.  The value inside a module is the path\nto that module file.\n\n</p>\n<p>Example: running <code>node example.js</code> from <code>/Users/mjr</code>\n\n</p>\n<pre><code>console.log(__filename);\n// /Users/mjr/example.js</code></pre>\n<p><code>__filename</code> isn&apos;t actually a global but rather local to each module.\n\n</p>\n"
+    },
+    {
+      "textRaw": "__dirname",
+      "name": "__dirname",
+      "type": "var",
+      "desc": "<p>The name of the directory that the currently executing script resides in.\n\n</p>\n<p>Example: running <code>node example.js</code> from <code>/Users/mjr</code>\n\n</p>\n<pre><code>console.log(__dirname);\n// /Users/mjr</code></pre>\n<p><code>__dirname</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n"
+    },
+    {
+      "textRaw": "module",
+      "name": "module",
+      "type": "var",
+      "desc": "<p>A reference to the current module. In particular\n<code>module.exports</code> is the same as the <code>exports</code> object. See <code>src/node.js</code>\nfor more information.\n<code>module</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n"
+    },
+    {
+      "textRaw": "exports",
+      "name": "exports",
+      "type": "var",
+      "desc": "<p>An object which is shared between all instances of the current module and\nmade accessible through <code>require()</code>.\n<code>exports</code> is the same as the <code>module.exports</code> object. See <code>src/node.js</code>\nfor more information.\n<code>exports</code> isn&apos;t actually a global but rather local to each module.\n\n</p>\n<p>See the <a href=\"modules.html\">module system documentation</a> for more\ninformation.\n\n</p>\n<p>See the <a href=\"modules.html\">module section</a> for more information.\n\n</p>\n"
+    }
+  ],
+  "methods": [
+    {
+      "textRaw": "setInterval(cb, ms)",
+      "type": "method",
+      "name": "setInterval",
+      "desc": "<p>The timer functions are global variables. See the <a href=\"timers.html\">timers</a> section.\n</p>\n",
+      "signatures": [
+        {
+          "params": [
+            {
+              "name": "cb"
+            },
+            {
+              "name": "ms"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "miscs": [
+    {
+      "textRaw": "Global Objects",
+      "name": "Global Objects",
+      "type": "misc",
+      "desc": "<p>These objects are available in all modules. Some of these objects aren&apos;t\nactually in the global scope but in the module scope - this will be noted.\n\n</p>\n",
+      "globals": [
+        {
+          "textRaw": "global",
+          "name": "global",
+          "type": "global",
+          "desc": "<p>In browsers, the top-level scope is the global scope. That means that in\nbrowsers if you&apos;re in the global scope <code>var something</code> will define a global\nvariable. In Node this is different. The top-level scope is not the global\nscope; <code>var something</code> inside a Node module will be local to that module.\n\n</p>\n"
+        },
+        {
+          "textRaw": "process",
+          "name": "process",
+          "type": "global",
+          "desc": "<p>The process object. See the <a href=\"process.html#process\">process object</a> section.\n\n</p>\n"
+        },
+        {
+          "textRaw": "console",
+          "name": "console",
+          "type": "global",
+          "desc": "<p>Used to print to stdout and stderr. See the <a href=\"stdio.html\">stdio</a> section.\n\n</p>\n"
+        },
+        {
+          "textRaw": "Buffer",
+          "name": "Buffer",
+          "type": "global",
+          "desc": "<p>Used to handle binary data. See the <a href=\"buffer.html\">buffer section</a>.\n\n</p>\n"
+        },
+        {
+          "textRaw": "clearInterval(t)",
+          "type": "global",
+          "name": "clearInterval",
+          "desc": "<p>The timer functions are global variables. See the <a href=\"timers.html\">timers</a> section.\n</p>\n"
+        }
+      ],
+      "vars": [
+        {
+          "textRaw": "require()",
+          "type": "var",
+          "name": "require",
+          "desc": "<p>To require modules. See the <a href=\"modules.html#modules\">Modules</a> section.\n<code>require</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n",
+          "methods": [
+            {
+              "textRaw": "require.resolve()",
+              "type": "method",
+              "name": "resolve",
+              "desc": "<p>Use the internal <code>require()</code> machinery to look up the location of a module,\nbut rather than loading the module, just return the resolved filename.\n\n</p>\n",
+              "signatures": [
+                {
+                  "params": []
+                }
+              ]
+            }
+          ],
+          "properties": [
+            {
+              "textRaw": "`cache` {Object} ",
+              "name": "cache",
+              "desc": "<p>Modules are cached in this object when they are required. By deleting a key\nvalue from this object, the next <code>require</code> will reload the module.\n\n</p>\n"
+            }
+          ]
+        },
+        {
+          "textRaw": "__filename",
+          "name": "__filename",
+          "type": "var",
+          "desc": "<p>The filename of the code being executed.  This is the resolved absolute path\nof this code file.  For a main program this is not necessarily the same\nfilename used in the command line.  The value inside a module is the path\nto that module file.\n\n</p>\n<p>Example: running <code>node example.js</code> from <code>/Users/mjr</code>\n\n</p>\n<pre><code>console.log(__filename);\n// /Users/mjr/example.js</code></pre>\n<p><code>__filename</code> isn&apos;t actually a global but rather local to each module.\n\n</p>\n"
+        },
+        {
+          "textRaw": "__dirname",
+          "name": "__dirname",
+          "type": "var",
+          "desc": "<p>The name of the directory that the currently executing script resides in.\n\n</p>\n<p>Example: running <code>node example.js</code> from <code>/Users/mjr</code>\n\n</p>\n<pre><code>console.log(__dirname);\n// /Users/mjr</code></pre>\n<p><code>__dirname</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n"
+        },
+        {
+          "textRaw": "module",
+          "name": "module",
+          "type": "var",
+          "desc": "<p>A reference to the current module. In particular\n<code>module.exports</code> is the same as the <code>exports</code> object. See <code>src/node.js</code>\nfor more information.\n<code>module</code> isn&apos;t actually a global but rather local to each module.\n\n\n</p>\n"
+        },
+        {
+          "textRaw": "exports",
+          "name": "exports",
+          "type": "var",
+          "desc": "<p>An object which is shared between all instances of the current module and\nmade accessible through <code>require()</code>.\n<code>exports</code> is the same as the <code>module.exports</code> object. See <code>src/node.js</code>\nfor more information.\n<code>exports</code> isn&apos;t actually a global but rather local to each module.\n\n</p>\n<p>See the <a href=\"modules.html\">module system documentation</a> for more\ninformation.\n\n</p>\n<p>See the <a href=\"modules.html\">module section</a> for more information.\n\n</p>\n"
+        }
+      ],
+      "methods": [
+        {
+          "textRaw": "setInterval(cb, ms)",
+          "type": "method",
+          "name": "setInterval",
+          "desc": "<p>The timer functions are global variables. See the <a href=\"timers.html\">timers</a> section.\n</p>\n",
+          "signatures": [
+            {
+              "params": [
+                {
+                  "name": "cb"
+                },
+                {
+                  "name": "ms"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

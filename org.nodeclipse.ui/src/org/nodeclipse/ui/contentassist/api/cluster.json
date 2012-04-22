@@ -1,0 +1,48 @@
+{
+  "source": "doc/api/cluster.markdown",
+  "modules": [
+    {
+      "textRaw": "Cluster",
+      "name": "cluster",
+      "stability": 1,
+      "stabilityText": "Experimental - Drastic changes in future versions",
+      "desc": "<p>A single instance of Node runs in a single thread. To take advantage of\nmulti-core systems the user will sometimes want to launch a cluster of Node\nprocesses to handle the load.\n\n</p>\n<p>The cluster module allows you to easily create a network of processes that\nall share server ports.\n\n</p>\n<pre><code>var cluster = require(&apos;cluster&apos;);\nvar http = require(&apos;http&apos;);\nvar numCPUs = require(&apos;os&apos;).cpus().length;\n\nif (cluster.isMaster) {\n  // Fork workers.\n  for (var i = 0; i &lt; numCPUs; i++) {\n    cluster.fork();\n  }\n\n  cluster.on(&apos;death&apos;, function(worker) {\n    console.log(&apos;worker &apos; + worker.pid + &apos; died&apos;);\n  });\n} else {\n  // Worker processes have a http server.\n  http.Server(function(req, res) {\n    res.writeHead(200);\n    res.end(&quot;hello world\\n&quot;);\n  }).listen(8000);\n}</code></pre>\n<p>Running node will now share port 8000 between the workers:\n\n</p>\n<pre><code>% node server.js\nWorker 2438 online\nWorker 2437 online</code></pre>\n<p>The difference between <code>cluster.fork()</code> and <code>child_process.fork()</code> is simply\nthat cluster allows TCP servers to be shared between workers. <code>cluster.fork</code>\nis implemented on top of <code>child_process.fork</code>. The message passing API that\nis available with <code>child_process.fork</code> is available with <code>cluster</code> as well.\nAs an example, here is a cluster which keeps count of the number of requests\nin the master process via message passing:\n\n</p>\n<pre><code>var cluster = require(&apos;cluster&apos;);\nvar http = require(&apos;http&apos;);\nvar numReqs = 0;\n\nif (cluster.isMaster) {\n  // Fork workers.\n  for (var i = 0; i &lt; 2; i++) {\n    var worker = cluster.fork();\n\n    worker.on(&apos;message&apos;, function(msg) {\n      if (msg.cmd &amp;&amp; msg.cmd == &apos;notifyRequest&apos;) {\n        numReqs++;\n      }\n    });\n  }\n\n  setInterval(function() {\n    console.log(&quot;numReqs =&quot;, numReqs);\n  }, 1000);\n} else {\n  // Worker processes have a http server.\n  http.Server(function(req, res) {\n    res.writeHead(200);\n    res.end(&quot;hello world\\n&quot;);\n    // Send message to master process\n    process.send({ cmd: &apos;notifyRequest&apos; });\n  }).listen(8000);\n}</code></pre>\n",
+      "methods": [
+        {
+          "textRaw": "cluster.fork()",
+          "type": "method",
+          "name": "fork",
+          "desc": "<p>Spawn a new worker process. This can only be called from the master process.\n\n</p>\n",
+          "signatures": [
+            {
+              "params": []
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "textRaw": "cluster.isMaster",
+          "name": "isMaster",
+          "desc": "<p>Boolean flags to determine if the current process is a master or a worker\nprocess in a cluster. A process <code>isMaster</code> if <code>process.env.NODE_WORKER_ID</code>\nis undefined.\n\n</p>\n"
+        },
+        {
+          "textRaw": "cluster.isWorker",
+          "name": "isWorker",
+          "desc": "<p>Boolean flags to determine if the current process is a master or a worker\nprocess in a cluster. A process <code>isMaster</code> if <code>process.env.NODE_WORKER_ID</code>\nis undefined.\n\n</p>\n"
+        }
+      ],
+      "events": [
+        {
+          "textRaw": "Event: 'death'",
+          "type": "event",
+          "name": "death",
+          "desc": "<p>When any of the workers die the cluster module will emit the &apos;death&apos; event.\nThis can be used to restart the worker by calling <code>fork()</code> again.\n\n</p>\n<pre><code>cluster.on(&apos;death&apos;, function(worker) {\n  console.log(&apos;worker &apos; + worker.pid + &apos; died. restart...&apos;);\n  cluster.fork();\n});</code></pre>\n<p>Different techniques can be used to restart the worker depending on the\napplication.\n</p>\n",
+          "params": []
+        }
+      ],
+      "type": "module",
+      "displayName": "Cluster"
+    }
+  ]
+}
