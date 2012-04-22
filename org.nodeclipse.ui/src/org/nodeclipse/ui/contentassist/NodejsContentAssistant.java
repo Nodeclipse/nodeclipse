@@ -16,6 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.nodeclipse.ui.Activator;
+import org.nodeclipse.ui.contentassist.api.APITool;
 import org.nodeclipse.ui.util.Constants;
 
 public class NodejsContentAssistant implements IContentAssistProcessor {
@@ -85,7 +86,7 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         String content_key = null;
         for (int i = 0; i < FILE_NAMES.length; i++) {
             if (FILE_NAMES[i].contains(input)) {
-                content_key =FILE_NAMES[i];
+                content_key = FILE_NAMES[i];
                 bFind = true;
                 break;
             }
@@ -98,10 +99,11 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
                 for (int i = 0; i < methods.length(); i++) {
                     JSONObject method = (JSONObject) methods.get(i);
                     String insert = method.getString("textRaw");
-                    String desc = method.getString("desc");
+                    String desc = APITool.clear(method.getString("desc"));
                     int length = input.length();
-                    //JSONArray params = ((JSONObject)method.getJSONArray("signatures").get(0)).getJSONArray("params");
-                    Image image  = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
+                    // JSONArray params =
+                    // ((JSONObject)method.getJSONArray("signatures").get(0)).getJSONArray("params");
+                    Image image = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
                     list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length() + 1, image, null, null, desc));
                 }
             } catch (JSONException e) {
