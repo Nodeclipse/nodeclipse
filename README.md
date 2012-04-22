@@ -10,9 +10,7 @@ Development is slow, but ongoing. If you would like to help out,
 please leave a comment stating so in the Nodeclipse forum. 
 
 INSTALLING
-
 Update Site : http://www.nodeclipse.org/updates
 
 CONTACT
-
 Not hesitate to contact me. Feel free to send <a title="Send me an email" href="mailto:dev@nodeclipse.com">email</a> to me.
