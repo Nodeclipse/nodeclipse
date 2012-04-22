@@ -10,16 +10,23 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
+import org.eclipse.swt.graphics.Image;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.nodeclipse.ui.Activator;
+import org.nodeclipse.ui.contentassist.api.APITool;
 import org.nodeclipse.ui.util.Constants;
 
 public class NodejsContentAssistant implements IContentAssistProcessor {
 
-    private static final String[] JS_SYNTAX_BUILDIB_OBJECT = Constants.JS_SYNTAX_BUILDIB_OBJECT;
+    public static final JSONArray METHODS = ContentProvider.METHODS;
 
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
         IDocument doc = viewer.getDocument();
-        List<CompletionProposal> list = computCompletionProposal(getObjectName(doc, offset), offset);
+        List<CompletionProposal> list;
+        list = computCompletionProposal(getObjectName(doc, offset), offset);
         return (CompletionProposal[]) list.toArray(new CompletionProposal[list.size()]);
     }
 
@@ -61,8 +68,8 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
                 char charOffset = doc.getChar(--offset);
                 if (Character.isWhitespace(charOffset))
                     break;
-                if (charOffset == '.')
-                    break;
+                // if (charOffset == '.')
+                // break;
                 buf.append(charOffset);
             } catch (BadLocationException e) {
                 break;
@@ -71,24 +78,24 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         return buf.reverse().toString();
     }
 
-    public List<CompletionProposal> computCompletionProposal(String objName, int offset) {
+    public List<CompletionProposal> computCompletionProposal(String input, int offset) {
         List<CompletionProposal> list = new ArrayList<CompletionProposal>();
-        boolean bFind = false;
-        for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
-            String tempString = JS_SYNTAX_BUILDIB_OBJECT[i];
-            if (objName.equals(tempString)) {
-                bFind = true;
-                break;
+        try {
+            for (int i = 0; i < METHODS.length(); i++) {
+                JSONObject method = (JSONObject) METHODS.get(i);
+                String insert = method.getString("textRaw");
+                if (insert != null && insert.contains(input)) {
+                    String desc = APITool.clear(method.getString("desc"));
+                    int length = input.length();
+                    // JSONArray params =
+                    // ((JSONObject)method.getJSONArray("signatures").get(0)).getJSONArray("params");
+                    Image image = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
+                    list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length(), image, null, null, desc));
+                }
             }
-        }
-        if (bFind) {
-            for (int i = 0; i < JS_SYNTAX_BUILDIB_OBJECT.length; i++) {
-                String insert = objName + "." + JS_SYNTAX_BUILDIB_OBJECT[i];
-                int length = objName.length();
-                list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length() + 1, null, null, null, "aaa"));
-            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return list;
     }
-
 }
