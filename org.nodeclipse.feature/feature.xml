@@ -225,14 +225,14 @@ http://www.apache.org/licenses/
          id="org.nodeclipse.debug"
          download-size="0"
          install-size="0"
-         version="0.1.3"
+         version="0.1.4"
          unpack="false"/>
 
    <plugin
          id="org.nodeclipse.ui"
          download-size="0"
          install-size="0"
-         version="0.1.3"
+         version="0.1.4"
          unpack="false"/>
 
 </feature>
