@@ -11,22 +11,20 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.graphics.Image;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.nodeclipse.ui.Activator;
-import org.nodeclipse.ui.contentassist.api.APITool;
 import org.nodeclipse.ui.util.Constants;
 
 public class NodejsContentAssistant implements IContentAssistProcessor {
-
-    public static final JSONArray METHODS = ContentProvider.METHODS;
+    
+    public static Image METHOD = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
 
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
         IDocument doc = viewer.getDocument();
         List<CompletionProposal> list;
-        list = computCompletionProposal(getObjectName(doc, offset), offset);
+        list = computCompletionProposal(getInputString(doc, offset), offset);
         return (CompletionProposal[]) list.toArray(new CompletionProposal[list.size()]);
     }
 
@@ -60,16 +58,13 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
         return null;
     }
 
-    public String getObjectName(IDocument doc, int offset) {
+    public String getInputString(IDocument doc, int offset) {
         StringBuffer buf = new StringBuffer();
-        offset--;
         while (true) {
             try {
                 char charOffset = doc.getChar(--offset);
                 if (Character.isWhitespace(charOffset))
                     break;
-                // if (charOffset == '.')
-                // break;
                 buf.append(charOffset);
             } catch (BadLocationException e) {
                 break;
@@ -81,16 +76,12 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
     public List<CompletionProposal> computCompletionProposal(String input, int offset) {
         List<CompletionProposal> list = new ArrayList<CompletionProposal>();
         try {
-            for (int i = 0; i < METHODS.length(); i++) {
-                JSONObject method = (JSONObject) METHODS.get(i);
-                String insert = method.getString("textRaw");
-                if (insert != null && insert.contains(input)) {
-                    String desc = APITool.clear(method.getString("desc"));
+            for (int i = 0; i < ContentProvider.COMPLETIONS.length(); i++) {
+                JSONObject method = (JSONObject) ContentProvider.COMPLETIONS.get(i);
+                String trigger = method.getString("trigger");
+                if (trigger != null && trigger.indexOf(input)!=-1) {
                     int length = input.length();
-                    // JSONArray params =
-                    // ((JSONObject)method.getJSONArray("signatures").get(0)).getJSONArray("params");
-                    Image image = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
-                    list.add(new CompletionProposal(insert, offset - length - 1, length + 1, insert.length(), image, null, null, desc));
+                    list.add(new CompletionProposal(trigger, offset - length - 1, length + 1, trigger.length(), METHOD, null, null, null));
                 }
             }
         } catch (JSONException e) {

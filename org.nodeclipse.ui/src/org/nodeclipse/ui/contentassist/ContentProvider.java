@@ -7,48 +7,22 @@ import java.io.InputStreamReader;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.nodeclipse.ui.util.Constants;
 
 public class ContentProvider {
-    public static final String PREFIX = "org/nodeclipse/ui/contentassist/api/";
-    public static final String SUFFIX = ".json";
-    public static final String MODULES_KEY = "modules";
-    public static final String METHODS_KEY = "methods";
-    public static final String[] METHOD_FILE_NAMES = { "assert", "path" };//,"buffer","child_process"
-    public static final JSONArray METHODS = new JSONArray();
+
+    public static JSONArray COMPLETIONS;
+
     static {
         try {
-            initContent();
+            InputStream is = ContentProvider.class.getClassLoader().getResourceAsStream(Constants.COMPLETIONS_JSON);
+            JSONObject object = new JSONObject(inputStream2String(is));
+            COMPLETIONS = object.getJSONArray(Constants.COMPLETIONS_KEY);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void initContent() throws JSONException, IOException {
-        for (int i = 0; i < METHOD_FILE_NAMES.length; i++) {
-            JSONArray modules = getModules(METHOD_FILE_NAMES[i]);
-            for (int j = 0; modules != null && j < modules.length(); j++) {
-                putMethods(getMethods(modules.getJSONObject(j)));
-            }
-        }
-    }
-
-    
-    public static JSONArray getMethods(JSONObject object) throws JSONException {
-       return object.getJSONArray(METHODS_KEY);
-    }
-
-    public static void putMethods(JSONArray array) throws JSONException {
-        for (int i = 0; array != null && i < array.length(); i++) {
-            METHODS.put(array.get(i));
-        }
-    }
-
-    public static JSONArray getModules(String fileName) throws JSONException, IOException {
-        InputStream is = ContentProvider.class.getClassLoader().getResourceAsStream(getFilePath(fileName));
-        JSONObject object = new JSONObject(inputStream2String(is));
-        return object.getJSONArray(MODULES_KEY);
     }
 
     public static String inputStream2String(InputStream is) throws IOException {
@@ -61,7 +35,4 @@ public class ContentProvider {
         return buffer.toString();
     }
 
-    public static String getFilePath(String fileName) {
-        return PREFIX + fileName + SUFFIX;
-    }
 }

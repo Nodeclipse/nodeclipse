@@ -1,0 +1,1437 @@
+{
+    "scope": "source.js - variable.other.js",
+    "completions": [
+        {
+            "trigger": "ArrayBuffer();",
+            "contents": "ArrayBuffer();"
+        },
+        {
+            "trigger": "Int8Array();",
+            "contents": "Int8Array();"
+        },
+        {
+            "trigger": "Uint8Array();",
+            "contents": "Uint8Array();"
+        },
+        {
+            "trigger": "Int16Array();",
+            "contents": "Int16Array();"
+        },
+        {
+            "trigger": "Uint16Array();",
+            "contents": "Uint16Array();"
+        },
+        {
+            "trigger": "Int32Array();",
+            "contents": "Int32Array();"
+        },
+        {
+            "trigger": "Uint32Array();",
+            "contents": "Uint32Array();"
+        },
+        {
+            "trigger": "Float32Array();",
+            "contents": "Float32Array();"
+        },
+        {
+            "trigger": "Float64Array();",
+            "contents": "Float64Array();"
+        },
+        {
+            "trigger": "DataView();",
+            "contents": "DataView();"
+        },
+        {
+            "trigger": "Buffer(subject, encoding, offset);",
+            "contents": "Buffer(subject, encoding, offset);"
+        },
+        {
+            "trigger": "setTimeout();",
+            "contents": "setTimeout();"
+        },
+        {
+            "trigger": "setInterval();",
+            "contents": "setInterval();"
+        },
+        {
+            "trigger": "clearTimeout();",
+            "contents": "clearTimeout();"
+        },
+        {
+            "trigger": "clearInterval();",
+            "contents": "clearInterval();"
+        },
+        {
+            "trigger": "process.EventEmitter();",
+            "contents": "process.EventEmitter();"
+        },
+        {
+            "trigger": "process.assert();",
+            "contents": "process.assert();"
+        },
+        {
+            "trigger": "process._tickCallback();",
+            "contents": "process._tickCallback();"
+        },
+        {
+            "trigger": "process.nextTick(callback);",
+            "contents": "process.nextTick(callback);"
+        },
+        {
+            "trigger": "process.openStdin();",
+            "contents": "process.openStdin();"
+        },
+        {
+            "trigger": "process.exit(code);",
+            "contents": "process.exit(code);"
+        },
+        {
+            "trigger": "process.kill(pid, sig);",
+            "contents": "process.kill(pid, sig);"
+        },
+        {
+            "trigger": "process.addListener(type, listener);",
+            "contents": "process.addListener(type, listener);"
+        },
+        {
+            "trigger": "process._needTickCallback();",
+            "contents": "process._needTickCallback();"
+        },
+        {
+            "trigger": "process.on(type, listener);",
+            "contents": "process.on(type, listener);"
+        },
+        {
+            "trigger": "process.reallyExit();",
+            "contents": "process.reallyExit();"
+        },
+        {
+            "trigger": "process.removeListener(type, listener);",
+            "contents": "process.removeListener(type, listener);"
+        },
+        {
+            "trigger": "process.chdir();",
+            "contents": "process.chdir();"
+        },
+        {
+            "trigger": "process.debug();",
+            "contents": "process.debug();"
+        },
+        {
+            "trigger": "process.cwd();",
+            "contents": "process.cwd();"
+        },
+        {
+            "trigger": "process.error();",
+            "contents": "process.error();"
+        },
+        {
+            "trigger": "process.watchFile();",
+            "contents": "process.watchFile();"
+        },
+        {
+            "trigger": "process.umask();",
+            "contents": "process.umask();"
+        },
+        {
+            "trigger": "process._kill();",
+            "contents": "process._kill();"
+        },
+        {
+            "trigger": "process.unwatchFile();",
+            "contents": "process.unwatchFile();"
+        },
+        {
+            "trigger": "process._debugProcess();",
+            "contents": "process._debugProcess();"
+        },
+        {
+            "trigger": "process.mixin();",
+            "contents": "process.mixin();"
+        },
+        {
+            "trigger": "process.dlopen();",
+            "contents": "process.dlopen();"
+        },
+        {
+            "trigger": "process.createChildProcess();",
+            "contents": "process.createChildProcess();"
+        },
+        {
+            "trigger": "process.inherits();",
+            "contents": "process.inherits();"
+        },
+        {
+            "trigger": "process.uptime();",
+            "contents": "process.uptime();"
+        },
+        {
+            "trigger": "process._byteLength();",
+            "contents": "process._byteLength();"
+        },
+        {
+            "trigger": "process.memoryUsage();",
+            "contents": "process.memoryUsage();"
+        },
+        {
+            "trigger": "process.uvCounters();",
+            "contents": "process.uvCounters();"
+        },
+        {
+            "trigger": "process.binding();",
+            "contents": "process.binding();"
+        },
+        {
+            "trigger": "process.setMaxListeners(n);",
+            "contents": "process.setMaxListeners(n);"
+        },
+        {
+            "trigger": "process.emit();",
+            "contents": "process.emit();"
+        },
+        {
+            "trigger": "process.once(type, listener);",
+            "contents": "process.once(type, listener);"
+        },
+        {
+            "trigger": "process.removeAllListeners(type);",
+            "contents": "process.removeAllListeners(type);"
+        },
+        {
+            "trigger": "process.listeners(type);",
+            "contents": "process.listeners(type);"
+        },
+        {
+            "trigger": "require.resolve(request);",
+            "contents": "require.resolve(request);"
+        },
+        {
+            "trigger": "require.registerExtension();",
+            "contents": "require.registerExtension();"
+        },
+        {
+            "trigger": "_debugger.start(argv, stdin, stdout);",
+            "contents": "_debugger.start(argv, stdin, stdout);"
+        },
+        {
+            "trigger": "_debugger.Protocol();",
+            "contents": "_debugger.Protocol();"
+        },
+        {
+            "trigger": "_debugger.Client();",
+            "contents": "_debugger.Client();"
+        },
+        {
+            "trigger": "_linklist.init(list);",
+            "contents": "_linklist.init(list);"
+        },
+        {
+            "trigger": "_linklist.peek(list);",
+            "contents": "_linklist.peek(list);"
+        },
+        {
+            "trigger": "_linklist.shift(list);",
+            "contents": "_linklist.shift(list);"
+        },
+        {
+            "trigger": "_linklist.remove(item);",
+            "contents": "_linklist.remove(item);"
+        },
+        {
+            "trigger": "_linklist.append(list, item);",
+            "contents": "_linklist.append(list, item);"
+        },
+        {
+            "trigger": "_linklist.isEmpty(list);",
+            "contents": "_linklist.isEmpty(list);"
+        },
+        {
+            "trigger": "assert.AssertionError;",
+            "contents": "assert.AssertionError;"
+        },
+        {
+            "trigger": "assert.fail(actual, expected, message, operator, stackStartFunction);",
+            "contents": "assert.fail(actual, expected, message, operator, stackStartFunction);"
+        },
+        {
+            "trigger": "assert.ok(value, message);",
+            "contents": "assert.ok(value, message);"
+        },
+        {
+            "trigger": "assert.equal(actual, expected, message);",
+            "contents": "assert.equal(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.notEqual(actual, expected, message);",
+            "contents": "assert.notEqual(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.deepEqual(actual, expected, message);",
+            "contents": "assert.deepEqual(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.notDeepEqual(actual, expected, message);",
+            "contents": "assert.notDeepEqual(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.strictEqual(actual, expected, message);",
+            "contents": "assert.strictEqual(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.notStrictEqual(actual, expected, message);",
+            "contents": "assert.notStrictEqual(actual, expected, message);"
+        },
+        {
+            "trigger": "assert.throws(block, /*optional*/error, /*optional*/message);",
+            "contents": "assert.throws(block, /*optional*/error, /*optional*/message);"
+        },
+        {
+            "trigger": "assert.doesNotThrow(block, /*optional*/error, /*optional*/message);",
+            "contents": "assert.doesNotThrow(block, /*optional*/error, /*optional*/message);"
+        },
+        {
+            "trigger": "assert.ifError(err);",
+            "contents": "assert.ifError(err);"
+        },
+        {
+            "trigger": "buffer.SlowBuffer();",
+            "contents": "buffer.SlowBuffer();"
+        },
+        {
+            "trigger": "buffer.Buffer(subject, encoding, offset);",
+            "contents": "buffer.Buffer(subject, encoding, offset);"
+        },
+        {
+            "trigger": "buffer_ieee754.readIEEE754(buffer, offset, isBE, mLen, nBytes);",
+            "contents": "buffer_ieee754.readIEEE754(buffer, offset, isBE, mLen, nBytes);"
+        },
+        {
+            "trigger": "buffer_ieee754.writeIEEE754(buffer, value, offset, isBE, mLen, nBytes);",
+            "contents": "buffer_ieee754.writeIEEE754(buffer, value, offset, isBE, mLen, nBytes);"
+        },
+        {
+            "trigger": "child_process.fork(modulePath, args, options);",
+            "contents": "child_process.fork(modulePath, args, options);"
+        },
+        {
+            "trigger": "child_process._forkChild();",
+            "contents": "child_process._forkChild();"
+        },
+        {
+            "trigger": "child_process.exec(command /*, options, callback */);",
+            "contents": "child_process.exec(command /*, options, callback */);"
+        },
+        {
+            "trigger": "child_process.execFile(file /* args, options, callback */);",
+            "contents": "child_process.execFile(file /* args, options, callback */);"
+        },
+        {
+            "trigger": "child_process.spawn(file, args, options);",
+            "contents": "child_process.spawn(file, args, options);"
+        },
+        {
+            "trigger": "cluster.fork();",
+            "contents": "cluster.fork();"
+        },
+        {
+            "trigger": "cluster._startWorker();",
+            "contents": "cluster._startWorker();"
+        },
+        {
+            "trigger": "cluster._getServer(address, port, addressType, cb);",
+            "contents": "cluster._getServer(address, port, addressType, cb);"
+        },
+        {
+            "trigger": "cluster.setMaxListeners(n);",
+            "contents": "cluster.setMaxListeners(n);"
+        },
+        {
+            "trigger": "cluster.emit();",
+            "contents": "cluster.emit();"
+        },
+        {
+            "trigger": "cluster.addListener(type, listener);",
+            "contents": "cluster.addListener(type, listener);"
+        },
+        {
+            "trigger": "cluster.on(type, listener);",
+            "contents": "cluster.on(type, listener);"
+        },
+        {
+            "trigger": "cluster.once(type, listener);",
+            "contents": "cluster.once(type, listener);"
+        },
+        {
+            "trigger": "cluster.removeListener(type, listener);",
+            "contents": "cluster.removeListener(type, listener);"
+        },
+        {
+            "trigger": "cluster.removeAllListeners(type);",
+            "contents": "cluster.removeAllListeners(type);"
+        },
+        {
+            "trigger": "cluster.listeners(type);",
+            "contents": "cluster.listeners(type);"
+        },
+        {
+            "trigger": "console.log();",
+            "contents": "console.log();"
+        },
+        {
+            "trigger": "console.info();",
+            "contents": "console.info();"
+        },
+        {
+            "trigger": "console.warn();",
+            "contents": "console.warn();"
+        },
+        {
+            "trigger": "console.error();",
+            "contents": "console.error();"
+        },
+        {
+            "trigger": "console.dir(object);",
+            "contents": "console.dir(object);"
+        },
+        {
+            "trigger": "console.time(label);",
+            "contents": "console.time(label);"
+        },
+        {
+            "trigger": "console.timeEnd(label);",
+            "contents": "console.timeEnd(label);"
+        },
+        {
+            "trigger": "console.trace(label);",
+            "contents": "console.trace(label);"
+        },
+        {
+            "trigger": "console.assert(expression);",
+            "contents": "console.assert(expression);"
+        },
+        {
+            "trigger": "crypto.Credentials(secureProtocol, flags, context);",
+            "contents": "crypto.Credentials(secureProtocol, flags, context);"
+        },
+        {
+            "trigger": "crypto.createCredentials(options, context);",
+            "contents": "crypto.createCredentials(options, context);"
+        },
+        {
+            "trigger": "crypto.Hash();",
+            "contents": "crypto.Hash();"
+        },
+        {
+            "trigger": "crypto.createHash(hash);",
+            "contents": "crypto.createHash(hash);"
+        },
+        {
+            "trigger": "crypto.Hmac();",
+            "contents": "crypto.Hmac();"
+        },
+        {
+            "trigger": "crypto.createHmac(hmac, key);",
+            "contents": "crypto.createHmac(hmac, key);"
+        },
+        {
+            "trigger": "crypto.Cipher();",
+            "contents": "crypto.Cipher();"
+        },
+        {
+            "trigger": "crypto.createCipher(cipher, password);",
+            "contents": "crypto.createCipher(cipher, password);"
+        },
+        {
+            "trigger": "crypto.createCipheriv(cipher, key, iv);",
+            "contents": "crypto.createCipheriv(cipher, key, iv);"
+        },
+        {
+            "trigger": "crypto.Decipher();",
+            "contents": "crypto.Decipher();"
+        },
+        {
+            "trigger": "crypto.createDecipher(cipher, password);",
+            "contents": "crypto.createDecipher(cipher, password);"
+        },
+        {
+            "trigger": "crypto.createDecipheriv(cipher, key, iv);",
+            "contents": "crypto.createDecipheriv(cipher, key, iv);"
+        },
+        {
+            "trigger": "crypto.Sign();",
+            "contents": "crypto.Sign();"
+        },
+        {
+            "trigger": "crypto.createSign(algorithm);",
+            "contents": "crypto.createSign(algorithm);"
+        },
+        {
+            "trigger": "crypto.Verify();",
+            "contents": "crypto.Verify();"
+        },
+        {
+            "trigger": "crypto.createVerify(algorithm);",
+            "contents": "crypto.createVerify(algorithm);"
+        },
+        {
+            "trigger": "crypto.DiffieHellman();",
+            "contents": "crypto.DiffieHellman();"
+        },
+        {
+            "trigger": "crypto.createDiffieHellman(size_or_key, enc);",
+            "contents": "crypto.createDiffieHellman(size_or_key, enc);"
+        },
+        {
+            "trigger": "crypto.pbkdf2();",
+            "contents": "crypto.pbkdf2();"
+        },
+        {
+            "trigger": "crypto.randomBytes();",
+            "contents": "crypto.randomBytes();"
+        },
+        {
+            "trigger": "crypto.pseudoRandomBytes();",
+            "contents": "crypto.pseudoRandomBytes();"
+        },
+        {
+            "trigger": "crypto.rng();",
+            "contents": "crypto.rng();"
+        },
+        {
+            "trigger": "crypto.prng();",
+            "contents": "crypto.prng();"
+        },
+        {
+            "trigger": "dgram.Socket(type, listener);",
+            "contents": "dgram.Socket(type, listener);"
+        },
+        {
+            "trigger": "dgram.createSocket(type, listener);",
+            "contents": "dgram.createSocket(type, listener);"
+        },
+        {
+            "trigger": "dns.lookup(domain, family, callback);",
+            "contents": "dns.lookup(domain, family, callback);"
+        },
+        {
+            "trigger": "dns.resolve4(name, callback);",
+            "contents": "dns.resolve4(name, callback);"
+        },
+        {
+            "trigger": "dns.resolve6(name, callback);",
+            "contents": "dns.resolve6(name, callback);"
+        },
+        {
+            "trigger": "dns.resolveCname(name, callback);",
+            "contents": "dns.resolveCname(name, callback);"
+        },
+        {
+            "trigger": "dns.resolveMx(name, callback);",
+            "contents": "dns.resolveMx(name, callback);"
+        },
+        {
+            "trigger": "dns.resolveNs(name, callback);",
+            "contents": "dns.resolveNs(name, callback);"
+        },
+        {
+            "trigger": "dns.resolveTxt(name, callback);",
+            "contents": "dns.resolveTxt(name, callback);"
+        },
+        {
+            "trigger": "dns.resolveSrv(name, callback);",
+            "contents": "dns.resolveSrv(name, callback);"
+        },
+        {
+            "trigger": "dns.reverse(name, callback);",
+            "contents": "dns.reverse(name, callback);"
+        },
+        {
+            "trigger": "dns.resolve(domain, type_, callback_);",
+            "contents": "dns.resolve(domain, type_, callback_);"
+        },
+        {
+            "trigger": "events.EventEmitter();",
+            "contents": "events.EventEmitter();"
+        },
+        {
+            "trigger": "freelist.FreeList(name, max, constructor);",
+            "contents": "freelist.FreeList(name, max, constructor);"
+        },
+        {
+            "trigger": "fs.Stats();",
+            "contents": "fs.Stats();"
+        },
+        {
+            "trigger": "fs.readFile(path, encoding_);",
+            "contents": "fs.readFile(path, encoding_);"
+        },
+        {
+            "trigger": "fs.readFileSync(path, encoding);",
+            "contents": "fs.readFileSync(path, encoding);"
+        },
+        {
+            "trigger": "fs.close(fd, callback);",
+            "contents": "fs.close(fd, callback);"
+        },
+        {
+            "trigger": "fs.closeSync(fd);",
+            "contents": "fs.closeSync(fd);"
+        },
+        {
+            "trigger": "fs.open(path, flags, mode, callback);",
+            "contents": "fs.open(path, flags, mode, callback);"
+        },
+        {
+            "trigger": "fs.openSync(path, flags, mode);",
+            "contents": "fs.openSync(path, flags, mode);"
+        },
+        {
+            "trigger": "fs.read(fd, buffer, offset, length, position, callback);",
+            "contents": "fs.read(fd, buffer, offset, length, position, callback);"
+        },
+        {
+            "trigger": "fs.readSync(fd, buffer, offset, length, position);",
+            "contents": "fs.readSync(fd, buffer, offset, length, position);"
+        },
+        {
+            "trigger": "fs.write(fd, buffer, offset, length, position, callback);",
+            "contents": "fs.write(fd, buffer, offset, length, position, callback);"
+        },
+        {
+            "trigger": "fs.writeSync(fd, buffer, offset, length, position);",
+            "contents": "fs.writeSync(fd, buffer, offset, length, position);"
+        },
+        {
+            "trigger": "fs.rename(oldPath, newPath, callback);",
+            "contents": "fs.rename(oldPath, newPath, callback);"
+        },
+        {
+            "trigger": "fs.renameSync(oldPath, newPath);",
+            "contents": "fs.renameSync(oldPath, newPath);"
+        },
+        {
+            "trigger": "fs.truncate(fd, len, callback);",
+            "contents": "fs.truncate(fd, len, callback);"
+        },
+        {
+            "trigger": "fs.truncateSync(fd, len);",
+            "contents": "fs.truncateSync(fd, len);"
+        },
+        {
+            "trigger": "fs.rmdir(path, callback);",
+            "contents": "fs.rmdir(path, callback);"
+        },
+        {
+            "trigger": "fs.rmdirSync(path);",
+            "contents": "fs.rmdirSync(path);"
+        },
+        {
+            "trigger": "fs.fdatasync(fd, callback);",
+            "contents": "fs.fdatasync(fd, callback);"
+        },
+        {
+            "trigger": "fs.fdatasyncSync(fd);",
+            "contents": "fs.fdatasyncSync(fd);"
+        },
+        {
+            "trigger": "fs.fsync(fd, callback);",
+            "contents": "fs.fsync(fd, callback);"
+        },
+        {
+            "trigger": "fs.fsyncSync(fd);",
+            "contents": "fs.fsyncSync(fd);"
+        },
+        {
+            "trigger": "fs.mkdir(path, mode, callback);",
+            "contents": "fs.mkdir(path, mode, callback);"
+        },
+        {
+            "trigger": "fs.mkdirSync(path, mode);",
+            "contents": "fs.mkdirSync(path, mode);"
+        },
+        {
+            "trigger": "fs.sendfile(outFd, inFd, inOffset, length, callback);",
+            "contents": "fs.sendfile(outFd, inFd, inOffset, length, callback);"
+        },
+        {
+            "trigger": "fs.sendfileSync(outFd, inFd, inOffset, length);",
+            "contents": "fs.sendfileSync(outFd, inFd, inOffset, length);"
+        },
+        {
+            "trigger": "fs.readdir(path, callback);",
+            "contents": "fs.readdir(path, callback);"
+        },
+        {
+            "trigger": "fs.readdirSync(path);",
+            "contents": "fs.readdirSync(path);"
+        },
+        {
+            "trigger": "fs.fstat(fd, callback);",
+            "contents": "fs.fstat(fd, callback);"
+        },
+        {
+            "trigger": "fs.lstat(path, callback);",
+            "contents": "fs.lstat(path, callback);"
+        },
+        {
+            "trigger": "fs.stat(path, callback);",
+            "contents": "fs.stat(path, callback);"
+        },
+        {
+            "trigger": "fs.fstatSync(fd);",
+            "contents": "fs.fstatSync(fd);"
+        },
+        {
+            "trigger": "fs.lstatSync(path);",
+            "contents": "fs.lstatSync(path);"
+        },
+        {
+            "trigger": "fs.statSync(path);",
+            "contents": "fs.statSync(path);"
+        },
+        {
+            "trigger": "fs.readlink(path, callback);",
+            "contents": "fs.readlink(path, callback);"
+        },
+        {
+            "trigger": "fs.readlinkSync(path);",
+            "contents": "fs.readlinkSync(path);"
+        },
+        {
+            "trigger": "fs.symlink(destination, path, mode_, callback);",
+            "contents": "fs.symlink(destination, path, mode_, callback);"
+        },
+        {
+            "trigger": "fs.symlinkSync(destination, path, mode);",
+            "contents": "fs.symlinkSync(destination, path, mode);"
+        },
+        {
+            "trigger": "fs.link(srcpath, dstpath, callback);",
+            "contents": "fs.link(srcpath, dstpath, callback);"
+        },
+        {
+            "trigger": "fs.linkSync(srcpath, dstpath);",
+            "contents": "fs.linkSync(srcpath, dstpath);"
+        },
+        {
+            "trigger": "fs.unlink(path, callback);",
+            "contents": "fs.unlink(path, callback);"
+        },
+        {
+            "trigger": "fs.unlinkSync(path);",
+            "contents": "fs.unlinkSync(path);"
+        },
+        {
+            "trigger": "fs.fchmod(fd, mode, callback);",
+            "contents": "fs.fchmod(fd, mode, callback);"
+        },
+        {
+            "trigger": "fs.fchmodSync(fd, mode);",
+            "contents": "fs.fchmodSync(fd, mode);"
+        },
+        {
+            "trigger": "fs.chmod(path, mode, callback);",
+            "contents": "fs.chmod(path, mode, callback);"
+        },
+        {
+            "trigger": "fs.chmodSync(path, mode);",
+            "contents": "fs.chmodSync(path, mode);"
+        },
+        {
+            "trigger": "fs.fchown(fd, uid, gid, callback);",
+            "contents": "fs.fchown(fd, uid, gid, callback);"
+        },
+        {
+            "trigger": "fs.fchownSync(fd, uid, gid);",
+            "contents": "fs.fchownSync(fd, uid, gid);"
+        },
+        {
+            "trigger": "fs.chown(path, uid, gid, callback);",
+            "contents": "fs.chown(path, uid, gid, callback);"
+        },
+        {
+            "trigger": "fs.chownSync(path, uid, gid);",
+            "contents": "fs.chownSync(path, uid, gid);"
+        },
+        {
+            "trigger": "fs._toUnixTimestamp(time);",
+            "contents": "fs._toUnixTimestamp(time);"
+        },
+        {
+            "trigger": "fs.utimes(path, atime, mtime, callback);",
+            "contents": "fs.utimes(path, atime, mtime, callback);"
+        },
+        {
+            "trigger": "fs.utimesSync(path, atime, mtime);",
+            "contents": "fs.utimesSync(path, atime, mtime);"
+        },
+        {
+            "trigger": "fs.futimes(fd, atime, mtime, callback);",
+            "contents": "fs.futimes(fd, atime, mtime, callback);"
+        },
+        {
+            "trigger": "fs.futimesSync(fd, atime, mtime);",
+            "contents": "fs.futimesSync(fd, atime, mtime);"
+        },
+        {
+            "trigger": "fs.writeFile(path, data, encoding_, callback);",
+            "contents": "fs.writeFile(path, data, encoding_, callback);"
+        },
+        {
+            "trigger": "fs.writeFileSync(path, data, encoding);",
+            "contents": "fs.writeFileSync(path, data, encoding);"
+        },
+        {
+            "trigger": "fs.watch(filename);",
+            "contents": "fs.watch(filename);"
+        },
+        {
+            "trigger": "fs.watchFile(filename);",
+            "contents": "fs.watchFile(filename);"
+        },
+        {
+            "trigger": "fs.unwatchFile(filename);",
+            "contents": "fs.unwatchFile(filename);"
+        },
+        {
+            "trigger": "fs.realpathSync(p, cache);",
+            "contents": "fs.realpathSync(p, cache);"
+        },
+        {
+            "trigger": "fs.realpath(p, cache, cb);",
+            "contents": "fs.realpath(p, cache, cb);"
+        },
+        {
+            "trigger": "fs.createReadStream(path, options);",
+            "contents": "fs.createReadStream(path, options);"
+        },
+        {
+            "trigger": "fs.ReadStream(path, options);",
+            "contents": "fs.ReadStream(path, options);"
+        },
+        {
+            "trigger": "fs.FileReadStream(path, options);",
+            "contents": "fs.FileReadStream(path, options);"
+        },
+        {
+            "trigger": "fs.createWriteStream(path, options);",
+            "contents": "fs.createWriteStream(path, options);"
+        },
+        {
+            "trigger": "fs.WriteStream(path, options);",
+            "contents": "fs.WriteStream(path, options);"
+        },
+        {
+            "trigger": "fs.FileWriteStream(path, options);",
+            "contents": "fs.FileWriteStream(path, options);"
+        },
+        {
+            "trigger": "fs.SyncWriteStream(fd);",
+            "contents": "fs.SyncWriteStream(fd);"
+        },
+        {
+            "trigger": "http.IncomingMessage(socket);",
+            "contents": "http.IncomingMessage(socket);"
+        },
+        {
+            "trigger": "http.OutgoingMessage();",
+            "contents": "http.OutgoingMessage();"
+        },
+        {
+            "trigger": "http.ServerResponse(req);",
+            "contents": "http.ServerResponse(req);"
+        },
+        {
+            "trigger": "http.Agent(options);",
+            "contents": "http.Agent(options);"
+        },
+        {
+            "trigger": "http.ClientRequest(options, cb);",
+            "contents": "http.ClientRequest(options, cb);"
+        },
+        {
+            "trigger": "http.request(options, cb);",
+            "contents": "http.request(options, cb);"
+        },
+        {
+            "trigger": "http.get(options, cb);",
+            "contents": "http.get(options, cb);"
+        },
+        {
+            "trigger": "http.Server(requestListener);",
+            "contents": "http.Server(requestListener);"
+        },
+        {
+            "trigger": "http.createServer(requestListener);",
+            "contents": "http.createServer(requestListener);"
+        },
+        {
+            "trigger": "http._connectionListener(socket);",
+            "contents": "http._connectionListener(socket);"
+        },
+        {
+            "trigger": "http.Client(port, host);",
+            "contents": "http.Client(port, host);"
+        },
+        {
+            "trigger": "http.createClient(port, host);",
+            "contents": "http.createClient(port, host);"
+        },
+        {
+            "trigger": "https.Server(opts, requestListener);",
+            "contents": "https.Server(opts, requestListener);"
+        },
+        {
+            "trigger": "https.createServer(opts, requestListener);",
+            "contents": "https.createServer(opts, requestListener);"
+        },
+        {
+            "trigger": "https.Agent(options);",
+            "contents": "https.Agent(options);"
+        },
+        {
+            "trigger": "https.request(options, cb);",
+            "contents": "https.request(options, cb);"
+        },
+        {
+            "trigger": "https.get(options, cb);",
+            "contents": "https.get(options, cb);"
+        },
+        {
+            "trigger": "module.wrap(script);",
+            "contents": "module.wrap(script);"
+        },
+        {
+            "trigger": "module._debug();",
+            "contents": "module._debug();"
+        },
+        {
+            "trigger": "module._findPath(request, paths);",
+            "contents": "module._findPath(request, paths);"
+        },
+        {
+            "trigger": "module._nodeModulePaths(from);",
+            "contents": "module._nodeModulePaths(from);"
+        },
+        {
+            "trigger": "module._resolveLookupPaths(request, parent);",
+            "contents": "module._resolveLookupPaths(request, parent);"
+        },
+        {
+            "trigger": "module._load(request, parent, isMain);",
+            "contents": "module._load(request, parent, isMain);"
+        },
+        {
+            "trigger": "module._resolveFilename(request, parent);",
+            "contents": "module._resolveFilename(request, parent);"
+        },
+        {
+            "trigger": "module.runMain();",
+            "contents": "module.runMain();"
+        },
+        {
+            "trigger": "module._initPaths();",
+            "contents": "module._initPaths();"
+        },
+        {
+            "trigger": "module.requireRepl();",
+            "contents": "module.requireRepl();"
+        },
+        {
+            "trigger": "module.Module(id, parent);",
+            "contents": "module.Module(id, parent);"
+        },
+        {
+            "trigger": "net.createServer();",
+            "contents": "net.createServer();"
+        },
+        {
+            "trigger": "net.createConnection(port /* [host], [cb] */);",
+            "contents": "net.createConnection(port /* [host], [cb] */);"
+        },
+        {
+            "trigger": "net.connect(port /* [host], [cb] */);",
+            "contents": "net.connect(port /* [host], [cb] */);"
+        },
+        {
+            "trigger": "net.Socket(options);",
+            "contents": "net.Socket(options);"
+        },
+        {
+            "trigger": "net.Stream(options);",
+            "contents": "net.Stream(options);"
+        },
+        {
+            "trigger": "net.Server(/* [ options, ] listener */);",
+            "contents": "net.Server(/* [ options, ] listener */);"
+        },
+        {
+            "trigger": "net._createServerHandle(address, port, addressType);",
+            "contents": "net._createServerHandle(address, port, addressType);"
+        },
+        {
+            "trigger": "net.isIP(input);",
+            "contents": "net.isIP(input);"
+        },
+        {
+            "trigger": "net.isIPv4(input);",
+            "contents": "net.isIPv4(input);"
+        },
+        {
+            "trigger": "net.isIPv6(input);",
+            "contents": "net.isIPv6(input);"
+        },
+        {
+            "trigger": "os.hostname();",
+            "contents": "os.hostname();"
+        },
+        {
+            "trigger": "os.loadavg();",
+            "contents": "os.loadavg();"
+        },
+        {
+            "trigger": "os.uptime();",
+            "contents": "os.uptime();"
+        },
+        {
+            "trigger": "os.freemem();",
+            "contents": "os.freemem();"
+        },
+        {
+            "trigger": "os.totalmem();",
+            "contents": "os.totalmem();"
+        },
+        {
+            "trigger": "os.cpus();",
+            "contents": "os.cpus();"
+        },
+        {
+            "trigger": "os.type();",
+            "contents": "os.type();"
+        },
+        {
+            "trigger": "os.release();",
+            "contents": "os.release();"
+        },
+        {
+            "trigger": "os.networkInterfaces();",
+            "contents": "os.networkInterfaces();"
+        },
+        {
+            "trigger": "os.arch();",
+            "contents": "os.arch();"
+        },
+        {
+            "trigger": "os.platform();",
+            "contents": "os.platform();"
+        },
+        {
+            "trigger": "os.getNetworkInterfaces();",
+            "contents": "os.getNetworkInterfaces();"
+        },
+        {
+            "trigger": "path.resolve();",
+            "contents": "path.resolve();"
+        },
+        {
+            "trigger": "path.normalize(path);",
+            "contents": "path.normalize(path);"
+        },
+        {
+            "trigger": "path.join();",
+            "contents": "path.join();"
+        },
+        {
+            "trigger": "path.relative(from, to);",
+            "contents": "path.relative(from, to);"
+        },
+        {
+            "trigger": "path.dirname(path);",
+            "contents": "path.dirname(path);"
+        },
+        {
+            "trigger": "path.basename(path, ext);",
+            "contents": "path.basename(path, ext);"
+        },
+        {
+            "trigger": "path.extname(path);",
+            "contents": "path.extname(path);"
+        },
+        {
+            "trigger": "path.exists(path, callback);",
+            "contents": "path.exists(path, callback);"
+        },
+        {
+            "trigger": "path.existsSync(path);",
+            "contents": "path.existsSync(path);"
+        },
+        {
+            "trigger": "punycode.decode(input, preserveCase);",
+            "contents": "punycode.decode(input, preserveCase);"
+        },
+        {
+            "trigger": "punycode.encode(input, preserveCase);",
+            "contents": "punycode.encode(input, preserveCase);"
+        },
+        {
+            "trigger": "punycode.toASCII(domain);",
+            "contents": "punycode.toASCII(domain);"
+        },
+        {
+            "trigger": "punycode.toUnicode(domain);",
+            "contents": "punycode.toUnicode(domain);"
+        },
+        {
+            "trigger": "querystring.unescapeBuffer(s, decodeSpaces);",
+            "contents": "querystring.unescapeBuffer(s, decodeSpaces);"
+        },
+        {
+            "trigger": "querystring.unescape(s, decodeSpaces);",
+            "contents": "querystring.unescape(s, decodeSpaces);"
+        },
+        {
+            "trigger": "querystring.escape(str);",
+            "contents": "querystring.escape(str);"
+        },
+        {
+            "trigger": "querystring.encode(obj, sep, eq, name);",
+            "contents": "querystring.encode(obj, sep, eq, name);"
+        },
+        {
+            "trigger": "querystring.stringify(obj, sep, eq, name);",
+            "contents": "querystring.stringify(obj, sep, eq, name);"
+        },
+        {
+            "trigger": "querystring.decode(qs, sep, eq);",
+            "contents": "querystring.decode(qs, sep, eq);"
+        },
+        {
+            "trigger": "querystring.parse(qs, sep, eq);",
+            "contents": "querystring.parse(qs, sep, eq);"
+        },
+        {
+            "trigger": "readline.createInterface(input, output, completer);",
+            "contents": "readline.createInterface(input, output, completer);"
+        },
+        {
+            "trigger": "readline.Interface(input, output, completer);",
+            "contents": "readline.Interface(input, output, completer);"
+        },
+        {
+            "trigger": "repl.writer(obj, showHidden, depth, colors);",
+            "contents": "repl.writer(obj, showHidden, depth, colors);"
+        },
+        {
+            "trigger": "repl.REPLServer(prompt, stream, eval, useGlobal, ignoreUndefined);",
+            "contents": "repl.REPLServer(prompt, stream, eval, useGlobal, ignoreUndefined);"
+        },
+        {
+            "trigger": "repl.start(prompt, source, eval, useGlobal);",
+            "contents": "repl.start(prompt, source, eval, useGlobal);"
+        },
+        {
+            "trigger": "stream.super_();",
+            "contents": "stream.super_();"
+        },
+        {
+            "trigger": "stream.Stream();",
+            "contents": "stream.Stream();"
+        },
+        {
+            "trigger": "string_decoder.StringDecoder(encoding);",
+            "contents": "string_decoder.StringDecoder(encoding);"
+        },
+        {
+            "trigger": "sys.print();",
+            "contents": "sys.print();"
+        },
+        {
+            "trigger": "sys.puts();",
+            "contents": "sys.puts();"
+        },
+        {
+            "trigger": "sys.debug(x);",
+            "contents": "sys.debug(x);"
+        },
+        {
+            "trigger": "sys.error(x);",
+            "contents": "sys.error(x);"
+        },
+        {
+            "trigger": "sys.inspect(obj, showHidden, depth, colors);",
+            "contents": "sys.inspect(obj, showHidden, depth, colors);"
+        },
+        {
+            "trigger": "sys.p();",
+            "contents": "sys.p();"
+        },
+        {
+            "trigger": "sys.log(msg);",
+            "contents": "sys.log(msg);"
+        },
+        {
+            "trigger": "sys.exec();",
+            "contents": "sys.exec();"
+        },
+        {
+            "trigger": "sys.pump(readStream, writeStream, callback);",
+            "contents": "sys.pump(readStream, writeStream, callback);"
+        },
+        {
+            "trigger": "sys.inherits(ctor, superCtor);",
+            "contents": "sys.inherits(ctor, superCtor);"
+        },
+        {
+            "trigger": "timers.unenroll(item);",
+            "contents": "timers.unenroll(item);"
+        },
+        {
+            "trigger": "timers.enroll(item, msecs);",
+            "contents": "timers.enroll(item, msecs);"
+        },
+        {
+            "trigger": "timers.active(item);",
+            "contents": "timers.active(item);"
+        },
+        {
+            "trigger": "timers.setTimeout(callback, after);",
+            "contents": "timers.setTimeout(callback, after);"
+        },
+        {
+            "trigger": "timers.clearTimeout(timer);",
+            "contents": "timers.clearTimeout(timer);"
+        },
+        {
+            "trigger": "timers.setInterval(callback, repeat);",
+            "contents": "timers.setInterval(callback, repeat);"
+        },
+        {
+            "trigger": "timers.clearInterval(timer);",
+            "contents": "timers.clearInterval(timer);"
+        },
+        {
+            "trigger": "tls.createSecurePair(credentials,\n                                    isServer,\n                                    requestCert,\n                                    rejectUnauthorized);",
+            "contents": "tls.createSecurePair(credentials,\n                                    isServer,\n                                    requestCert,\n                                    rejectUnauthorized);"
+        },
+        {
+            "trigger": "tls.Server(/* [options], listener */);",
+            "contents": "tls.Server(/* [options], listener */);"
+        },
+        {
+            "trigger": "tls.createServer(options, listener);",
+            "contents": "tls.createServer(options, listener);"
+        },
+        {
+            "trigger": "tls.connect(port /* host, options, cb */);",
+            "contents": "tls.connect(port /* host, options, cb */);"
+        },
+        {
+            "trigger": "tty.isatty(fd);",
+            "contents": "tty.isatty(fd);"
+        },
+        {
+            "trigger": "tty.setRawMode(flag);",
+            "contents": "tty.setRawMode(flag);"
+        },
+        {
+            "trigger": "tty.getWindowSize();",
+            "contents": "tty.getWindowSize();"
+        },
+        {
+            "trigger": "tty.setWindowSize();",
+            "contents": "tty.setWindowSize();"
+        },
+        {
+            "trigger": "tty.ReadStream(fd);",
+            "contents": "tty.ReadStream(fd);"
+        },
+        {
+            "trigger": "tty.WriteStream(fd);",
+            "contents": "tty.WriteStream(fd);"
+        },
+        {
+            "trigger": "url.parse(url, parseQueryString, slashesDenoteHost);",
+            "contents": "url.parse(url, parseQueryString, slashesDenoteHost);"
+        },
+        {
+            "trigger": "url.resolve(source, relative);",
+            "contents": "url.resolve(source, relative);"
+        },
+        {
+            "trigger": "url.resolveObject(source, relative);",
+            "contents": "url.resolveObject(source, relative);"
+        },
+        {
+            "trigger": "url.format(obj);",
+            "contents": "url.format(obj);"
+        },
+        {
+            "trigger": "util.format(f);",
+            "contents": "util.format(f);"
+        },
+        {
+            "trigger": "util.print();",
+            "contents": "util.print();"
+        },
+        {
+            "trigger": "util.puts();",
+            "contents": "util.puts();"
+        },
+        {
+            "trigger": "util.debug(x);",
+            "contents": "util.debug(x);"
+        },
+        {
+            "trigger": "util.error(x);",
+            "contents": "util.error(x);"
+        },
+        {
+            "trigger": "util.inspect(obj, showHidden, depth, colors);",
+            "contents": "util.inspect(obj, showHidden, depth, colors);"
+        },
+        {
+            "trigger": "util.isArray(ar);",
+            "contents": "util.isArray(ar);"
+        },
+        {
+            "trigger": "util.isRegExp(re);",
+            "contents": "util.isRegExp(re);"
+        },
+        {
+            "trigger": "util.isDate(d);",
+            "contents": "util.isDate(d);"
+        },
+        {
+            "trigger": "util.isError(e);",
+            "contents": "util.isError(e);"
+        },
+        {
+            "trigger": "util.p();",
+            "contents": "util.p();"
+        },
+        {
+            "trigger": "util.log(msg);",
+            "contents": "util.log(msg);"
+        },
+        {
+            "trigger": "util.exec();",
+            "contents": "util.exec();"
+        },
+        {
+            "trigger": "util.pump(readStream, writeStream, callback);",
+            "contents": "util.pump(readStream, writeStream, callback);"
+        },
+        {
+            "trigger": "util.inherits(ctor, superCtor);",
+            "contents": "util.inherits(ctor, superCtor);"
+        },
+        {
+            "trigger": "vm.Script();",
+            "contents": "vm.Script();"
+        },
+        {
+            "trigger": "vm.createScript(code, ctx, name);",
+            "contents": "vm.createScript(code, ctx, name);"
+        },
+        {
+            "trigger": "vm.createContext();",
+            "contents": "vm.createContext();"
+        },
+        {
+            "trigger": "vm.runInContext();",
+            "contents": "vm.runInContext();"
+        },
+        {
+            "trigger": "vm.runInThisContext();",
+            "contents": "vm.runInThisContext();"
+        },
+        {
+            "trigger": "vm.runInNewContext();",
+            "contents": "vm.runInNewContext();"
+        },
+        {
+            "trigger": "zlib.Deflate(opts);",
+            "contents": "zlib.Deflate(opts);"
+        },
+        {
+            "trigger": "zlib.Inflate(opts);",
+            "contents": "zlib.Inflate(opts);"
+        },
+        {
+            "trigger": "zlib.Gzip(opts);",
+            "contents": "zlib.Gzip(opts);"
+        },
+        {
+            "trigger": "zlib.Gunzip(opts);",
+            "contents": "zlib.Gunzip(opts);"
+        },
+        {
+            "trigger": "zlib.DeflateRaw(opts);",
+            "contents": "zlib.DeflateRaw(opts);"
+        },
+        {
+            "trigger": "zlib.InflateRaw(opts);",
+            "contents": "zlib.InflateRaw(opts);"
+        },
+        {
+            "trigger": "zlib.Unzip(opts);",
+            "contents": "zlib.Unzip(opts);"
+        },
+        {
+            "trigger": "zlib.createDeflate(o);",
+            "contents": "zlib.createDeflate(o);"
+        },
+        {
+            "trigger": "zlib.createInflate(o);",
+            "contents": "zlib.createInflate(o);"
+        },
+        {
+            "trigger": "zlib.createDeflateRaw(o);",
+            "contents": "zlib.createDeflateRaw(o);"
+        },
+        {
+            "trigger": "zlib.createInflateRaw(o);",
+            "contents": "zlib.createInflateRaw(o);"
+        },
+        {
+            "trigger": "zlib.createGzip(o);",
+            "contents": "zlib.createGzip(o);"
+        },
+        {
+            "trigger": "zlib.createGunzip(o);",
+            "contents": "zlib.createGunzip(o);"
+        },
+        {
+            "trigger": "zlib.createUnzip(o);",
+            "contents": "zlib.createUnzip(o);"
+        },
+        {
+            "trigger": "zlib.deflate(buffer, callback);",
+            "contents": "zlib.deflate(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.gzip(buffer, callback);",
+            "contents": "zlib.gzip(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.deflateRaw(buffer, callback);",
+            "contents": "zlib.deflateRaw(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.unzip(buffer, callback);",
+            "contents": "zlib.unzip(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.inflate(buffer, callback);",
+            "contents": "zlib.inflate(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.gunzip(buffer, callback);",
+            "contents": "zlib.gunzip(buffer, callback);"
+        },
+        {
+            "trigger": "zlib.inflateRaw(buffer, callback);",
+            "contents": "zlib.inflateRaw(buffer, callback);"
+        }
+    ]
+}
