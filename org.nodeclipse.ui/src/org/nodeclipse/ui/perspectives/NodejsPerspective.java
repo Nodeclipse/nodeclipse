@@ -1,11 +1,10 @@
 package org.nodeclipse.ui.perspectives;
 
+import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.console.IConsoleConstants;
-import org.eclipse.debug.ui.IDebugUIConstants;
-import org.eclipse.jdt.ui.JavaUI;
 
 /**
  * This class is meant to serve as an example for how various contributions are
@@ -41,7 +40,7 @@ public class NodejsPerspective implements IPerspectiveFactory {
 
         IFolderLayout rightBottom = factory.createFolder("rightBottom", IPageLayout.BOTTOM, 0.75f, factory.getEditorArea());// NON-NLS-1
         rightBottom.addView(IPageLayout.ID_PROBLEM_VIEW);
-        rightBottom.addPlaceholder(IConsoleConstants.ID_CONSOLE_VIEW);
+        rightBottom.addView(IConsoleConstants.ID_CONSOLE_VIEW);
 
         IFolderLayout rightTopRight = factory.createFolder("rightTopRight", IPageLayout.RIGHT, 0.75f, factory.getEditorArea());
         rightTopRight.addView(IPageLayout.ID_OUTLINE);
@@ -72,7 +71,6 @@ public class NodejsPerspective implements IPerspectiveFactory {
     private void addViewShortcuts() {
         factory.addShowViewShortcut("org.eclipse.team.ui.GenericHistoryView"); // NON-NLS-1
         factory.addShowViewShortcut(IConsoleConstants.ID_CONSOLE_VIEW);
-        factory.addShowViewShortcut(JavaUI.ID_PACKAGES);
         factory.addShowViewShortcut("org.eclipse.ui.views.ResourceNavigator");
         factory.addShowViewShortcut(IPageLayout.ID_PROBLEM_VIEW);
         factory.addShowViewShortcut(IPageLayout.ID_OUTLINE);

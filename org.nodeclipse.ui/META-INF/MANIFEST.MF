@@ -11,7 +11,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface.text,
  org.eclipse.ui.editors,
  org.eclipse.ui.console,
- org.eclipse.jdt.ui,
  org.eclipse.debug.ui;bundle-version="3.7.101",
  org.eclipse.ui.navigator
 Bundle-ActivationPolicy: lazy
