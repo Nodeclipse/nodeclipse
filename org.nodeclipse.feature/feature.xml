@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse"
       label="Nodeclipse"
-      version="0.1.4">
+      version="0.1.5">
 
    <description url="http://www.nodeclipse.org/">
       node.js language support
@@ -225,14 +225,14 @@ http://www.apache.org/licenses/
          id="org.nodeclipse.debug"
          download-size="0"
          install-size="0"
-         version="0.1.4"
+         version="0.1.5"
          unpack="false"/>
 
    <plugin
          id="org.nodeclipse.ui"
          download-size="0"
          install-size="0"
-         version="0.1.4"
+         version="0.1.5"
          unpack="false"/>
 
 </feature>
