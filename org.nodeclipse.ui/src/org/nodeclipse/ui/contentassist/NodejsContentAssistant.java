@@ -17,7 +17,7 @@ import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.Constants;
 
 public class NodejsContentAssistant implements IContentAssistProcessor {
-    
+
     public static Image METHOD = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
 
     @Override
@@ -79,9 +79,9 @@ public class NodejsContentAssistant implements IContentAssistProcessor {
             for (int i = 0; i < ContentProvider.COMPLETIONS.length(); i++) {
                 JSONObject method = (JSONObject) ContentProvider.COMPLETIONS.get(i);
                 String trigger = method.getString("trigger");
-                if (trigger != null && trigger.indexOf(input)!=-1) {
+                if (trigger != null && trigger.startsWith(input)) {
                     int length = input.length();
-                    list.add(new CompletionProposal(trigger, offset - length - 1, length + 1, trigger.length(), METHOD, null, null, null));
+                    list.add(new CompletionProposal(trigger, offset - length, length, trigger.length(), METHOD, null, null, null));
                 }
             }
         } catch (JSONException e) {
