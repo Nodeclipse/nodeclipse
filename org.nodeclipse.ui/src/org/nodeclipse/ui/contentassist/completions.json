@@ -1210,8 +1210,8 @@
             "contents": "timers.clearInterval(timer);"
         },
         {
-            "trigger": "tls.createSecurePair(credentials,\n                                    isServer,\n                                    requestCert,\n                                    rejectUnauthorized);",
-            "contents": "tls.createSecurePair(credentials,\n                                    isServer,\n                                    requestCert,\n                                    rejectUnauthorized);"
+            "trigger": "tls.createSecurePair(credentials, isServer, requestCert, rejectUnauthorized);",
+            "contents": "tls.createSecurePair(credentials, isServer, requestCert, rejectUnauthorized);"
         },
         {
             "trigger": "tls.Server(/* [options], listener */);",
