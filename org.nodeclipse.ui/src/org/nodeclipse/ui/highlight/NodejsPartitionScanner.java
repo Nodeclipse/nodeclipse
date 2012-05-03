@@ -1,5 +1,6 @@
-package org.nodeclipse.ui.editors;
+package org.nodeclipse.ui.highlight;
 
+import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.ICharacterScanner;
 import org.eclipse.jface.text.rules.IPredicateRule;
@@ -13,10 +14,11 @@ import org.eclipse.jface.text.rules.WordRule;
 
 public class NodejsPartitionScanner extends RuleBasedPartitionScanner {
 
-    static final String PARTITIONING = "NodejsPartitioning";
-    static final String MULTILINE_COMMENT = "__nodejs_multiline_comment";
-    static final String NODEJSDOC = "__nodejsdoc";
-    static final String[] PARTITION_TYPES = { MULTILINE_COMMENT, NODEJSDOC };
+    public static final String PARTITIONING = "NodejsPartitioning";
+    public static final String MULTILINE_COMMENT = "__nodejs_multiline_comment";
+    public static final String NODEJSDOC = "__nodejsdoc";
+    public static final String[] PARTITION_TYPES = { MULTILINE_COMMENT, NODEJSDOC };
+    public static final String[] CONTENT_TYPES = { IDocument.DEFAULT_CONTENT_TYPE, NODEJSDOC, MULTILINE_COMMENT };
 
     private static class EmptyCommentDetector implements IWordDetector {
 

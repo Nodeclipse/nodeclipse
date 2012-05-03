@@ -7,6 +7,7 @@ import org.eclipse.jface.text.IDocumentPartitioner;
 import org.eclipse.jface.text.rules.FastPartitioner;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.FileDocumentProvider;
+import org.nodeclipse.ui.highlight.NodejsPartitionScanner;
 
 public class NodejsDocumentProvider extends FileDocumentProvider {
 
