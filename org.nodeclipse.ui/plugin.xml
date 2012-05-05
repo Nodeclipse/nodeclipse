@@ -47,7 +47,7 @@
          point="org.eclipse.ui.ide.projectNatureImages">
       <image
             icon="icons/nodejs-nature.png"
-            id="org.nodeclipse.ui.nodejsNature.image"
+            id="org.nodeclipse.ui.NodejsNature.Image"
             natureId="org.nodeclipse.ui.NodejsNature">
       </image>
    </extension>
