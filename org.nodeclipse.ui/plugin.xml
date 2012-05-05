@@ -104,15 +104,30 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="true"
-            id="org.nodeclipse.ui.contribution1"
+            id="org.nodeclipse.ui.npm"
             nameFilter="*"
             objectClass="org.eclipse.core.resources.IProject">
+         <menu
+			label="npm"
+			path="additions"
+			icon="icons/npm/npm.png" 
+			id="org.nodeclipse.ui.npm.menu">
+         </menu>
          <action
-               class="org.nodeclipse.ui.builder.ToggleNatureAction"
+               class="org.nodeclipse.ui.npm.InstallAction"
                enablesFor="+"
-               id="org.nodeclipse.ui.addRemoveNatureAction"
-               label="Add/Remove Nodejs Nature"
-               menubarPath="additions">
+               icon="icons/npm/npm.png" 
+               id="org.nodeclipse.ui.npm.InstallAction"
+               label="npm install"
+               menubarPath="org.nodeclipse.ui.npm.menu/additions">
+         </action>
+         <action
+               class="org.nodeclipse.ui.npm.InstallAction"
+               enablesFor="+"
+               icon="icons/npm/npm.png"
+               id="org.nodeclipse.ui.npm.InstallAction"
+               label="npm install"
+               menubarPath="org.nodeclipse.ui.npm.menu/additions">
          </action>
       </objectContribution>
    </extension>
