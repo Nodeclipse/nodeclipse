@@ -2,7 +2,6 @@ package org.nodeclipse.ui.wizards;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -31,7 +30,7 @@ import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.registry.PerspectiveDescriptor;
 import org.eclipse.ui.wizards.newresource.BasicNewResourceWizard;
-import org.nodeclipse.ui.builder.NodejsNature;
+import org.nodeclipse.ui.nature.NodejsNature;
 import org.nodeclipse.ui.perspectives.NodejsPerspective;
 import org.nodeclipse.ui.util.LogUtil;
 

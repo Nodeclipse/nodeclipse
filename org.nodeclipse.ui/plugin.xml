@@ -48,59 +48,18 @@
       <image
             icon="icons/nodejs-nature.png"
             id="org.nodeclipse.ui.nodejsNature.image"
-            natureId="org.nodeclipse.ui.nodejsNature">
+            natureId="org.nodeclipse.ui.NodejsNature">
       </image>
    </extension>
    <extension
-         id="nodejsNature"
+         id="org.nodeclipse.ui.NodejsNature"
          name="Nodejs Project Nature"
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="org.nodeclipse.ui.builder.NodejsNature">
+               class="org.nodeclipse.ui.nature.NodejsNature">
          </run>
       </runtime>
-      <builder
-            id="org.nodeclipse.ui.nodejsBuilder">
-      </builder>
-   </extension>
-   <extension
-         id="nodejsBuilder"
-         name="Nodejs Project Builder"
-         point="org.eclipse.core.resources.builders">
-      <builder
-            hasNature="true">
-         <run
-               class="org.nodeclipse.ui.builder.NodejsBuilder">
-         </run>
-      </builder>
-   </extension>
-   <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="org.nodeclipse.ui.contribution1"
-            nameFilter="*"
-            objectClass="org.eclipse.core.resources.IProject">
-         <action
-               class="org.nodeclipse.ui.builder.ToggleNatureAction"
-               enablesFor="+"
-               id="org.nodeclipse.ui.addRemoveNatureAction"
-               label="Add/Remove Nodejs Nature"
-               menubarPath="additions">
-         </action>
-      </objectContribution>
-   </extension>
-   <extension
-         id="nodejsProblem"
-         name="Nodejs Problem"
-         point="org.eclipse.core.resources.markers">
-      <super
-            type="org.eclipse.core.resources.problemmarker">
-      </super>
-      <persistent
-            value="true">
-      </persistent>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
@@ -141,5 +100,20 @@
          <enablement></enablement>
       </commonWizard>
    </extension>
-
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.nodeclipse.ui.contribution1"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.nodeclipse.ui.builder.ToggleNatureAction"
+               enablesFor="+"
+               id="org.nodeclipse.ui.addRemoveNatureAction"
+               label="Add/Remove Nodejs Nature"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
 </plugin>

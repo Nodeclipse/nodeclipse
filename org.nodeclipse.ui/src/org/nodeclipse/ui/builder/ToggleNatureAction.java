@@ -11,6 +11,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.nodeclipse.ui.nature.NodejsNature;
 
 public class ToggleNatureAction implements IObjectActionDelegate {
 
