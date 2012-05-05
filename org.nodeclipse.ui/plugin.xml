@@ -114,17 +114,25 @@
 			id="org.nodeclipse.ui.npm.menu">
          </menu>
          <action
-               class="org.nodeclipse.ui.npm.InstallAction"
+               class="org.nodeclipse.ui.npm.OtherAction"
                enablesFor="+"
-               icon="icons/npm/npm.png" 
-               id="org.nodeclipse.ui.npm.InstallAction"
-               label="npm install"
+               icon="icons/npm/npm.png"
+               id="org.nodeclipse.ui.npm.OtherAction"
+               label="npm other"
+               menubarPath="org.nodeclipse.ui.npm.menu/additions">
+         </action>
+         <action
+               class="org.nodeclipse.ui.npm.PublishAction"
+               enablesFor="+"
+               icon="icons/npm/npm.png"
+               id="org.nodeclipse.ui.npm.PublishAction"
+               label="npm publish"
                menubarPath="org.nodeclipse.ui.npm.menu/additions">
          </action>
          <action
                class="org.nodeclipse.ui.npm.InstallAction"
                enablesFor="+"
-               icon="icons/npm/npm.png"
+               icon="icons/npm/npm.png" 
                id="org.nodeclipse.ui.npm.InstallAction"
                label="npm install"
                menubarPath="org.nodeclipse.ui.npm.menu/additions">
