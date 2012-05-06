@@ -101,42 +101,92 @@
       </commonWizard>
    </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="org.nodeclipse.ui.npm"
-            nameFilter="*"
-            objectClass="org.eclipse.core.resources.IProject">
-         <menu
-			label="npm"
-			path="additions"
-			icon="icons/npm/npm.png" 
-			id="org.nodeclipse.ui.npm.menu">
-         </menu>
-         <action
-               class="org.nodeclipse.ui.npm.OtherAction"
-               enablesFor="+"
-               icon="icons/npm/npm.png"
-               id="org.nodeclipse.ui.npm.OtherAction"
-               label="npm other"
-               menubarPath="org.nodeclipse.ui.npm.menu/additions">
-         </action>
-         <action
-               class="org.nodeclipse.ui.npm.PublishAction"
-               enablesFor="+"
-               icon="icons/npm/npm.png"
-               id="org.nodeclipse.ui.npm.PublishAction"
-               label="npm publish"
-               menubarPath="org.nodeclipse.ui.npm.menu/additions">
-         </action>
-         <action
-               class="org.nodeclipse.ui.npm.InstallAction"
-               enablesFor="+"
-               icon="icons/npm/npm.png" 
-               id="org.nodeclipse.ui.npm.InstallAction"
-               label="npm install"
-               menubarPath="org.nodeclipse.ui.npm.menu/additions">
-         </action>
-      </objectContribution>
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.nodeclipse.ui.npm.LaunchConfigurationDelegate"
+            id="org.nodeclipse.ui.npm.LaunchConfigurationType"
+            modes="run, debug"
+            name="NPM">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >
+      <launchConfigurationTypeImage
+            configTypeID= "org.nodeclipse.ui.npm.LaunchConfigurationType"
+            icon= "icons/npm/npm.png"
+            id= "org.nodeclipse.ui.npm.LaunchConfigurationTypeImage" >
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point= "org.eclipse.debug.ui.launchShortcuts" >
+      <shortcut
+            class= "org.nodeclipse.ui.npm.InstallLaunchShortcut"
+            icon= "icons/npm/npm.png"
+            id= "org.nodeclipse.ui.npm.InstallLaunchShortcut"
+            label= "npm install"
+            modes= "run, debug" >
+         <configurationType
+                id= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
+         </configurationType>
+         <contextualLaunch>
+              <enablement>
+                 <with
+                       variable= "selection" >
+                    <count
+                          value= "1" >
+                    </count>
+                    <iterate>
+                       <or>
+                          <instanceof value="org.eclipse.core.resources.IFile"/>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "package.json" >
+                          </test>
+                       </or>
+                      </iterate>
+                 </with>
+              </enablement>
+         </contextualLaunch>
+       </shortcut>
+   </extension>
+   <extension
+         point= "org.eclipse.debug.ui.launchShortcuts" >
+      <shortcut
+            class= "org.nodeclipse.ui.npm.LaunchShortcut"
+            icon= "icons/npm/npm.png"
+            id= "org.nodeclipse.ui.npm.LaunchShortcut"
+            label= "npm ..."
+            modes= "run, debug" >
+         <configurationType
+                id= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
+         </configurationType>
+         <contextualLaunch>
+              <enablement>
+                 <with
+                       variable= "selection" >
+                    <count
+                          value= "1" >
+                    </count>
+                    <iterate>
+                       <or>
+                          <instanceof value="org.eclipse.core.resources.IFile"/>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "package.json" >
+                          </test>
+                       </or>
+                      </iterate>
+                 </with>
+              </enablement>
+         </contextualLaunch>
+       </shortcut>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+          <launchConfigurationTabGroup
+       		class= "org.nodeclipse.ui.npm.LaunchConfigurationTabGroup"
+      		id= "org.nodeclipse.ui.npm.LaunchConfigurationTabGroup"
+        	type= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
+		  </launchConfigurationTabGroup>
    </extension>
 </plugin>

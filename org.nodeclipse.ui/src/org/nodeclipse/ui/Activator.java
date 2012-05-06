@@ -1,6 +1,8 @@
 package org.nodeclipse.ui;
 
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -65,4 +67,27 @@ public class Activator extends AbstractUIPlugin {
     public static ImageDescriptor getImageDescriptor(String path) {
         return imageDescriptorFromPlugin(PLUGIN_ID, path);
     }
+
+    /**
+     * Returns the active workbench shell or <code>null</code> if none
+     * 
+     * @return the active workbench shell or <code>null</code> if none
+     */
+    public static Shell getActiveWorkbenchShell() {
+        IWorkbenchWindow window = getActiveWorkbenchWindow();
+        if (window != null) {
+            return window.getShell();
+        }
+        return null;
+    }
+
+    /**
+     * Returns the active workbench window
+     * 
+     * @return the active workbench window
+     */
+    public static IWorkbenchWindow getActiveWorkbenchWindow() {
+        return getDefault().getWorkbench().getActiveWorkbenchWindow();
+    }
+
 }
