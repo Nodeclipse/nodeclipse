@@ -27,7 +27,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.nodeclipse.debug.Activator;
 import org.nodeclipse.debug.util.Constants;
-import org.nodeclipse.debug.util.Messages;
 
 public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
@@ -51,7 +50,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
 
     private void createFileGroup(Composite parent) {
         Group fileGroup = new Group(parent, SWT.NONE);
-        fileGroup.setText(Messages.fileLabel);
+        fileGroup.setText(Constants.FILE_LABEL);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         fileGroup.setLayoutData(gd);
         GridLayout layout = new GridLayout();
@@ -69,7 +68,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
             }
         });
 
-        fileButton = createPushButton(fileGroup, Messages.searchLabel, null); //$NON-NLS-1$
+        fileButton = createPushButton(fileGroup, Constants.SEARCH_LABEL, null); //$NON-NLS-1$
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileButton.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
@@ -84,7 +83,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
     protected void browseFiles() {
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         ResourceListSelectionDialog dialog = new ResourceListSelectionDialog(getShell(), root, IResource.FILE);
-        dialog.setTitle(Messages.searchTitle);
+        dialog.setTitle(Constants.SEARCH_TITLE);
         if (dialog.open() == Window.OK) {
             Object[] files = dialog.getResult();
             IFile file = (IFile) files[0];

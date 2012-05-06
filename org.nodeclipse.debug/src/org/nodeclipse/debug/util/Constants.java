@@ -23,5 +23,9 @@ public class Constants {
     public static final String NEXT = "next";
     public static final String OUT = "out";
     public static final String CONT = "cont";
+    
+    public static final String FILE_LABEL = "File";
+    public static final String SEARCH_LABEL = "Search...";
+    public static final String SEARCH_TITLE = "Search File";
 
 }

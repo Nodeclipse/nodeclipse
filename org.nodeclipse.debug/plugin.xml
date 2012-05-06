@@ -10,7 +10,7 @@
             name="Nodejs Application">
       </launchConfigurationType> 
     </extension>
-    <extension   
+    <extension
           point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
        <launchConfigurationTypeImage   
              configTypeID= "org.nodeclipse.debug.launch.LaunchConfigurationType"   
@@ -22,7 +22,7 @@
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
              class= "org.nodeclipse.debug.launch.LaunchShortcut"   
-             icon= "icons/nodejs.png"   
+             icon= "icons/nodejs.png"
              id= "org.nodeclipse.debug.launch.LaunchShortcut"   
              label= "Nodejs Application"   
              modes= "run, debug" >   
