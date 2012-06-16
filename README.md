@@ -1,4 +1,4 @@
-Nodeclipse -- node.js language support for eclipse
+Nodeclipse -- node.js language support for Eclipse
 
 
 <a href="http://www.nodeclipse.org/">Nodeclipse</a> is an plugin that 
@@ -8,6 +8,12 @@ The purpose of Nodeclipse is to create an environment in
 which development of Node.js is easy for a beginner to intermediate user. 
 Development is slow, but ongoing. If you would like to help out, 
 please leave a comment stating so in the Nodeclipse forum. 
+
+FEATURES
+New Node Project and New Node Source File create default structure
+Syntax highlighting
+Content Assistant
+NPM support
 
 INSTALLING
 Update Site : http://www.nodeclipse.org/updates
