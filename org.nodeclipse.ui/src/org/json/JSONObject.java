@@ -92,6 +92,7 @@ import java.util.ResourceBundle;
  * @author JSON.org
  * @version 2012-05-29
  */
+@SuppressWarnings({"rawtypes","unchecked"})
 public class JSONObject {
 
     /**
