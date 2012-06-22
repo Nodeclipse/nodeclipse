@@ -5,11 +5,11 @@
       version="0.1.6">
 
    <description url="http://www.nodeclipse.org/">
-      node.js language support
+      Node support for Eclipse
    </description>
 
    <copyright url="http://www.nodeclipse.org/">
-      Copyright@nodeclipse
+      Copyright@Nodeclipse
    </copyright>
 
    <license url="http://www.apache.org/licenses/LICENSE-2.0">
