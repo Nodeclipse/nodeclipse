@@ -26,7 +26,7 @@ import org.eclipse.ui.dialogs.ContainerSelectionDialog;
  * OR with the extension that matches the expected one (js).
  */
 
-public class NodejsFileWizardPage extends WizardPage {
+public class NodeFileWizardPage extends WizardPage {
     private Text containerText;
 
     private Text fileText;
@@ -38,10 +38,10 @@ public class NodejsFileWizardPage extends WizardPage {
      * 
      * @param pageName
      */
-    public NodejsFileWizardPage(ISelection selection) {
-        super("nodejsFileWizardPage");
-        setTitle("Nodejs Source File");
-        setDescription("Create a new Nodejs source file.");
+    public NodeFileWizardPage(ISelection selection) {
+        super("NodeFileWizardPage");
+        setTitle("Node Source File");
+        setDescription("Create a new Node source file.");
         this.selection = selection;
     }
 
@@ -109,6 +109,8 @@ public class NodejsFileWizardPage extends WizardPage {
             }
         }
         fileText.setText("new_file.js");
+        //TODO focus
+        fileText.setFocus();
     }
 
     /**

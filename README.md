@@ -1,13 +1,13 @@
-# Nodeclipse -- node.js language support for Eclipse
+# Nodeclipse -- Node support for Eclipse
 
 
 > <a href="http://www.nodeclipse.org/">Nodeclipse</a> is an plugin that 
 adds IDE functionality to the <a href="http://www.eclipse.org/">Eclipse</a> 
-for the <a href="http://www.nodejs.org/">Node.js</a>. 
+for the <a href="http://www.nodejs.org/">Node</a>. 
 The purpose of Nodeclipse is to create an environment in 
-which development of Node.js is easy for a beginner to intermediate user. 
+which development of Node is easy for a beginner to intermediate user. 
 Development is slow, but ongoing. If you would like to help out, 
-please leave a comment stating so in the Nodeclipse forum. 
+please leave a comment stating so in the Nodeclipse forum.
 
 # FEATURES
 * New Node Project and New Node Source File create default structure

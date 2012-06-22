@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.Constants;
 
-public class NodejsContentAssistant implements IContentAssistProcessor {
+public class NodeContentAssistant implements IContentAssistProcessor {
 
     public static Image METHOD = Activator.getImageDescriptor(Constants.METHOD_ICON).createImage();
 

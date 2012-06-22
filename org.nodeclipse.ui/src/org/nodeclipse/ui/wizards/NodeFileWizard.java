@@ -24,17 +24,17 @@ import org.eclipse.ui.ide.IDE;
  * same extension, it will be able to open it.
  */
 
-public class NodejsFileWizard extends Wizard implements INewWizard {
+public class NodeFileWizard extends Wizard implements INewWizard {
 
-    private final String WINDOW_TITLE = "New Nodejs Source File";
+    private final String WINDOW_TITLE = "New Node Source File";
 
-    private NodejsFileWizardPage page;
+    private NodeFileWizardPage page;
     private ISelection selection;
 
     /**
-     * Constructor for NodejsWizard.
+     * Constructor for NodeWizard.
      */
-    public NodejsFileWizard() {
+    public NodeFileWizard() {
         setWindowTitle(WINDOW_TITLE);
         setNeedsProgressMonitor(true);
     }
@@ -44,7 +44,7 @@ public class NodejsFileWizard extends Wizard implements INewWizard {
      */
 
     public void addPages() {
-        page = new NodejsFileWizardPage(selection);
+        page = new NodeFileWizardPage(selection);
         addPage(page);
     }
 
@@ -123,7 +123,7 @@ public class NodejsFileWizard extends Wizard implements INewWizard {
      */
 
     private InputStream openContentStream() {
-        String contents = "/**\n * New nodejs file\n */\n";
+        String contents = "/**\n * New node file\n */\n";
         return new ByteArrayInputStream(contents.getBytes());
     }
 

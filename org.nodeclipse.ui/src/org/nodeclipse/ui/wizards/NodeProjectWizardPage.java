@@ -30,7 +30,7 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea;
 import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter;
 
 @SuppressWarnings("restriction")
-public class NodejsProjectWizardPage extends WizardPage {
+public class NodeProjectWizardPage extends WizardPage {
 
     // initial value stores
     private String initialProjectFieldValue;
@@ -61,7 +61,7 @@ public class NodejsProjectWizardPage extends WizardPage {
      *            the name of this page
      * @wbp.parser.constructor
      */
-    public NodejsProjectWizardPage(String pageName) {
+    public NodeProjectWizardPage(String pageName) {
         super(pageName);
         setPageComplete(false);
     }

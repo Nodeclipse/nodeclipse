@@ -12,13 +12,13 @@ import org.eclipse.jface.text.rules.SingleLineRule;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.rules.WordRule;
 
-public class NodejsPartitionScanner extends RuleBasedPartitionScanner {
+public class NodePartitionScanner extends RuleBasedPartitionScanner {
 
-    public static final String PARTITIONING = "NodejsPartitioning";
-    public static final String MULTILINE_COMMENT = "__nodejs_multiline_comment";
-    public static final String NODEJSDOC = "__nodejsdoc";
-    public static final String[] PARTITION_TYPES = { MULTILINE_COMMENT, NODEJSDOC };
-    public static final String[] CONTENT_TYPES = { IDocument.DEFAULT_CONTENT_TYPE, NODEJSDOC, MULTILINE_COMMENT };
+    public static final String PARTITIONING = "NodePartitioning";
+    public static final String MULTILINE_COMMENT = "__node_multiline_comment";
+    public static final String NODEDOC = "__nodedoc";
+    public static final String[] PARTITION_TYPES = { MULTILINE_COMMENT, NODEDOC };
+    public static final String[] CONTENT_TYPES = { IDocument.DEFAULT_CONTENT_TYPE, NODEDOC, MULTILINE_COMMENT };
 
     private static class EmptyCommentDetector implements IWordDetector {
 
@@ -49,8 +49,8 @@ public class NodejsPartitionScanner extends RuleBasedPartitionScanner {
         }
     }
 
-    public NodejsPartitionScanner() {
-        IToken jsDocToken = new Token(NODEJSDOC);
+    public NodePartitionScanner() {
+        IToken jsDocToken = new Token(NODEDOC);
         IToken multilineCommentToken = new Token(MULTILINE_COMMENT);
 
         setPredicateRules(new IPredicateRule[] { new EndOfLineRule("//", Token.UNDEFINED), //$NON-NLS-1$

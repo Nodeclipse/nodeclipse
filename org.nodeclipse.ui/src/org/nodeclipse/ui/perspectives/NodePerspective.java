@@ -12,12 +12,12 @@ import org.eclipse.ui.console.IConsoleConstants;
  * referred to as API constants while others are hardcoded and may be subject to
  * change.
  */
-public class NodejsPerspective implements IPerspectiveFactory {
+public class NodePerspective implements IPerspectiveFactory {
 
-    public static final String ID = "org.nodeclipse.ui.perspectives.NodejsPerspective";
+    public static final String ID = "org.nodeclipse.ui.perspectives.NodePerspective";
     private IPageLayout factory;
 
-    public NodejsPerspective() {
+    public NodePerspective() {
         super();
     }
 
@@ -62,8 +62,8 @@ public class NodejsPerspective implements IPerspectiveFactory {
     }
 
     private void addNewWizardShortcuts() {
-        factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodejsProjectWizard");
-        factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodejsFileWizard");
+        factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodeProjectWizard");
+        factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodeFileWizard");
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder");// NON-NLS-1
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.file");// NON-NLS-1
     }

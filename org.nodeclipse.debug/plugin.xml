@@ -7,14 +7,14 @@
             delegate="org.nodeclipse.debug.launch.LaunchConfigurationDelegate" 
             id="org.nodeclipse.debug.launch.LaunchConfigurationType" 
             modes="run, debug" 
-            name="Nodejs Application">
+            name="Node Application">
       </launchConfigurationType> 
     </extension>
     <extension
           point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
        <launchConfigurationTypeImage   
              configTypeID= "org.nodeclipse.debug.launch.LaunchConfigurationType"   
-             icon= "icons/nodejs.png"   
+             icon= "icons/node.png"   
              id= "org.nodeclipse.debug.launch.LaunchConfigurationTypeImage" >   
        </launchConfigurationTypeImage>   
     </extension>  
@@ -22,9 +22,9 @@
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
              class= "org.nodeclipse.debug.launch.LaunchShortcut"   
-             icon= "icons/nodejs.png"
+             icon= "icons/node.png"
              id= "org.nodeclipse.debug.launch.LaunchShortcut"   
-             label= "Nodejs Application"   
+             label= "Node Application"   
              modes= "run, debug" >   
           <configurationType
                 id= "org.nodeclipse.debug.launch.LaunchConfigurationType" >

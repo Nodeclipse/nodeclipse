@@ -4,12 +4,12 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectNature;
 import org.eclipse.core.runtime.CoreException;
 
-public class NodejsNature implements IProjectNature {
+public class NodeNature implements IProjectNature {
 
 	/**
 	 * ID of this project nature
 	 */
-	public static final String NATURE_ID = "org.nodeclipse.ui.NodejsNature";
+	public static final String NATURE_ID = "org.nodeclipse.ui.NodeNature";
 
 	private IProject project;
 

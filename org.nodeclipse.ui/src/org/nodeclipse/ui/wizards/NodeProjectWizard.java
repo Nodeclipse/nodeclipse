@@ -30,22 +30,22 @@ import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.registry.PerspectiveDescriptor;
 import org.eclipse.ui.wizards.newresource.BasicNewResourceWizard;
-import org.nodeclipse.ui.nature.NodejsNature;
-import org.nodeclipse.ui.perspectives.NodejsPerspective;
+import org.nodeclipse.ui.nature.NodeNature;
+import org.nodeclipse.ui.perspectives.NodePerspective;
 import org.nodeclipse.ui.util.LogUtil;
 
 @SuppressWarnings("restriction")
-public class NodejsProjectWizard extends Wizard implements INewWizard {
+public class NodeProjectWizard extends Wizard implements INewWizard {
 
-    private final String WINDOW_TITLE = "New Nodejs Project";
+    private final String WINDOW_TITLE = "New Node Project";
 
     private IWorkbench workbench;
     private IStructuredSelection selection;
-    private NodejsProjectWizardPage mainPage;
+    private NodeProjectWizardPage mainPage;
 
     private IProject newProject;
 
-    public NodejsProjectWizard() {
+    public NodeProjectWizard() {
         setWindowTitle(WINDOW_TITLE);
         setNeedsProgressMonitor(true);
     }
@@ -62,7 +62,7 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
 
     @Override
     public void addPages() {
-        mainPage = new NodejsProjectWizardPage("nodejsNewProjectPage") { //$NON-NLS-1$
+        mainPage = new NodeProjectWizardPage("NodeNewProjectPage") { //$NON-NLS-1$
             /*
              * (non-Javadoc)
              * 
@@ -76,8 +76,8 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
                 Dialog.applyDialogFont(getControl());
             }
         };
-        mainPage.setTitle("Create a Nodejs Project");
-        mainPage.setDescription("Create a new Nodejs project.");
+        mainPage.setTitle("Create a Node Project");
+        mainPage.setDescription("Create a new Node project.");
         addPage(mainPage);
     }
 
@@ -105,12 +105,12 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
     }
 
     /**
-     * 更新视图,跳转到NodejsPerspective视图.
+     * 更新视图,跳转到NodePerspective视图.
      */
     private void updatePerspective() {
         IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
         IPerspectiveRegistry reg = WorkbenchPlugin.getDefault().getPerspectiveRegistry();
-        PerspectiveDescriptor rtPerspectiveDesc = (PerspectiveDescriptor) reg.findPerspectiveWithId(NodejsPerspective.ID);
+        PerspectiveDescriptor rtPerspectiveDesc = (PerspectiveDescriptor) reg.findPerspectiveWithId(NodePerspective.ID);
         // Now set it as the active perspective.
         if (window != null) {
             IWorkbenchPage page = window.getActivePage();
@@ -134,7 +134,7 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
         String[] natures = description.getNatureIds();
         String[] newNatures = new String[natures.length + 1];
         System.arraycopy(natures, 0, newNatures, 0, natures.length);
-        newNatures[natures.length] = NodejsNature.NATURE_ID;
+        newNatures[natures.length] = NodeNature.NATURE_ID;
         description.setNatureIds(newNatures);
 
         IRunnableWithProgress op = new IRunnableWithProgress() {
@@ -160,13 +160,13 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
     }
 
     @SuppressWarnings("unused")
-    private static class CreateNodejsProjectOperation extends WorkspaceModifyOperation {
+    private static class CreateNodeProjectOperation extends WorkspaceModifyOperation {
 
         private String projectName;
         private IStatus result;
         private IProject project;
 
-        public CreateNodejsProjectOperation(String projectName) {
+        public CreateNodeProjectOperation(String projectName) {
             this.projectName = projectName;
         }
 
@@ -183,7 +183,7 @@ public class NodejsProjectWizard extends Wizard implements INewWizard {
             String[] natures = description.getNatureIds();
             String[] newNatures = new String[natures.length + 1];
             System.arraycopy(natures, 0, newNatures, 0, natures.length);
-            newNatures[natures.length] = NodejsNature.NATURE_ID;
+            newNatures[natures.length] = NodeNature.NATURE_ID;
             description.setNatureIds(newNatures);
             project.setDescription(description, null);
 

@@ -18,7 +18,7 @@ import org.eclipse.ui.IFileEditorInput;
 import org.nodeclipse.debug.util.Constants;
 
 /**
- * Using "Run As" --> "Nodejs Application" will lead here.
+ * Using "Run As" --> "Node Application" will lead here.
  **/
 public class LaunchShortcut implements ILaunchShortcut {
 

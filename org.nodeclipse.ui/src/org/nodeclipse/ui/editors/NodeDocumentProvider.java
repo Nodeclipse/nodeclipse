@@ -7,15 +7,15 @@ import org.eclipse.jface.text.IDocumentPartitioner;
 import org.eclipse.jface.text.rules.FastPartitioner;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.FileDocumentProvider;
-import org.nodeclipse.ui.highlight.NodejsPartitionScanner;
+import org.nodeclipse.ui.highlight.NodePartitionScanner;
 
-public class NodejsDocumentProvider extends FileDocumentProvider {
+public class NodeDocumentProvider extends FileDocumentProvider {
 
     @Override
     protected IDocument createDocument(Object element) throws CoreException {
         IDocument doc = super.createDocument(element);
         if (doc != null) {
-            IDocumentPartitioner partitioner = new FastPartitioner(new NodejsPartitionScanner(), NodejsPartitionScanner.PARTITION_TYPES);
+            IDocumentPartitioner partitioner = new FastPartitioner(new NodePartitionScanner(), NodePartitionScanner.PARTITION_TYPES);
             partitioner.connect(doc);
             doc.setDocumentPartitioner(partitioner);
         }

@@ -18,7 +18,7 @@ import org.eclipse.swt.graphics.RGB;
 /**
  * JavaScript code scanner for source code highlighting.
  */
-public class NodejsCodeScanner extends RuleBasedScanner {
+public class NodeCodeScanner extends RuleBasedScanner {
 
     // TODO Preferences
     private TextAttribute commentAttribute = new TextAttribute(EditorColors.getColor(new RGB(63, 127, 95)), null, SWT.NORMAL);
@@ -28,7 +28,7 @@ public class NodejsCodeScanner extends RuleBasedScanner {
     private TextAttribute numberAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
     private TextAttribute normalAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
 
-    public NodejsCodeScanner() {
+    public NodeCodeScanner() {
         createRules();
     }
 
@@ -77,7 +77,7 @@ public class NodejsCodeScanner extends RuleBasedScanner {
             for (String word : Words.KEYWORDS) {
                 addWord(word, token);
             }
-            for (String word : Words.NODEJS_WORDS) {
+            for (String word : Words.NODE_WORDS) {
                 addWord(word, token);
             }
         }

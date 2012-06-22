@@ -13,22 +13,22 @@ import org.eclipse.jface.text.rules.ITokenScanner;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
 import org.eclipse.swt.widgets.Shell;
-import org.nodeclipse.ui.contentassist.NodejsContentAssistant;
+import org.nodeclipse.ui.contentassist.NodeContentAssistant;
 import org.nodeclipse.ui.highlight.MultilineCommentScanner;
-import org.nodeclipse.ui.highlight.NodejsCodeScanner;
-import org.nodeclipse.ui.highlight.NodejsPartitionScanner;
+import org.nodeclipse.ui.highlight.NodeCodeScanner;
+import org.nodeclipse.ui.highlight.NodePartitionScanner;
 
-public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
+public class NodeSourceViewerConfiguration extends SourceViewerConfiguration {
 
     @Override
     public IPresentationReconciler getPresentationReconciler(ISourceViewer sourceViewer) {
         PresentationReconciler pr = new PresentationReconciler();
         pr.setDocumentPartitioning(getConfiguredDocumentPartitioning(sourceViewer));
         
-        NodejsCodeScanner scanner = new NodejsCodeScanner();
+        NodeCodeScanner scanner = new NodeCodeScanner();
         setDamagerRepairer(pr, scanner, IDocument.DEFAULT_CONTENT_TYPE);
-        setDamagerRepairer(pr, new MultilineCommentScanner(scanner.getCommentAttribute()), NodejsPartitionScanner.MULTILINE_COMMENT);
-        setDamagerRepairer(pr, new MultilineCommentScanner(scanner.getDocAttribute()), NodejsPartitionScanner.NODEJSDOC);
+        setDamagerRepairer(pr, new MultilineCommentScanner(scanner.getCommentAttribute()), NodePartitionScanner.MULTILINE_COMMENT);
+        setDamagerRepairer(pr, new MultilineCommentScanner(scanner.getDocAttribute()), NodePartitionScanner.NODEDOC);
         return pr;
     }
 
@@ -40,7 +40,7 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
 
     @Override
     public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
-        return NodejsPartitionScanner.CONTENT_TYPES;
+        return NodePartitionScanner.CONTENT_TYPES;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class NodejsSourceViewerConfiguration extends SourceViewerConfiguration {
                 return control;
             }
         });
-        contentAssistant.setContentAssistProcessor(new NodejsContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
+        contentAssistant.setContentAssistProcessor(new NodeContentAssistant(), IDocument.DEFAULT_CONTENT_TYPE);
         contentAssistant.enableAutoActivation(true);
         contentAssistant.setAutoActivationDelay(500);
         return contentAssistant;

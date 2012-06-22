@@ -6,24 +6,24 @@ import org.eclipse.jface.text.source.DefaultCharacterPairMatcher;
 import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.texteditor.SourceViewerDecorationSupport;
 
-public class NodejsEditor extends TextEditor {
+public class NodeEditor extends TextEditor {
 
-    public static final String EDITOR_ID = "org.nodeclipse.ui.editors.NodejsEditor";
+    public static final String EDITOR_ID = "org.nodeclipse.ui.editors.NodeEditor";
     public static final String RULER_CONTEXT = EDITOR_ID + ".ruler";
     public final static String EDITOR_MATCHING_BRACKETS = "matchingBrackets";
     public final static String EDITOR_MATCHING_BRACKETS_COLOR = "matchingBracketsColor";
 
     private DefaultCharacterPairMatcher matcher;
 
-    public NodejsEditor() {
-        setSourceViewerConfiguration(new NodejsSourceViewerConfiguration());
+    public NodeEditor() {
+        setSourceViewerConfiguration(new NodeSourceViewerConfiguration());
     }
 
     @Override
     protected void initializeEditor() {
         super.initializeEditor();
         setRulerContextMenuId(RULER_CONTEXT);
-        setDocumentProvider(new NodejsDocumentProvider());
+        setDocumentProvider(new NodeDocumentProvider());
     }
 
     /**

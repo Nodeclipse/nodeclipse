@@ -22,7 +22,7 @@ public class Words {
             "double", "import", "public"//
     };
 
-    public static final String[] NODEJS_WORDS = new String[] { "require", "__filename",//
+    public static final String[] NODE_WORDS = new String[] { "require", "__filename",//
             "__dirname", "module", "exports", "setInterval"//
     };
 

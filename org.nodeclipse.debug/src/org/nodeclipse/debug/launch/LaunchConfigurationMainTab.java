@@ -173,7 +173,7 @@ public class LaunchConfigurationMainTab extends AbstractLaunchConfigurationTab {
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getImage()
      **/
     public Image getImage() {
-        return Activator.getImageDescriptor(Constants.NODEJS_ICON).createImage();
+        return Activator.getImageDescriptor(Constants.NODE_ICON).createImage();
     }
 
     /**

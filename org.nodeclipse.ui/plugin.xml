@@ -5,69 +5,69 @@
          point="org.eclipse.ui.newWizards">
       <category
             id="org.nodeclipse.ui.wizards.category"
-            name="Nodejs">
+            name="Node">
       </category>
       <wizard
             category="org.nodeclipse.ui.wizards.category"
-            class="org.nodeclipse.ui.wizards.NodejsProjectWizard"
-            finalPerspective="org.nodeclipse.ui.perspectives.NodejsPerspective"
-            icon="icons/nodejs.png"
-            id="org.nodeclipse.ui.wizards.NodejsProjectWizard"
-            name="Nodejs Project"
+            class="org.nodeclipse.ui.wizards.NodeProjectWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.wizards.NodeProjectWizard"
+            name="Node Project"
             project="true">
          <description>
-            Create a new Nodejs language project
+            Create a new Node language project
          </description>
       </wizard>
       <wizard
             category="org.nodeclipse.ui.wizards.category"
-            class="org.nodeclipse.ui.wizards.NodejsFileWizard"
-            finalPerspective="org.nodeclipse.ui.perspectives.NodejsPerspective"
-            icon="icons/nodejs.png"
-            id="org.nodeclipse.ui.wizards.NodejsFileWizard"
-            name="Nodejs Source File">
+            class="org.nodeclipse.ui.wizards.NodeFileWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.wizards.NodeFileWizard"
+            name="Node Source File">
          <description>
-            Create a new Nodejs source file
+            Create a new Node source file
          </description>
       </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="org.nodeclipse.ui.editors.NodejsEditor"
+            class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
             extensions="js"
-            icon="icons/nodejs.png"
-            id="org.nodeclipse.ui.editors.NodejsEditor"
-            name="Nodejs Editor">
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.editors.NodeEditor"
+            name="Node Editor">
       </editor>
    </extension>
    <extension
          point="org.eclipse.ui.ide.projectNatureImages">
       <image
-            icon="icons/nodejs-nature.png"
-            id="org.nodeclipse.ui.NodejsNature.Image"
-            natureId="org.nodeclipse.ui.NodejsNature">
+            icon="icons/node-nature.png"
+            id="org.nodeclipse.ui.NodeNature.Image"
+            natureId="org.nodeclipse.ui.NodeNature">
       </image>
    </extension>
    <extension
-         id="org.nodeclipse.ui.NodejsNature"
-         name="Nodejs Project Nature"
+         id="org.nodeclipse.ui.NodeNature"
+         name="Node Project Nature"
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="org.nodeclipse.ui.nature.NodejsNature">
+               class="org.nodeclipse.ui.nature.NodeNature">
          </run>
       </runtime>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="org.nodeclipse.ui.perspectives.NodejsPerspective"
-            icon="icons/nodejs.png"
-            id="org.nodeclipse.ui.perspectives.NodejsPerspective"
-            name="Nodejs">
+            class="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.perspectives.NodePerspective"
+            name="Node">
       </perspective>
    </extension>
    <extension
@@ -75,13 +75,13 @@
       <perspectiveExtension
             targetID="org.eclipse.ui.resourcePerspective">
          <perspectiveShortcut
-               id="org.nodeclipse.ui.perspectives.NodejsPerspective">
+               id="org.nodeclipse.ui.perspectives.NodePerspective">
          </perspectiveShortcut>
       </perspectiveExtension>
       <perspectiveExtension
             targetID="org.eclipse.debug.ui.DebugPerspective">
          <perspectiveShortcut
-               id="org.nodeclipse.ui.perspectives.NodejsPerspective">
+               id="org.nodeclipse.ui.perspectives.NodePerspective">
          </perspectiveShortcut>
       </perspectiveExtension>
    </extension>
@@ -90,13 +90,13 @@
       <commonWizard
             menuGroupId="org.nodeclipse.ui.wizards.category"
             type="new"
-            wizardId="org.nodeclipse.ui.wizards.NodejsProjectWizard">
+            wizardId="org.nodeclipse.ui.wizards.NodeProjectWizard">
          <enablement></enablement>
       </commonWizard>
       <commonWizard
             menuGroupId="org.nodeclipse.ui.wizards.category"
             type="new"
-            wizardId="org.nodeclipse.ui.wizards.NodejsFileWizard">
+            wizardId="org.nodeclipse.ui.wizards.NodeFileWizard">
          <enablement></enablement>
       </commonWizard>
    </extension>
