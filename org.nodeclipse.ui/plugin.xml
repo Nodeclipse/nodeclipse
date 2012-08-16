@@ -189,4 +189,21 @@
         	type= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
 		  </launchConfigurationTabGroup>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.nodeclipse.ui.preferences.PreferenceInitializer">
+      </initializer>
+      <initializer
+            class="org.nodeclipse.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.nodeclipse.ui.preferences.NodePreferencePage"
+            id="org.nodeclipse.ui.preferences.NodePreferencePage"
+            name="Node">
+      </page>
+   </extension>
 </plugin>

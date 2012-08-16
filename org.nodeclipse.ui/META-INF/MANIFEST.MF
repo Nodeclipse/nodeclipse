@@ -15,3 +15,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.navigator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.nodeclipse.ui,
+ org.nodeclipse.ui.preferences

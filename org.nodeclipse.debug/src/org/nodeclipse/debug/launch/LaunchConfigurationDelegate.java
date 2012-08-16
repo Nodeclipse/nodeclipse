@@ -12,6 +12,9 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.nodeclipse.debug.util.Constants;
+import org.nodeclipse.ui.Activator;
+
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
@@ -29,7 +32,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
-        cmdLine.add(Constants.NODE);
+        cmdLine.add(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_NODE_PATH));
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
             cmdLine.add("--debug-brk=5858");
         }
