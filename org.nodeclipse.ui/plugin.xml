@@ -203,7 +203,7 @@
       <page
             class="org.nodeclipse.ui.preferences.NodePreferencePage"
             id="org.nodeclipse.ui.preferences.NodePreferencePage"
-            name="Node">
+            name="Nodeclipse">
       </page>
    </extension>
 </plugin>
