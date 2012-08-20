@@ -17,6 +17,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+		//TODO 这个地方应该像Android那样主动提示设置哇...
 		store.setDefault(PreferenceConstants.P_NODE_PATH, "node");
 	}
 
