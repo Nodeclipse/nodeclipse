@@ -26,4 +26,11 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements
 				"Node Path:", getFieldEditorParent()));
 	}
 
+	@Override
+	public boolean isValid() {
+		//window默认是C:/Program Files/nodejs/node.exe *nix下默认是/usr/local/bin/node
+		//这个最好可以检测一些这些是不是存在，如果不存在提示用户安装
+		return super.isValid();
+	}
+
 }
