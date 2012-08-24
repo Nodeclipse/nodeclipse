@@ -32,7 +32,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
-        cmdLine.add(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_NODE_PATH));
+        cmdLine.add(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH));
         if (mode.equals(ILaunchManager.DEBUG_MODE)) {
             cmdLine.add("--debug-brk=5858");
         }
