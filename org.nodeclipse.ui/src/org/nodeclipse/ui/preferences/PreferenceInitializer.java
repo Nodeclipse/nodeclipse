@@ -22,7 +22,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         if (OSUtils.isWindows()) {
             path = "C:/Program Files/nodejs/node.exe";
         }
-        store.setDefault(PreferenceConstants.P_NODE_PATH, path);
+        store.setDefault(PreferenceConstants.NODE_PATH, path);
     }
 
 }
