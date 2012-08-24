@@ -194,10 +194,6 @@
       <initializer
             class="org.nodeclipse.ui.preferences.PreferenceInitializer">
       </initializer>
-      <!-- 这里为什么一摸一样的两个-->
-      <initializer
-            class="org.nodeclipse.ui.preferences.PreferenceInitializer">
-      </initializer>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
