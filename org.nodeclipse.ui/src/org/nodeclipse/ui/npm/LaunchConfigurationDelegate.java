@@ -10,6 +10,8 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
+import org.nodeclipse.ui.Activator;
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.OSUtils;
 
@@ -29,10 +31,12 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         // Using configuration to build command line
         List<String> cmdLine = new ArrayList<String>();
         // Application path should be stored in preference.
+        String nodePath = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.NODE_PATH);
+        String npmPath = nodePath.substring(0, nodePath.lastIndexOf(File.separator) + 1);
         if (OSUtils.isWindows()) {
-            cmdLine.add(Constants.NPM_CMD);
+            cmdLine.add(npmPath + Constants.NPM_CMD);
         } else {
-            cmdLine.add(Constants.NPM);
+            cmdLine.add(npmPath + Constants.NPM);
         }
         String goal = configuration.getAttribute(Constants.KEY_GOAL, Constants.BLANK_STRING);
         cmdLine.add(goal);
@@ -41,7 +45,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         String[] cmds = {};
         cmds = cmdLine.toArray(cmds);
         Process p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
-        DebugPlugin.newProcess(launch, p, Constants.NPM_PROCESS_MESSAGE +goal);
+        DebugPlugin.newProcess(launch, p, Constants.NPM_PROCESS_MESSAGE + goal);
 
     }
 
