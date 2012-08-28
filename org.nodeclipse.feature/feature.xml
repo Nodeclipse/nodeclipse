@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse"
       label="Nodeclipse"
-      version="0.1.7">
+      version="0.1.8">
 
    <description url="http://www.nodeclipse.org/">
       Node support for Eclipse
@@ -225,14 +225,14 @@ http://www.apache.org/licenses/
          id="org.nodeclipse.debug"
          download-size="0"
          install-size="0"
-         version="0.1.7"
+         version="0.1.8"
          unpack="false"/>
 
    <plugin
          id="org.nodeclipse.ui"
          download-size="0"
          install-size="0"
-         version="0.1.7"
+         version="0.1.8"
          unpack="false"/>
 
 </feature>
