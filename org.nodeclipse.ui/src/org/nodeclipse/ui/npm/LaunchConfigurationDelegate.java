@@ -44,9 +44,13 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
         String[] cmds = {};
         cmds = cmdLine.toArray(cmds);
-        Process p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
+        Process p = null;
+        if(OSUtils.isMacOS()) {
+        	String[] env = {"PATH=" + nodePath.substring(0, nodePath.lastIndexOf(File.separator))};
+        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile(), env);
+        } else {
+        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
+        }
         DebugPlugin.newProcess(launch, p, Constants.NPM_PROCESS_MESSAGE + goal);
-
     }
-
 }

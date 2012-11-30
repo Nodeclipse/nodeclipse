@@ -9,6 +9,7 @@ import org.nodeclipse.ui.Activator;
 public class NodePreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
     private FileFieldEditor fileFieldEditor;
+    private FileFieldEditor expressPath;
     
     public NodePreferencePage() {
         super(GRID);
@@ -25,6 +26,9 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     protected void createFieldEditors() {
         fileFieldEditor = new FileFieldEditor(PreferenceConstants.NODE_PATH, "Node Path:", getFieldEditorParent());
         addField(fileFieldEditor);
+        
+        expressPath = new FileFieldEditor(PreferenceConstants.EXPRESS_PATH, "Express Path:", getFieldEditorParent());
+        addField(expressPath);
     }
 
     @Override

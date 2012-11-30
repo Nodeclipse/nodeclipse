@@ -1,3 +1,4 @@
-org.nodeclipse.debug/bin/
-org.nodeclipse.ui/bin/
+.metadata
+org.nodeclipse.debug/bin
+org.nodeclipse.ui/bin
 *.DS_Store

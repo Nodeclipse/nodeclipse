@@ -30,6 +30,15 @@
             Create a new Node source file
          </description>
       </wizard>
+      <wizard
+            category="org.nodeclipse.ui.wizards.category"
+            class="org.nodeclipse.ui.wizards.ExpressProjectWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/node.png"
+            id="org.nodeclipse.ui.wizards.ExpressProjectWizard"
+            name="Express Project"
+            project="true">
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.editors">

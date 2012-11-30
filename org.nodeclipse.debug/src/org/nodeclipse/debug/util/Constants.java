@@ -7,6 +7,7 @@ package org.nodeclipse.debug.util;
 public class Constants {
 
     public static final String LAUNCH_CONFIGURATION_TYPE_ID = "org.nodeclipse.debug.launch.LaunchConfigurationType";
+    public static final String STANDALONE_V8_LAUNCH_CONFIGURATION_TYPE_ID = "org.chromium.debug.ui.LaunchType$StandaloneV8";
 
     public static final String KEY_FILE_PATH = "key_file_path";
     public static final String BLANK_STRING = "";

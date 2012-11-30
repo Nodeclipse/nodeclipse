@@ -24,4 +24,7 @@ public class Constants {
     public static final String SEARCH_TITLE = "Search File";
     public static final String GOAL_LABEL = "Goal";
 
+    public static final String PACKAGE_JSON = "package.json";
+    public static final String MODE_RUN = "run";
+    public static final String TEMPLATE_EJS = "ejs";
 }
