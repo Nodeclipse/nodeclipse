@@ -21,4 +21,4 @@ please leave a comment stating so in the Nodeclipse forum.
 Update Site : http://www.nodeclipse.org/updates
 
 # CONTACT
-Not hesitate to contact me. Feel free to send [email](mailto:dev@nodeclipse.com) to me.
+Not hesitate to contact me. Feel free to send [email](mailto:dev@nodeclipse.org) to me.
